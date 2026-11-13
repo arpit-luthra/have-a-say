@@ -19,8 +19,9 @@ import './WardMap.css'
 
 setWorkerUrl(workerUrl)
 
-// "Bright" is OpenFreeMap's Google-Maps-like style: light green parks, white roads, blue water.
-const BASE_STYLE_URL = 'https://tiles.openfreemap.org/styles/bright'
+// "Liberty" is OpenFreeMap's detailed style: street names, parks, shops, transit
+// stops, water, and 3D buildings when zoomed in close.
+const BASE_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
 const LABELS_URL = '/data/toronto-ward-labels.geojson'
 const MASK_URL = '/data/toronto-mask.geojson'
 
@@ -30,6 +31,7 @@ const BEARING = -17
 // Poster colours: one solid colour for the city, a touch lighter on hover.
 const POSTER = '#2f4d63'
 const POSTER_HOVER = '#3f6580'
+
 
 // A box around Toronto with some breathing room: [west, south, east, north].
 // People can pan and zoom anywhere inside it, but not off into the rest of Ontario.
@@ -70,9 +72,8 @@ export default function WardMap({ selectedWard, homeLocation, onSelectWard }) {
       center: [-79.38, 43.71], // roughly the middle of Toronto
       zoom: 10,
       maxZoom: 19, // all the way down to street level
-      bearing: BEARING,
-      dragRotate: false, // people can't turn the map themselves
-      pitchWithRotate: false,
+      bearing: BEARING, pitch: 0,
+      maxPitch: 60, // right-drag (or two-finger drag) tilts the map to see 3D buildings
     })
     map.touchZoomRotate.disableRotation() // pinch zooms, but never twists the map
     mapRef.current = map
@@ -127,8 +128,11 @@ export default function WardMap({ selectedWard, homeLocation, onSelectWard }) {
       map.setFeatureState({ source: 'wards', id: ward.id }, state)
       map.setFeatureState({ source: 'ward-labels', id: ward.id }, state)
     }
-    // The city outline only belongs on the city view.
-    map.setPaintProperty('city-border', 'line-opacity', selectedNumber === null ? 0.9 : 0)
+    // City view: solid cover outside Toronto and a city outline. Ward page: none of
+    // that, just the plain map.
+    const onWardPage = selectedNumber !== null
+    map.setPaintProperty('city-border', 'line-opacity', onWardPage ? 0 : 0.9)
+        map.setPaintProperty('outside-mask', 'fill-opacity', onWardPage ? 0 : 1)
 
     const selected = wards.find((ward) => ward.id === selectedNumber)
     if (!selected) {
@@ -139,8 +143,11 @@ export default function WardMap({ selectedWard, homeLocation, onSelectWard }) {
     }
     // Ward page: fit the ward, then stop people zooming out or dragging off it.
     areaRef.current = paddedBox(selected)
-    const zoom = flyToWards(map, [selected], 1400)
-    map.once('moveend', () => map.setMinZoom(zoom - 0.3))
+    // Start with the whole ward filling the screen (no margins). That view is the
+    // minimum zoom: people can zoom in, but not out. (Going back to the city view
+    // sets the city limits again, above.)
+    const zoom = flyToWards(map, [selected], 1400, true) // true = use the full screen, no margins
+    map.once('moveend', () => map.setMinZoom(zoom - 0.01)) // tiny allowance so rounding can't push the view out of bounds
   }, [selectedWard, isReady])
 
   // --- 3. The "You live here" pin. Only kept in memory, never saved. ---
@@ -159,22 +166,22 @@ export default function WardMap({ selectedWard, homeLocation, onSelectWard }) {
  * Smoothly fly the camera so some wards (one ward, or the whole city) fill the
  * screen as large as possible. Returns the zoom level it flies to.
  */
-function flyToWards(map, wardFeatures, duration) {
-  const camera = fitCamera(map, outlinePoints(wardFeatures))
+function flyToWards(map, wardFeatures, duration, fullScreen = false) {
+  const camera = fitCamera(map, outlinePoints(wardFeatures), fullScreen)
   map.flyTo(
-    { ...camera, bearing: BEARING, duration: prefersReducedMotion ? 0 : duration, essential: true },
+    { ...camera, bearing: BEARING, pitch: 0, duration: prefersReducedMotion ? 0 : duration, essential: true },
     { fromApp: true }, // a tag on the move's events, so we can tell our moves from the user's
   )
   return camera.zoom
 }
 
-/** A ward's bounding box [west, south, east, north], with 10% extra room around it. */
+/** A ward's bounding box [west, south, east, north], with 5% extra room around it. */
 function paddedBox(ward) {
   const points = outlinePoints([ward])
   const lngs = points.map(([lng]) => lng)
   const lats = points.map(([, lat]) => lat)
   const [w, e, s, n] = [Math.min(...lngs), Math.max(...lngs), Math.min(...lats), Math.max(...lats)]
-  const [padX, padY] = [(e - w) * 0.1, (n - s) * 0.1]
+  const [padX, padY] = [(e - w) * 0.05, (n - s) * 0.05]
   return [w - padX, s - padY, e + padX, n + padY]
 }
 
@@ -196,9 +203,9 @@ function outlinePoints(wardFeatures) {
  * measure: jump the camera (invisibly, before the screen redraws), see where the
  * points land in pixels, zoom by the amount that makes them fit, re-centre, repeat.
  */
-function fitCamera(map, points) {
+function fitCamera(map, points, fullScreen) {
   map.resize() // make sure MapLibre knows the real screen size
-  const start = { center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing() }
+  const start = { center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() }
   map.stop()
 
   // Small margins; a little extra at the top for the search bar.
@@ -206,6 +213,8 @@ function fitCamera(map, points) {
   const height = map.getContainer().clientHeight
   const margin = 10
   const space = { left: margin, right: width - margin, top: 60, bottom: height - margin }
+  // Ward page: use the entire screen, no margins.
+  if (fullScreen) Object.assign(space, { left: 0, right: width, top: 0, bottom: height })
 
   const lngs = points.map(([lng]) => lng)
   const lats = points.map(([, lat]) => lat)
@@ -216,13 +225,15 @@ function fitCamera(map, points) {
 
   for (let round = 0; round < 4; round++) {
     // a) zoom so the shape is as big as fits (each zoom step doubles the size)
-    map.jumpTo({ ...camera, bearing: BEARING }, { fromApp: true })
+    map.jumpTo({ ...camera, bearing: BEARING, pitch: 0 }, { fromApp: true })
     let box = boxOnScreen(map, points)
-    const scale = Math.min((space.right - space.left) / box.width, (space.bottom - space.top) / box.height)
+    const [scaleX, scaleY] = [(space.right - space.left) / box.width, (space.bottom - space.top) / box.height]
+    // The smaller scale is the limiting side: the tall (or wide) edge touches the screen edge.
+    const scale = Math.min(scaleX, scaleY)
     camera.zoom = Math.min(16, camera.zoom + Math.log2(scale))
 
     // b) at the new zoom, shift so the shape's middle sits in the middle of the free space
-    map.jumpTo({ ...camera, bearing: BEARING }, { fromApp: true })
+    map.jumpTo({ ...camera, bearing: BEARING, pitch: 0 }, { fromApp: true })
     box = boxOnScreen(map, points)
     const shapeMiddle = map.unproject([box.middleX, box.middleY])
     const spaceMiddle = map.unproject([(space.left + space.right) / 2, (space.top + space.bottom) / 2])
@@ -245,9 +256,12 @@ function boxOnScreen(map, points) {
 
 /** Draw everything we add on top of the base map. */
 function addMapLayers(map, wards) {
-  // Hide big city names ("Toronto", "Mississauga"): the page already says
-  // Toronto, and that label would sit on top of the downtown ward badges.
-  if (map.getLayer('label_city')) map.setLayoutProperty('label_city', 'visibility', 'none')
+  // Hide bus stops (they clutter the map): keep every other place marker, but skip class "bus".
+  for (const layer of map.getStyle().layers) {
+    if (!layer.id.startsWith('poi')) continue
+    const notBus = ['!=', ['get', 'class'], 'bus']
+    map.setFilter(layer.id, layer.filter ? ['all', layer.filter, notBus] : notBus)
+  }
 
   map.addSource('wards', {
     type: 'geojson',
@@ -269,11 +283,11 @@ function addMapLayers(map, wards) {
     type: 'fill',
     source: 'wards',
     paint: {
-      // Other wards, once one is open, turn into the plain light background.
-      'fill-color': ['case', is('dimmed'), OUTSIDE_COLOR, is('hover'), POSTER_HOVER, POSTER],
-      'fill-opacity': ['case', is('selected'), 0, 1],
+      // Once a ward is open, every cover disappears and the plain real map shows.
+      'fill-color': ['case', is('dimmed'), POSTER, is('hover'), POSTER_HOVER, POSTER],
+      'fill-opacity': ['case', is('selected'), 0, is('dimmed'), 0, 1],
       'fill-opacity-transition': { duration: prefersReducedMotion ? 0 : 700 },
-      'fill-color-transition': { duration: 150 },
+      'fill-color-transition': { duration: prefersReducedMotion ? 0 : 700 },
     },
   })
 
@@ -301,9 +315,9 @@ function addMapLayers(map, wards) {
     source: 'wards',
     layout: { 'line-join': 'round' },
     paint: {
-      'line-color': ['case', is('selected'), INK, '#ffffff'],
-      'line-width': ['case', is('selected'), 3, 1],
-      'line-opacity': ['case', is('dimmed'), 0, 1],
+      'line-color': '#ffffff',
+      'line-width': 1,
+      'line-opacity': ['case', is('selected'), 0, is('dimmed'), 0, 1], // no ward borders on a ward page
     },
   })
 
