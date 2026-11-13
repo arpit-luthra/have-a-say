@@ -1,0 +1,24 @@
+/* The map fills whatever space its parent gives it. */
+.ward-map {
+  position: absolute;
+  inset: 0;
+}
+
+/* Hover label: override MapLibre's default white popup with our quieter style. */
+.ward-tooltip {
+  pointer-events: none; /* so the label never "steals" the mouse from the map */
+}
+
+.ward-tooltip .maplibregl-popup-content {
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 500 13px/1.3 var(--font-sans);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+}
+
+/* Hide the little pointer triangle: the label sits next to the cursor instead. */
+.ward-tooltip .maplibregl-popup-tip {
+  display: none;
+}

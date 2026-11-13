@@ -1,0 +1,36 @@
+/* Global styles and design tokens (colours, fonts) used across the app.
+   Calm, civic palette: warm paper, dark ink, one muted blue.
+   We deliberately avoid red/yellow/green so nothing feels like an alarm. */
+
+:root {
+  --paper: #f6f5f1; /* background */
+  --ink: #26303b; /* main text, ward outlines */
+  --ink-muted: #5b6672; /* secondary text */
+  --line: #d9d6ce; /* borders */
+  --civic-blue: #3d5a73; /* ward fill, links */
+
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
