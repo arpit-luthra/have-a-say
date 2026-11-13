@@ -1,9 +1,9 @@
-// "Find my ward": type an address or postal code, and we work out which ward it's in.
-//
+// Address search: type an address or postal code and we find it on the map.
+// (We also check it is inside Toronto, using the ward file behind the scenes.)
 // Steps when you press Find:
 // 1. Ask OpenStreetMap's search (Nominatim) where that address is.
-// 2. Check which of the 25 ward shapes contains that spot.
-// 3. Tell the parent (App), which drops the pin and zooms to the ward.
+// 2. Check the spot is inside Toronto (using the ward shapes, which are not drawn).
+// 3. Tell the parent (App), which drops the pin and zooms there.
 //
 // The address only lives in this component's memory while the page is open.
 // It is never saved in the browser or sent anywhere except the address search.
@@ -61,8 +61,8 @@ export default function FindWard({ onFound }) {
             type="text"
             inputMode="search"
             autoComplete="street-address"
-            aria-label="Find my ward: address or postal code"
-            placeholder="Find my ward: address or postal code"
+            aria-label="Search an address or postal code"
+            placeholder="Search an address or postal code"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />

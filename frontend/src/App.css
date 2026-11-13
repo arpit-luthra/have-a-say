@@ -1,48 +1,6 @@
-/* The app is just one full-screen map. Controls float on top of it. */
+/* The app is just one full-screen map. The search bar floats on top of it. */
 .app {
   position: relative;
   height: 100%;
   overflow: hidden;
-}
-
-/* Ward page: back button and ward name, top left. */
-.ward-bar {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  pointer-events: none; /* only the pieces below catch the mouse, so the map stays draggable */
-}
-
-.ward-bar__back,
-.ward-bar__name {
-  pointer-events: auto;
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
-}
-
-.ward-bar__back {
-  flex: none;
-  padding: 11px 16px;
-  border: 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink);
-  cursor: pointer;
-}
-
-.ward-bar__name {
-  margin: 0;
-  min-width: 0;
-  padding: 11px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

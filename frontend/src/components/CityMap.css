@@ -1,5 +1,5 @@
 /* The map fills whatever space its parent gives it. */
-.ward-map {
+.city-map {
   position: absolute;
   inset: 0;
 }
