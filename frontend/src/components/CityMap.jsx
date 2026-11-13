@@ -12,6 +12,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 // around when bundling, so we tell MapLibre where that file ends up.
 // `?url` asks Vite for the file's final web address instead of its contents.
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
+import { tooltipText } from '../lib/cardText.js'
 import { loadWards } from '../lib/wardData.js'
 import { findWardAt, isPointInGeometry } from '../lib/geo.js'
 import './CityMap.css'
@@ -122,7 +123,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
       .setLngLat([homeLocation.lng, homeLocation.lat])
       .addTo(map)
     map.flyTo(
-      { center: [homeLocation.lng, homeLocation.lat], zoom: 15, duration: prefersReducedMotion ? 0 : 1400, essential: true },
+      { center: [homeLocation.lng, homeLocation.lat], zoom: 13.5, duration: prefersReducedMotion ? 0 : 1400, essential: true },
       { fromApp: true }, // a tag on the move's events, so we can tell our moves from the user's
     )
     return () => marker.remove() // removed when the location changes or the page closes
@@ -160,7 +161,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     mapRef.current.setFilter('pin-points', selectedId ? ['==', ['get', 'id'], selectedId] : null)
   }, [selectedId, isReady])
 
-  // --- 4b. Hovering a pin (or its card in the list) shows a small tooltip with the plain title. ---
+  // --- 4b. Hovering a pin (or its card in the list) shows a small tooltip with the topic and place. ---
   useEffect(() => {
     if (!isReady || !hoveredId) return
     const map = mapRef.current
@@ -170,7 +171,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     const pinHeight = 24 * (1 + 0.5 * Math.min(1, Math.max(0, (map.getZoom() - 11) / 6)))
     const tooltip = new Popup({ closeButton: false, closeOnClick: false, className: 'pin-tooltip', offset: [0, -pinHeight - 4], maxWidth: '260px' })
       .setLngLat([pin.lng, pin.lat])
-      .setText(pin.title) // setText (not HTML), so titles can never inject markup
+      .setText(tooltipText(pin)) // setText (not HTML), so text can never inject markup
       .addTo(map)
     return () => tooltip.remove()
   }, [hoveredId, isReady])

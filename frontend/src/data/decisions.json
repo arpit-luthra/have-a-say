@@ -13,7 +13,8 @@
     "lat": 43.6615,
     "lng": -79.4105,
     "sayStatus": "closed",
-    "deadline": null
+    "deadline": null,
+    "place": "Lennox Street"
   },
   {
     "id": "2026.MM40.29",
@@ -29,6 +30,7 @@
     "lat": 43.66,
     "lng": -79.365,
     "sayStatus": "closed",
-    "deadline": null
+    "deadline": null,
+    "place": "Ontario Street"
   }
 ]

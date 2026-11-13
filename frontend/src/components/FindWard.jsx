@@ -21,7 +21,8 @@ const MESSAGES = {
   offline: "Address search isn't working right now. Please try again in a moment.",
 }
 
-export default function FindWard({ onFound }) {
+// `hero` = the big version on the start page (link under the bar instead of a dropdown).
+export default function FindWard({ onFound, hero = false }) {
   const [query, setQuery] = useState('')
   const [isSearching, setIsSearching] = useState(false)
   const [error, setError] = useState(null)
@@ -70,7 +71,7 @@ export default function FindWard({ onFound }) {
         setError(MESSAGES.outside)
         return
       }
-      onFound({ location: { ...place, label: 'You live here' }, ward: wardSummary(ward.properties) })
+      onFound({ location: { ...place, label: 'You are here' }, ward: wardSummary(ward.properties) })
     } catch {
       setError(MESSAGES.offline)
     } finally {
@@ -79,7 +80,7 @@ export default function FindWard({ onFound }) {
   }
 
   return (
-    <form className="find-ward" role="search" onSubmit={handleSubmit}>
+    <form className={`find-ward${hero ? ' find-ward--hero' : ''}`} role="search" onSubmit={handleSubmit}>
       <div className="find-ward__pill">
         <div className="find-ward__row">
           <input
@@ -88,7 +89,7 @@ export default function FindWard({ onFound }) {
             inputMode="search"
             autoComplete="street-address"
             aria-label="Search an address or postal code"
-            placeholder="Search an address or postal code"
+            placeholder={hero ? 'Enter your address or postal code' : 'Search an address or postal code'}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             onFocus={() => setIsOpen(true)}
@@ -104,7 +105,7 @@ export default function FindWard({ onFound }) {
         </div>
       </div>
 
-      {isOpen && (
+      {isOpen && !hero && (
         <ul className="find-ward__menu">
           <li>
             {/* onMouseDown + preventDefault: keeps the input focused so the menu doesn't
@@ -118,6 +119,12 @@ export default function FindWard({ onFound }) {
             </button>
           </li>
         </ul>
+      )}
+
+      {hero && (
+        <button type="button" className="find-ward__link" onClick={useCurrentLocation}>
+          Use my current location
+        </button>
       )}
 
       {/* aria-live: screen readers announce this message when it appears. */}

@@ -41,3 +41,9 @@
   font-weight: 600;
   color: var(--brand);
 }
+
+.map-panel__place {
+  margin: 2px 0 10px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}

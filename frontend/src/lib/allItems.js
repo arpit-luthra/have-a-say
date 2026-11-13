@@ -22,7 +22,7 @@ const fromOpenData = openData.items
     const spot = locations[item.id] // undefined = no pin for this one
     return {
       ...item,
-      ...(spot && { lat: spot.lat, lng: spot.lng }),
+      ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address }),
       title: plain || item.title,
       officialTitle: plain ? item.title : null,
       topic: guessTopic(item.title), // guess from the OFFICIAL title: it has more keywords

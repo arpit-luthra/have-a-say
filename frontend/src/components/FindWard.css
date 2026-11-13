@@ -113,3 +113,30 @@
 .find-ward__option svg {
   color: var(--brand);
 }
+
+/* Big version on the start page: sits on the photo, so the error chip stays readable. */
+.find-ward--hero .find-ward__pill {
+  border: 0;
+  border-radius: 40px;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.35);
+}
+.find-ward--hero .find-ward__input {
+  padding: 22px 8px 22px 28px;
+  font-size: 18px;
+}
+.find-ward--hero .find-ward__button {
+  width: 52px;
+  height: 52px;
+  margin-right: 8px;
+}
+.find-ward__link {
+  display: block;
+  margin: 14px auto 0;
+  padding: 4px 8px;
+  border: 0;
+  background: none;
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}

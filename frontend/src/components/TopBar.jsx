@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './TopBar.css'
 
 const MENU = [
-  { to: '/', label: 'Explore' },
+  { to: '/explore', label: 'Explore' },
   { to: '/have-your-say', label: 'Have your say' },
   { to: '/how-it-works', label: 'How council works' },
   { to: '/about', label: 'About & sources' },
@@ -25,7 +25,7 @@ export default function TopBar() {
       </NavLink>
       <nav className="topbar__menu" aria-label="Main">
         {MENU.map((item) => (
-          <NavLink key={item.to} to={item.to} end={item.to === '/'} className="topbar__link">
+          <NavLink key={item.to} to={item.to} className="topbar__link">
             {item.label}
           </NavLink>
         ))}

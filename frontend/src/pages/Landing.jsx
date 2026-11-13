@@ -1,0 +1,84 @@
+// Start page: a photo, one big search bar, recently decided items, and 3 steps.
+// Searching saves the spot in memory (ResidentContext) and goes to the Explore page.
+import { useNavigate } from 'react-router-dom'
+import FindWard from '../components/FindWard.jsx'
+import DecisionCard from '../components/DecisionCard.jsx'
+import { allItems } from '../lib/allItems.js'
+import { statusWord } from '../lib/statusWord.js'
+import { useResident } from '../lib/ResidentContext.jsx'
+import './Landing.css'
+
+// The 4 newest items that already have a final answer.
+const recentlyDecided = allItems
+  .filter((d) => statusWord(d) !== 'In progress')
+  .sort((a, b) => b.dateISO.localeCompare(a.dateISO))
+  .slice(0, 4)
+
+const STEPS = [
+  {
+    title: 'Enter your address',
+    text: 'We use it once to find what is close to you. We never save it.',
+    icon: <path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5c0 4.8 5.7 11 6.2 11.5a.4.4 0 0 0 .6 0c.5-.5 6.2-6.7 6.2-11.5A6.5 6.5 0 0 0 12 2.5zM12 9m-2.3 0a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0-4.6 0" />,
+  },
+  {
+    title: "See what's happening near you",
+    text: 'Short, plain answers about each decision.',
+    icon: <path d="M3 12s3.5-6.5 9-6.5S21 12 21 12s-3.5 6.5-9 6.5S3 12 3 12zM12 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0" />,
+  },
+  {
+    title: 'Have your say',
+    text: 'Find out if you can still speak up, and how.',
+    icon: <path d="M4 5h16v11H11l-4.5 3.5V16H4z" />,
+  },
+]
+
+export default function Landing() {
+  const { setFound } = useResident()
+  const navigate = useNavigate()
+
+  return (
+    <main>
+      <section className="hero">
+        <div className="hero__inner">
+          <h1 className="hero__title">Your city is making decisions about your street.</h1>
+          <p className="hero__sub">See what's happening near you, and how to have a say.</p>
+          <FindWard
+            hero
+            onFound={(found) => {
+              setFound(found)
+              navigate('/explore')
+            }}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <h2 className="section__title">Recently decided in Toronto</h2>
+        <ul className="recent">
+          {recentlyDecided.map((d) => (
+            <li key={d.id}>
+              <DecisionCard decision={d} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section section--steps">
+        <h2 className="section__title">How it works</h2>
+        <ol className="steps">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="steps__item">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true">
+                {step.icon}
+              </svg>
+              <h3>
+                {i + 1}. {step.title}
+              </h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </main>
+  )
+}

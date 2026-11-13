@@ -32,3 +32,12 @@ export function isPointInGeometry(lng, lat, geometry) {
 export function findWardAt(lng, lat, wardFeatures) {
   return wardFeatures.find((ward) => isPointInGeometry(lng, lat, ward.geometry))
 }
+
+/** Straight-line distance between two spots in kilometres (the "haversine" formula). */
+export function distanceKm(a, b) {
+  const toRad = (deg) => (deg * Math.PI) / 180
+  const dLat = toRad(b.lat - a.lat)
+  const dLng = toRad(b.lng - a.lng)
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2
+  return 2 * 6371 * Math.asin(Math.sqrt(h)) // 6371 = Earth's radius in km
+}

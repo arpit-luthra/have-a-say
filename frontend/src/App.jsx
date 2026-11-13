@@ -2,6 +2,7 @@
 // The top bar is shown on every page; the page fills the space under it.
 import { Route, Routes } from 'react-router-dom'
 import TopBar from './components/TopBar.jsx'
+import Landing from './pages/Landing.jsx'
 import Home from './pages/Home.jsx'
 import DecisionPage from './pages/DecisionPage.jsx'
 import HaveYourSay from './pages/HaveYourSay.jsx'
@@ -15,7 +16,8 @@ export default function App() {
       <TopBar />
       <div className="app__page">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/explore" element={<Home />} />
           <Route path="/decision/:id" element={<DecisionPage />} />
           <Route path="/have-your-say" element={<HaveYourSay />} />
           <Route path="/how-it-works" element={<Placeholder title="How council works" />} />

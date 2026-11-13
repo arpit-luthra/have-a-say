@@ -1,23 +1,12 @@
-// One item in the list. The whole card links to its own page.
-// Items without a written explanation say so; their page shows what the open data knows.
+// One item in a list: topic, plain title, then status · distance.
+// The whole card links to the decision's own page.
 import { Link } from 'react-router-dom'
-import { formatDate } from '../lib/formatDate.js'
-import CouncillorVote from './CouncillorVote.jsx'
-import { bodyName } from '../lib/voteWords.js'
-import { getStageSteps } from '../lib/stageSteps.js'
+import { statusWord } from '../lib/statusWord.js'
 import './DecisionCard.css'
 
-// One plain word for the list: the full 4-step tracker lives on the decision page.
-function statusWord(decision) {
-  const lastStep = getStageSteps(decision).steps[3]
-  if (lastStep.state === 'reached') return 'Approved'
-  if (lastStep.state === 'rejected') return 'Rejected'
-  return 'In progress'
-}
-
 // `onHover(id | null)` lets the page highlight this card's map pin; `active` = its pin is hovered.
-export default function DecisionCard({ decision, active = false, onHover = () => {} }) {
-  const { detailed } = decision
+// `distanceKm` is optional (no distance until the person has searched an address).
+export default function DecisionCard({ decision, distanceKm = null, active = false, onHover = () => {} }) {
   return (
     <Link
       id={`card-${decision.id}`} // so the map can scroll this card into view
@@ -26,29 +15,9 @@ export default function DecisionCard({ decision, active = false, onHover = () =>
       onMouseEnter={() => onHover(decision.id)}
       onMouseLeave={() => onHover(null)}
     >
-      <div className="card__top">
-        <span className="card__topic">{decision.topic}</span>
-        <span className="card__status">{statusWord(decision)}</span>
-      </div>
+      <p className="card__topic">{decision.topic}</p>
       <h2 className="card__title">{decision.title}</h2>
-      {detailed ? (
-        <>
-          <p className="card__meta">
-            {decision.ward} · {decision.neighbourhood}
-          </p>
-          <p className="card__meta card__meta--date">{decision.date}</p>
-          <p className="card__say">{decision.say}</p>
-        </>
-      ) : (
-        <>
-          <p className="card__meta">{bodyName(decision.committee)}</p>
-          <p className="card__meta card__meta--date">
-            Decided {formatDate(decision.dateISO)}
-          </p>
-          <p className="card__say">Full explanation not ready yet.</p>
-          <CouncillorVote item={decision} />
-        </>
-      )}
+      <p className="card__meta">{statusWord(decision)}{distanceKm != null && ` · ${distanceKm.toFixed(1)} km away`}</p>
     </Link>
   )
 }

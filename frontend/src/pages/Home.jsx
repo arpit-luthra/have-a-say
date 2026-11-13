@@ -10,20 +10,33 @@ import FindWard from '../components/FindWard.jsx'
 import DecisionCard from '../components/DecisionCard.jsx'
 import FilterBar, { NO_FILTERS } from '../components/FilterBar.jsx'
 import { filterDecisions } from '../lib/filterDecisions.js'
+import { distanceKm } from '../lib/geo.js'
 import { allItems } from '../lib/allItems.js'
 import { useResident } from '../lib/ResidentContext.jsx'
 import './Home.css'
 
 const PAGE_SIZE = 20
+const NEAR_KM = 2
+const WIDE_KM = 5
 
 export default function Home() {
   const { homeLocation, setFound } = useResident() // kept in memory for the whole visit
-  const [filters, setFilters] = useState(NO_FILTERS)
+  const [filters, setFilters] = useState({ ...NO_FILTERS, sort: 'Closest to me' })
+  const [radius, setRadius] = useState(NEAR_KM) // km around the searched spot
+  const [showAll, setShowAll] = useState(false) // "Show all of Toronto" (off by default)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  // With no searched spot there is nothing to be "near", so everything is shown.
+  const nearOnly = homeLocation && !showAll
   const [visible, setVisible] = useState(PAGE_SIZE) // how many cards to show ("load more")
   const [hoveredId, setHoveredId] = useState(null) // card <-> pin highlight
   // useMemo = only redo this when the filters or location change (not on every hover),
   // so the map isn't handed new pin data each time the mouse moves.
-  const shown = useMemo(() => filterDecisions([...allItems], filters, homeLocation), [filters, homeLocation])
+  const filtered = useMemo(() => filterDecisions([...allItems], filters, homeLocation), [filters, homeLocation])
+  // Near mode keeps only mapped decisions inside the radius (items with no address can't be "near").
+  const shown = useMemo(
+    () => (nearOnly ? filtered.filter((d) => d.lat != null && distanceKm(homeLocation, d) <= radius) : filtered),
+    [filtered, nearOnly, homeLocation, radius],
+  )
   const pins = useMemo(() => shown.filter((d) => d.lat != null), [shown]) // pins only for decisions in the list
 
   // The decision whose pin was clicked. If a filter then removes it from the list, it is deselected.
@@ -45,26 +58,42 @@ export default function Home() {
   return (
     <main className={`home ${showMap ? 'home--map' : ''}`}>
       <section className="home__list">
-        <h1 className="home__title">Decisions near you</h1>
+        <h1 className="home__title">
+          {!homeLocation
+            ? 'Decisions in Toronto'
+            : showAll
+              ? `${shown.length} decisions in Toronto`
+              : shown.length === 0
+                ? `Nothing within ${radius} km right now`
+                : `${shown.length} ${shown.length === 1 ? 'decision' : 'decisions'} near you`}
+        </h1>
         <FindWard onFound={(found) => {
           setFound(found)
-          setFilters((f) => ({ ...f, sort: 'Closest to me' }))
+          setRadius(NEAR_KM)
+          setVisible(PAGE_SIZE)
         }} />
-        <FilterBar
-          filters={filters}
-          onChange={(next) => {
-            setFilters(next)
-            setVisible(PAGE_SIZE) // new filter -> start from the top again
-          }}
-          count={shown.length}
-        />
-        <p className="home__mapnote">
-          {pins.length} of {shown.length} decisions shown on the map (decisions without a street address aren't mapped).
-        </p>
+        {nearOnly && shown.length === 0 && radius < WIDE_KM && (
+          <button className="home__more" type="button" onClick={() => setRadius(WIDE_KM)}>
+            Look within {WIDE_KM} km
+          </button>
+        )}
+        <button className="home__filters" type="button" aria-expanded={filtersOpen} onClick={() => setFiltersOpen(!filtersOpen)}>
+          Filters
+        </button>
+        {filtersOpen && (
+          <FilterBar
+            filters={filters}
+            onChange={(next) => {
+              setFilters(next)
+              setVisible(PAGE_SIZE) // new filter -> start from the top again
+            }}
+            count={shown.length}
+          />
+        )}
         <ul className="home__cards">
           {shown.slice(0, visible).map((decision) => (
             <li key={decision.id}>
-              <DecisionCard decision={decision} active={hoveredId === decision.id || selected?.id === decision.id} onHover={setHoveredId} />
+              <DecisionCard decision={decision} distanceKm={homeLocation && decision.lat != null ? distanceKm(homeLocation, decision) : null} active={hoveredId === decision.id || selected?.id === decision.id} onHover={setHoveredId} />
             </li>
           ))}
         </ul>
@@ -88,6 +117,12 @@ export default function Home() {
             setScrolledTo(null)
           }}
         />
+        {homeLocation && (
+          <label className="home__showall">
+            <input type="checkbox" checked={showAll} onChange={(e) => setShowAll(e.target.checked)} />
+            Show all of Toronto
+          </label>
+        )}
         <MapPanel decision={selected} onBack={() => {
             setSelectedId(null)
             setScrolledTo(null)
