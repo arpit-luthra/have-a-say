@@ -9,13 +9,16 @@ import FindWard from '../components/FindWard.jsx'
 import DecisionCard from '../components/DecisionCard.jsx'
 import FilterBar, { NO_FILTERS } from '../components/FilterBar.jsx'
 import { filterDecisions } from '../lib/filterDecisions.js'
-import decisions from '../data/decisions.json'
+import { allItems } from '../lib/allItems.js'
 import './Home.css'
+
+const PAGE_SIZE = 20
 
 export default function Home() {
   const [homeLocation, setHomeLocation] = useState(null)
   const [filters, setFilters] = useState(NO_FILTERS)
-  const shown = filterDecisions([...decisions], filters, homeLocation)
+  const [visible, setVisible] = useState(PAGE_SIZE) // how many cards to show ("load more")
+  const shown = filterDecisions([...allItems], filters, homeLocation)
   const [showMap, setShowMap] = useState(false) // only matters on phones
 
   return (
@@ -26,14 +29,26 @@ export default function Home() {
           setHomeLocation(location)
           setFilters((f) => ({ ...f, sort: 'Closest to me' }))
         }} />
-        <FilterBar filters={filters} onChange={setFilters} count={shown.length} />
+        <FilterBar
+          filters={filters}
+          onChange={(next) => {
+            setFilters(next)
+            setVisible(PAGE_SIZE) // new filter -> start from the top again
+          }}
+          count={shown.length}
+        />
         <ul className="home__cards">
-          {shown.map((decision) => (
+          {shown.slice(0, visible).map((decision) => (
             <li key={decision.id}>
               <DecisionCard decision={decision} />
             </li>
           ))}
         </ul>
+        {visible < shown.length && (
+          <button className="home__more" type="button" onClick={() => setVisible(visible + PAGE_SIZE)}>
+            Load more ({shown.length - visible} left)
+          </button>
+        )}
       </section>
 
       {/* Always rendered (even when hidden on phones) so the map keeps its size. */}

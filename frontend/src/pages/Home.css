@@ -18,11 +18,23 @@
 }
 
 .home__cards {
-  display: grid;
-  gap: 16px;
+  border-top: 1px solid var(--ink);
   margin: 20px 0 0;
   padding: 0;
   list-style: none;
+}
+
+.home__more {
+  display: block;
+  margin: 28px 0 0;
+  padding: 10px 20px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+.home__more:hover {
+  background: rgb(38 48 59 / 0.06);
 }
 
 .home__map {
@@ -73,7 +85,7 @@
     z-index: 5;
     padding: 12px 28px;
     border: 0;
-    border-radius: 999px;
+    border-radius: 2px;
     background: var(--ink);
     color: var(--paper);
     font-weight: 500;

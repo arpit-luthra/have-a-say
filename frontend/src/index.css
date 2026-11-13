@@ -9,7 +9,9 @@
   --line: #d9d6ce; /* borders */
   --brand: #0f766e; /* deep teal: the only brand colour */
 
-  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
   color: var(--ink);
   background: var(--paper);

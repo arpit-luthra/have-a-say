@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import TopBar from './components/TopBar.jsx'
 import Home from './pages/Home.jsx'
 import DecisionPage from './pages/DecisionPage.jsx'
+import HaveYourSay from './pages/HaveYourSay.jsx'
 import Placeholder from './pages/Placeholder.jsx'
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/decision/:id" element={<DecisionPage />} />
-          <Route path="/have-your-say" element={<Placeholder title="Have your say" />} />
+          <Route path="/have-your-say" element={<HaveYourSay />} />
           <Route path="/how-it-works" element={<Placeholder title="How council works" />} />
           <Route path="/about" element={<Placeholder title="About & sources" />} />
         </Routes>

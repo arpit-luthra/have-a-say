@@ -6,7 +6,7 @@
 /* The white rounded bar with a soft shadow. */
 .find-ward__pill {
   background: #ffffff;
-  border-radius: 26px;
+  border-radius: 2px;
   border: 1px solid var(--line);
   transition: box-shadow 150ms;
 }
@@ -69,7 +69,7 @@
 .find-ward__error {
   margin: 8px 0 0;
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 2px;
   background: #ffffff;
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
   font-size: 13px;
@@ -87,7 +87,7 @@
   padding: 6px;
   list-style: none;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 2px;
   background: #ffffff;
   box-shadow: 0 6px 20px rgb(38 48 59 / 0.15);
 }
@@ -99,7 +99,7 @@
   width: 100%;
   padding: 12px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 2px;
   background: none;
   font-size: 15px;
   text-align: left;

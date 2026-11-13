@@ -1,0 +1,66 @@
+.say {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+  background: #fff;
+  min-height: 100%;
+}
+.say__title {
+  margin: 0 0 16px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.say__intro {
+  margin: 0 0 40px;
+  font-size: 19px;
+  line-height: 1.55;
+}
+.say__heading {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.say__empty {
+  margin: 24px 0;
+  font-size: 17px;
+  line-height: 1.6;
+  font-style: italic;
+}
+.say a {
+  color: var(--brand);
+}
+.say__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.say__meeting {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.say__date {
+  font-size: 14px;
+}
+.say__detail {
+  display: block;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.say__source {
+  margin: 32px 0 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+@media (max-width: 700px) {
+  .say__meeting {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

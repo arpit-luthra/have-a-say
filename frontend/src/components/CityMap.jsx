@@ -60,10 +60,25 @@ export default function CityMap({ homeLocation }) {
       if (cancelled) return
 
       // Toronto fills the screen on load, and that zoom is as far out as anyone can go.
-      const camera = fitCity(map, outlinePoints(wards.features, 3))
+      const points = outlinePoints(wards.features, 3)
+      const camera = fitCity(map, points)
       map.jumpTo({ ...camera, bearing: BEARING, pitch: 0 }, { fromApp: true })
       map.setMinZoom(camera.zoom - 0.01) // tiny allowance so rounding can't trip the limit
+      // A hard box around Toronto: MapLibre itself refuses to show anything far outside it,
+      // so the map can never zoom out to the whole GTA, whatever the screen size.
+      map.setMaxBounds(cityBox(points, 0.03))
       keepInsideToronto(map, wards.features)
+
+      // If the window changes size, the "whole city fits" zoom changes too, so work it out again.
+      // (Skipped while the map is hidden: a 0-pixel-wide map would give a nonsense zoom.)
+      map.on('resize', () => {
+        if (!map.getContainer().clientWidth || !map.getContainer().clientHeight) return
+        // fitCity moves the camera while measuring, so remember where we were first.
+        const before = { center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() }
+        const fitted = fitCity(map, points)
+        map.setMinZoom(fitted.zoom - 0.01)
+        map.jumpTo({ ...before, zoom: Math.max(before.zoom, fitted.zoom) }, { fromApp: true })
+      })
 
       setIsReady(true)
     })
@@ -111,6 +126,16 @@ function outlinePoints(wardFeatures, step) {
     }
   }
   return points
+}
+
+/** The box (south-west and north-east corners) around the points, with a small margin. */
+function cityBox(points, margin) {
+  const lngs = points.map(([lng]) => lng)
+  const lats = points.map(([, lat]) => lat)
+  return [
+    [Math.min(...lngs) - margin, Math.min(...lats) - margin],
+    [Math.max(...lngs) + margin, Math.max(...lats) + margin],
+  ]
 }
 
 /**

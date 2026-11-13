@@ -1,0 +1,102 @@
+/* Reached steps are teal, later ones grey. Skipped / not-needed steps are hollow. */
+.tracker__dot {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+.tracker__dot--reached {
+  background: var(--brand);
+}
+.tracker__dot--rejected {
+  background: var(--ink);
+}
+.tracker__dot--skipped,
+.tracker__dot--not-needed {
+  background: #fff;
+  border: 1px solid var(--ink-muted);
+}
+
+/* ----- compact (list cards) ----- */
+.tracker--compact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.tracker__dots {
+  display: inline-flex;
+  gap: 4px;
+}
+.tracker--compact .tracker__dot {
+  width: 7px;
+  height: 7px;
+}
+.tracker__label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ----- full (decision page) ----- */
+.tracker__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tracker__dot-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.tracker__line {
+  flex: 1;
+  height: 1px;
+  margin: 0 6px;
+  background: #d1d5db;
+}
+.tracker__step--reached .tracker__line {
+  background: var(--brand);
+}
+.tracker__name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.tracker__step--upcoming .tracker__name {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+.tracker__step--skipped .tracker__name,
+.tracker__step--not-needed .tracker__name {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+.tracker__note {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.tracker__next {
+  margin: 14px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.tracker__uncertain {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 700px) {
+  .tracker__name,
+  .tracker__note {
+    font-size: 12px;
+  }
+}
+.tracker + .timeline { margin-top: 28px; }
