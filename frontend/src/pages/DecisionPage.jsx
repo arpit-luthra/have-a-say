@@ -4,7 +4,9 @@ import { Link, useParams } from 'react-router-dom'
 import decisions from '../data/decisions.json'
 import { allItems } from '../lib/allItems.js'
 import { formatDate } from '../lib/formatDate.js'
+import { bodyName, outcomeWord } from '../lib/voteWords.js'
 import details from '../data/decision-details.json'
+import CouncillorVote from '../components/CouncillorVote.jsx'
 import StageTracker from '../components/StageTracker.jsx'
 import './DecisionPage.css'
 
@@ -99,12 +101,12 @@ function BasicDecision({ item }) {
         </Link>
         <header className="decision__header">
           <p className="decision__ref">
-            Item <span className="mono">{item.id}</span> · {item.topic} · {item.committee}
+            Item <span className="mono">{item.id}</span> · {item.topic} · {bodyName(item.committee)}
           </p>
           <h1 className="decision__title">{item.title}</h1>
           {item.officialTitle && <p className="decision__official">Official title: {item.officialTitle}</p>}
           <p className="decision__where">
-            Last vote <span className="mono">{formatDate(item.dateISO)}</span>
+            Decided <span className="mono">{formatDate(item.dateISO)}</span>
           </p>
         </header>
       </div>
@@ -126,10 +128,10 @@ function BasicDecision({ item }) {
       </section>
 
       <section className="row">
-        <h2 className="row__q">Last vote</h2>
+        <h2 className="row__q">Decision</h2>
         <div className="row__a">
           <p>
-            <span className="mono">{item.result}</span> at {item.committee} on{' '}
+            {outcomeWord(item.result)} at {bodyName(item.committee)} on{' '}
             <span className="mono">{formatDate(item.dateISO)}</span>.
           </p>
           <p className="row__note">
@@ -142,6 +144,13 @@ function BasicDecision({ item }) {
         <h2 className="row__q">Where is it in the process?</h2>
         <div className="row__a">
           <StageTracker item={item} />
+        </div>
+      </section>
+
+      <section className="row">
+        <h2 className="row__q">How your councillor voted</h2>
+        <div className="row__a">
+          <CouncillorVote item={item} full />
         </div>
       </section>
 
@@ -205,6 +214,13 @@ export default function DecisionPage() {
       {numbered.map((s) => (
         <Section section={s} decision={decision} key={s.key} />
       ))}
+
+      <section className="row">
+        <h2 className="row__q">How your councillor voted</h2>
+        <div className="row__a">
+          <CouncillorVote item={{ ...decision, committee: 'City Council' }} full />
+        </div>
+      </section>
 
       <section className="row">
         <h2 className="row__q">Documents</h2>

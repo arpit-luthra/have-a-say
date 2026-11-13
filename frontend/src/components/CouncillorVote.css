@@ -1,0 +1,26 @@
+.votes__line {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.votes__all {
+  margin: 12px 0 8px;
+  font-size: 15px;
+}
+.votes__all summary {
+  cursor: pointer;
+  color: var(--brand);
+}
+.votes__all ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.votes__all li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}

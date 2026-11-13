@@ -6,9 +6,11 @@ import Home from './pages/Home.jsx'
 import DecisionPage from './pages/DecisionPage.jsx'
 import HaveYourSay from './pages/HaveYourSay.jsx'
 import Placeholder from './pages/Placeholder.jsx'
+import { ResidentProvider } from './lib/ResidentContext.jsx'
 
 export default function App() {
   return (
+    <ResidentProvider>
     <div className="app">
       <TopBar />
       <div className="app__page">
@@ -21,5 +23,6 @@ export default function App() {
         </Routes>
       </div>
     </div>
+    </ResidentProvider>
   )
 }

@@ -9,7 +9,8 @@
   text-decoration: none;
 }
 
-.card:hover {
+.card:hover,
+.card--active {
   background: rgb(38 48 59 / 0.04);
 }
 
@@ -69,10 +70,6 @@
   color: var(--brand);
 }
 
-/* The official title, small and grey, under the plain-language one. */
-.card__official {
-  margin: -4px 0 10px;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #6b7280;
+.card__status {
+  font-weight: 600;
 }

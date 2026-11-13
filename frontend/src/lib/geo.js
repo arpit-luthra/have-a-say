@@ -21,7 +21,7 @@ function isPointInRing(lng, lat, ring) {
 }
 
 /** Inside a Polygon or MultiPolygon: inside an outer ring, and not inside one of its holes. */
-function isPointInGeometry(lng, lat, geometry) {
+export function isPointInGeometry(lng, lat, geometry) {
   const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates
   return polygons.some(
     ([outer, ...holes]) => isPointInRing(lng, lat, outer) && !holes.some((hole) => isPointInRing(lng, lat, hole)),

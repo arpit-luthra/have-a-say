@@ -1,0 +1,1137 @@
+{
+ "2026.NY34.12": {
+  "lat": 43.708166,
+  "lng": -79.389593,
+  "address": "245 Eglinton Avenue East"
+ },
+ "2026.NY34.25": {
+  "lat": 43.703149,
+  "lng": -79.36299,
+  "address": "922 Millwood Road"
+ },
+ "2026.NY34.8": {
+  "lat": 43.735782,
+  "lng": -79.446449,
+  "address": "1 Vinci Crescent"
+ },
+ "2026.NY34.13": {
+  "lat": 43.710477,
+  "lng": -79.379431,
+  "address": "537 Eglinton Avenue East"
+ },
+ "2026.NY34.23": {
+  "lat": 43.711897,
+  "lng": -79.378417,
+  "address": "590 Roehampton Avenue"
+ },
+ "2026.CC43.25": {
+  "lat": 43.70577,
+  "lng": -79.44207,
+  "address": "245 Marlee Avenue"
+ },
+ "2026.CC43.30": {
+  "lat": 43.683776,
+  "lng": -79.372442,
+  "address": "2 Whitney Avenue"
+ },
+ "2026.CC43.13": {
+  "lat": 43.698257,
+  "lng": -79.438956,
+  "address": "1410 Eglinton Avenue West"
+ },
+ "2026.SC33.12": {
+  "lat": 43.746874,
+  "lng": -79.203114,
+  "address": "60 Guildwood Parkway"
+ },
+ "2026.CC43.14": {
+  "lat": 43.66923,
+  "lng": -79.46151,
+  "address": "189 Old Weston Road"
+ },
+ "2026.TE34.21": {
+  "lat": 43.658754,
+  "lng": -79.394793,
+  "address": "191 College Street"
+ },
+ "2026.SC33.9": {
+  "lat": 43.689367,
+  "lng": -79.287393,
+  "address": "507 Victoria Park"
+ },
+ "2026.SC33.2": {
+  "lat": 43.734271,
+  "lng": -79.222272,
+  "address": "3310 Kingston Road"
+ },
+ "2026.SC33.1": {
+  "lat": 43.726859,
+  "lng": -79.291201,
+  "address": "1911 Eglinton Avenue East"
+ },
+ "2026.SC33.5": {
+  "lat": 43.82783,
+  "lng": -79.22148,
+  "address": "251 Staines Road"
+ },
+ "2026.TE34.12": {
+  "lat": 43.639723,
+  "lng": -79.440409,
+  "address": "1497 Queen Street West"
+ },
+ "2026.NY34.44": {
+  "lat": 43.70032,
+  "lng": -79.38301,
+  "address": "460 Balliol Street"
+ },
+ "2026.NY34.9": {
+  "lat": 43.74989,
+  "lng": -79.48165,
+  "address": "1377 Sheppard Avenue West"
+ },
+ "2026.NY34.1": {
+  "lat": 43.71584,
+  "lng": -79.43895,
+  "address": "112 Dell Park"
+ },
+ "2026.NY33.2": {
+  "lat": 43.732933,
+  "lng": -79.452145,
+  "address": "75 Billy Bishop Way"
+ },
+ "2026.TE31.24": {
+  "lat": 43.675739,
+  "lng": -79.368178,
+  "address": "9 Drumsnab Road"
+ },
+ "2026.EY32.1": {
+  "lat": 43.60301,
+  "lng": -79.49549,
+  "address": "2686 Lake Shore Boulevard West"
+ },
+ "2026.SC32.2": {
+  "lat": 43.708225,
+  "lng": -79.267589,
+  "address": "468 Danforth Road"
+ },
+ "2026.SC32.1": {
+  "lat": 43.7334,
+  "lng": -79.22479,
+  "address": "5 Bellamy Road South"
+ },
+ "2026.SC32.8": {
+  "lat": 43.702112,
+  "lng": -79.285119,
+  "address": "120 Donside Drive"
+ },
+ "2026.NY33.21": {
+  "lat": 43.76454,
+  "lng": -79.39117,
+  "address": "5 Vonda Avenue"
+ },
+ "2026.EY32.8": {
+  "lat": 43.71256,
+  "lng": -79.49579,
+  "address": "4 Berryton Avenue"
+ },
+ "2026.EY32.5": {
+  "lat": 43.73376,
+  "lng": -79.538408,
+  "address": "3100 Weston Road"
+ },
+ "2026.TE32.6": {
+  "lat": 43.683769,
+  "lng": -79.391812,
+  "address": "1233 Yonge Street"
+ },
+ "2026.TE32.5": {
+  "lat": 43.683769,
+  "lng": -79.391812,
+  "address": "1233 Yonge Street"
+ },
+ "2026.PH30.3": {
+  "lat": 43.641344,
+  "lng": -79.538891,
+  "address": "3838 Bloor Street West"
+ },
+ "2026.TE32.12": {
+  "lat": 43.68162,
+  "lng": -79.35784,
+  "address": "954 Broadview Avenue"
+ },
+ "2026.MM41.6": {
+  "lat": 43.73197,
+  "lng": -79.32298,
+  "address": "5 Sulkara Court"
+ },
+ "2026.MM41.29": {
+  "lat": 43.688593,
+  "lng": -79.477629,
+  "address": "9 Hertford Avenue"
+ },
+ "2026.SC31.1": {
+  "lat": 43.78674,
+  "lng": -79.1866,
+  "address": "3307 Ellesmere Road"
+ },
+ "2026.CC41.14": {
+  "lat": 43.719738,
+  "lng": -79.322874,
+  "address": "155 St Dennis Drive"
+ },
+ "2026.TE32.10": {
+  "lat": 43.65043,
+  "lng": -79.37607,
+  "address": "17 Toronto Street"
+ },
+ "2026.TE32.11": {
+  "lat": 43.65043,
+  "lng": -79.37607,
+  "address": "17 Toronto Street"
+ },
+ "2026.CC41.10": {
+  "lat": 43.671563,
+  "lng": -79.407337,
+  "address": "112 Walmer Road"
+ },
+ "2026.SC31.3": {
+  "lat": 43.773642,
+  "lng": -79.248432,
+  "address": "1710 Ellesmere Road"
+ },
+ "2026.NY32.9": {
+  "lat": 43.73033,
+  "lng": -79.39796,
+  "address": "103 Roslin Avenue"
+ },
+ "2026.NY32.1": {
+  "lat": 43.74568,
+  "lng": -79.42139,
+  "address": "15 Marchwood Drive"
+ },
+ "2026.NY32.10": {
+  "lat": 43.7373,
+  "lng": -79.31018,
+  "address": "14 Prestbury Street"
+ },
+ "2026.EY31.3": {
+  "lat": 43.648278,
+  "lng": -79.506598,
+  "address": "2915 Bloor Street West"
+ },
+ "2026.EY31.2": {
+  "lat": 43.624645,
+  "lng": -79.495347,
+  "address": "2 Mendota Road"
+ },
+ "2026.EY30.1": {
+  "lat": 43.74865,
+  "lng": -79.514533,
+  "address": "2775 Jane Street"
+ },
+ "2026.PH29.6": {
+  "lat": 43.712376,
+  "lng": -79.360934,
+  "address": "105 Vanderhoof Avenue"
+ },
+ "2026.CC39.10": {
+  "lat": 43.735893,
+  "lng": -79.347515,
+  "address": "895 Lawrence Avenue East"
+ },
+ "2026.TE29.12": {
+  "lat": 43.667188,
+  "lng": -79.313429,
+  "address": "1684 Queen Street East"
+ },
+ "2026.CC39.9": {
+  "lat": 43.704062,
+  "lng": -79.411835,
+  "address": "444 Eglinton Avenue West"
+ },
+ "2026.EY29.6": {
+  "lat": 43.698586,
+  "lng": -79.518122,
+  "address": "2125 Lawrence Avenue West"
+ },
+ "2026.EY29.2": {
+  "lat": 43.620761,
+  "lng": -79.48429,
+  "address": "2256 Lake Shore Boulevard West"
+ },
+ "2026.SC28.1": {
+  "lat": 43.682468,
+  "lng": -79.279069,
+  "address": "1212 Kingston Road"
+ },
+ "2026.CC36.10": {
+  "lat": 43.663022,
+  "lng": -79.372482,
+  "address": "353 Sherbourne Street"
+ },
+ "2026.TE28.12": {
+  "lat": 43.663022,
+  "lng": -79.372482,
+  "address": "353 Sherbourne Street"
+ },
+ "2026.NY29.1": {
+  "lat": 43.71839,
+  "lng": -79.40175,
+  "address": "10 Glencairn Avenue"
+ },
+ "2025.MM35.12": {
+  "lat": 43.658643,
+  "lng": -79.395092,
+  "address": "199 College Street"
+ },
+ "2025.DM35.1": {
+  "lat": 43.680066,
+  "lng": -79.291156,
+  "address": "847 Kingston Road"
+ },
+ "2025.PH26.17": {
+  "lat": 43.66531,
+  "lng": -79.344807,
+  "address": "444 Logan Avenue"
+ },
+ "2025.EC25.1": {
+  "lat": 43.75784,
+  "lng": -79.47723,
+  "address": "4050 Chesswood Drive"
+ },
+ "2025.CC34.4": {
+  "lat": 43.731988,
+  "lng": -79.446348,
+  "address": "2 Tippett Road"
+ },
+ "2025.MM34.13": {
+  "lat": 43.712734,
+  "lng": -79.369526,
+  "address": "712 Eglinton Avenue East"
+ },
+ "2025.EY26.2": {
+  "lat": 43.639147,
+  "lng": -79.521468,
+  "address": "1138 Islington Avenue"
+ },
+ "2025.EY26.4": {
+  "lat": 43.59587,
+  "lng": -79.52868,
+  "address": "3418 Lake Shore Boulevard West"
+ },
+ "2025.EY26.5": {
+  "lat": 43.63783,
+  "lng": -79.539336,
+  "address": "5280 Dundas Street West"
+ },
+ "2025.TE26.15": {
+  "lat": 43.67703,
+  "lng": -79.28283,
+  "address": "171 Neville Park"
+ },
+ "2025.MM33.31": {
+  "lat": 43.78239,
+  "lng": -79.39945,
+  "address": "226 Olive Avenue"
+ },
+ "2025.CC33.22": {
+  "lat": 43.683776,
+  "lng": -79.372442,
+  "address": "2 Whitney Avenue"
+ },
+ "2025.PH24.5": {
+  "lat": 43.661418,
+  "lng": -79.383305,
+  "address": "2 College Street"
+ },
+ "2025.NY26.10": {
+  "lat": 43.716787,
+  "lng": -79.414702,
+  "address": "258 Glengrove Avenue West"
+ },
+ "2025.EY25.24": {
+  "lat": 43.66875,
+  "lng": -79.473,
+  "address": "87 Ethel Avenue"
+ },
+ "2025.MM32.42": {
+  "lat": 43.78782,
+  "lng": -79.28259,
+  "address": "42 Donalda Crescent"
+ },
+ "2025.SC24.1": {
+  "lat": 43.806303,
+  "lng": -79.277099,
+  "address": "4610 Finch Avenue East"
+ },
+ "2025.MM32.44": {
+  "lat": 43.679533,
+  "lng": -79.547041,
+  "address": "250 Wincott Drive"
+ },
+ "2025.NY25.6": {
+  "lat": 43.716798,
+  "lng": -79.400712,
+  "address": "2674 Yonge Street"
+ },
+ "2025.NY25.8": {
+  "lat": 43.698257,
+  "lng": -79.438956,
+  "address": "1410 Eglinton Avenue West"
+ },
+ "2025.SC23.1": {
+  "lat": 43.73713,
+  "lng": -79.24415,
+  "address": "2823 Eglinton Avenue East"
+ },
+ "2025.MM31.1": {
+  "lat": 43.716061,
+  "lng": -79.475791,
+  "address": "36 Romeo Street"
+ },
+ "2025.SC23.2": {
+  "lat": 43.72005,
+  "lng": -79.2742,
+  "address": "672 Birchmount Road"
+ },
+ "2025.EY23.1": {
+  "lat": 43.748903,
+  "lng": -79.541917,
+  "address": "3406 Weston Road"
+ },
+ "2025.EY23.23": {
+  "lat": 43.64148,
+  "lng": -79.53425,
+  "address": "3755 Bloor Street West"
+ },
+ "2025.SC23.4": {
+  "lat": 43.774175,
+  "lng": -79.179582,
+  "address": "62 Orchard Park"
+ },
+ "2025.SC23.6": {
+  "lat": 43.73672,
+  "lng": -79.22622,
+  "address": "49 Bellamy Road South"
+ },
+ "2025.TE23.3": {
+  "lat": 43.65606,
+  "lng": -79.38438,
+  "address": "604 Bay Street"
+ },
+ "2025.TE23.55": {
+  "lat": 43.666555,
+  "lng": -79.435264,
+  "address": "224 Hallam Street"
+ },
+ "2025.NY24.1": {
+  "lat": 43.70997,
+  "lng": -79.41629,
+  "address": "499 Briar Hill"
+ },
+ "2025.MM30.33": {
+  "lat": 43.702448,
+  "lng": -79.376338,
+  "address": "521 Davisville Avenue"
+ },
+ "2025.MM30.40": {
+  "lat": 43.70245,
+  "lng": -79.39257,
+  "address": "11 Oswald Crescent"
+ },
+ "2025.NY23.4": {
+  "lat": 43.71462,
+  "lng": -79.42025,
+  "address": "390 Glencairn Avenue"
+ },
+ "2025.TE21.4": {
+  "lat": 43.654614,
+  "lng": -79.445203,
+  "address": "158 Sterling Road"
+ },
+ "2025.MM29.10": {
+  "lat": 43.78967,
+  "lng": -79.42628,
+  "address": "164 Homewood Avenue"
+ },
+ "2025.NY22.1": {
+  "lat": 43.74401,
+  "lng": -79.32572,
+  "address": "1 Broadlands Boulevard"
+ },
+ "2025.TE21.9": {
+  "lat": 43.647838,
+  "lng": -79.392894,
+  "address": "111 Peter Street"
+ },
+ "2025.PH20.1": {
+  "lat": 43.73942,
+  "lng": -79.56528,
+  "address": "7 Wardlaw Crescent"
+ },
+ "2025.MM28.49": {
+  "lat": 43.69368,
+  "lng": -79.46968,
+  "address": "55 Lonborough Avenue"
+ },
+ "2025.NY21.2": {
+  "lat": 43.78165,
+  "lng": -79.40799,
+  "address": "104 Finch Avenue East"
+ },
+ "2025.SC20.6": {
+  "lat": 43.785289,
+  "lng": -79.311116,
+  "address": "513 Huntingwood Drive"
+ },
+ "2025.SC20.1": {
+  "lat": 43.719082,
+  "lng": -79.239045,
+  "address": "2759 Kingston Road"
+ },
+ "2025.NY21.3": {
+  "lat": 43.76501,
+  "lng": -79.38813,
+  "address": "2810 Bayview Avenue"
+ },
+ "2025.PH18.16": {
+  "lat": 43.73376,
+  "lng": -79.538408,
+  "address": "3100 Weston Road"
+ },
+ "2025.NY20.1": {
+  "lat": 43.70624,
+  "lng": -79.37812,
+  "address": "425 Manor Road East"
+ },
+ "2024.CC24.11": {
+  "lat": 43.6677,
+  "lng": -79.44081,
+  "address": "1245 Dupont Street"
+ },
+ "2024.MM24.21": {
+  "lat": 43.73259,
+  "lng": -79.23103,
+  "address": "187 Oakridge Drive"
+ },
+ "2024.MM24.28": {
+  "lat": 43.669182,
+  "lng": -79.384786,
+  "address": "30 Charles Street East"
+ },
+ "2024.MM24.43": {
+  "lat": 43.71609,
+  "lng": -79.3655,
+  "address": "321 Laird Drive"
+ },
+ "2024.CC24.6": {
+  "lat": 43.77415,
+  "lng": -79.524246,
+  "address": "4001 Steeles Avenue West"
+ },
+ "2024.CC24.12": {
+  "lat": 43.71578,
+  "lng": -79.53424,
+  "address": "33 Walsh Avenue"
+ },
+ "2024.SC18.3": {
+  "lat": 43.741453,
+  "lng": -79.231726,
+  "address": "123 Bellamy Road North"
+ },
+ "2024.SC18.9": {
+  "lat": 43.73779,
+  "lng": -79.21551,
+  "address": "20 Shirley Crescent"
+ },
+ "2024.NY19.2": {
+  "lat": 43.74699,
+  "lng": -79.42133,
+  "address": "124 Sandringham Drive"
+ },
+ "2024.EY18.6": {
+  "lat": 43.649524,
+  "lng": -79.527519,
+  "address": "4875 Dundas Street West"
+ },
+ "2024.GG18.28": {
+  "lat": 43.65243,
+  "lng": -79.37683,
+  "address": "50 Richmond Street East"
+ },
+ "2024.CC23.19": {
+  "lat": 43.74695,
+  "lng": -79.48731,
+  "address": "3374 Keele Street"
+ },
+ "2024.MM23.12": {
+  "lat": 43.73345,
+  "lng": -79.23397,
+  "address": "16 Martindale Road"
+ },
+ "2024.MM23.16": {
+  "lat": 43.666024,
+  "lng": -79.42565,
+  "address": "171 Pendrith Street"
+ },
+ "2024.MM23.32": {
+  "lat": 43.684109,
+  "lng": -79.4901,
+  "address": "80 Guestville Avenue"
+ },
+ "2024.CC23.16": {
+  "lat": 43.725376,
+  "lng": -79.399782,
+  "address": "49 Lawrence Avenue East"
+ },
+ "2024.NY18.27": {
+  "lat": 43.784066,
+  "lng": -79.437229,
+  "address": "110 Caines Avenue"
+ },
+ "2024.NY18.4": {
+  "lat": 43.7084,
+  "lng": -79.40136,
+  "address": "85 Helendale Avenue"
+ },
+ "2024.TE17.8": {
+  "lat": 43.686157,
+  "lng": -79.312569,
+  "address": "985 Woodbine Avenue"
+ },
+ "2024.MM22.26": {
+  "lat": 43.603242,
+  "lng": -79.53356,
+  "address": "186 Thirtieth Street"
+ },
+ "2024.TE16.5": {
+  "lat": 43.657381,
+  "lng": -79.370824,
+  "address": "214 Sherbourne Street"
+ },
+ "2024.CC21.3": {
+  "lat": 43.63929,
+  "lng": -79.41618,
+  "address": "70 Lynn Williams Street"
+ },
+ "2024.CC21.4": {
+  "lat": 43.66011,
+  "lng": -79.51114,
+  "address": "4195 Dundas Street West"
+ },
+ "2024.DM20.1": {
+  "lat": 43.767199,
+  "lng": -79.412185,
+  "address": "5051 Yonge Street"
+ },
+ "2024.IA20.1": {
+  "lat": 43.768391,
+  "lng": -79.284873,
+  "address": "39 Dundalk Drive"
+ },
+ "2024.CC20.19": {
+  "lat": 43.733526,
+  "lng": -79.341718,
+  "address": "1053 Don Mills Road"
+ },
+ "2024.NY15.3": {
+  "lat": 43.781838,
+  "lng": -79.445799,
+  "address": "155 Antibes Drive"
+ },
+ "2024.SC15.1": {
+  "lat": 43.732462,
+  "lng": -79.223389,
+  "address": "3291 Kingston Road"
+ },
+ "2024.TE15.10": {
+  "lat": 43.66642,
+  "lng": -79.35341,
+  "address": "400 Broadview Avenue"
+ },
+ "2024.NY15.4": {
+  "lat": 43.78709,
+  "lng": -79.46772,
+  "address": "1875 Steeles Avenue West"
+ },
+ "2024.TE14.16": {
+  "lat": 43.682939,
+  "lng": -79.374296,
+  "address": "135 Roxborough Drive"
+ },
+ "2024.MM19.2": {
+  "lat": 43.74955,
+  "lng": -79.33612,
+  "address": "14 Lacewood Crescent"
+ },
+ "2024.MM19.34": {
+  "lat": 43.689573,
+  "lng": -79.373678,
+  "address": "222 Rosedale Heights"
+ },
+ "2024.CC19.12": {
+  "lat": 43.776134,
+  "lng": -79.258438,
+  "address": "300 Borough Drive"
+ },
+ "2024.SC14.5": {
+  "lat": 43.759591,
+  "lng": -79.195685,
+  "address": "4201 Kingston Road"
+ },
+ "2024.EY14.2": {
+  "lat": 43.756241,
+  "lng": -79.514982,
+  "address": "1911 Finch Avenue West"
+ },
+ "2024.TE13.7": {
+  "lat": 43.68079,
+  "lng": -79.33409,
+  "address": "1117 Danforth Avenue"
+ },
+ "2024.NY13.3": {
+  "lat": 43.75325,
+  "lng": -79.45125,
+  "address": "824 Sheppard Avenue West"
+ },
+ "2024.TE13.8": {
+  "lat": 43.67208,
+  "lng": -79.32359,
+  "address": "1400 Gerrard Street East"
+ },
+ "2024.TE13.6": {
+  "lat": 43.680751,
+  "lng": -79.335125,
+  "address": "1095 Danforth Avenue"
+ },
+ "2024.NY13.1": {
+  "lat": 43.730851,
+  "lng": -79.480444,
+  "address": "2 Hawksdale Road"
+ },
+ "2024.PH11.13": {
+  "lat": 43.6808,
+  "lng": -79.33433,
+  "address": "1111 Danforth Avenue"
+ },
+ "2024.MM17.25": {
+  "lat": 43.68797,
+  "lng": -79.26525,
+  "address": "30 Lakeside Avenue"
+ },
+ "2024.TE12.5": {
+  "lat": 43.668156,
+  "lng": -79.40701,
+  "address": "171 Lowther Avenue"
+ },
+ "2024.CC17.6": {
+  "lat": 43.649577,
+  "lng": -79.528256,
+  "address": "4888 Dundas Street West"
+ },
+ "2024.CC17.7": {
+  "lat": 43.649707,
+  "lng": -79.528109,
+  "address": "4884 Dundas Street West"
+ },
+ "2024.EY12.7": {
+  "lat": 43.757796,
+  "lng": -79.580293,
+  "address": "12 Hillside Road"
+ },
+ "2024.NY12.12": {
+  "lat": 43.713147,
+  "lng": -79.377309,
+  "address": "1837 Bayview Avenue"
+ },
+ "2024.NY12.27": {
+  "lat": 43.78906,
+  "lng": -79.42698,
+  "address": "173 Homewood Avenue"
+ },
+ "2024.PB16.6": {
+  "lat": 43.7286,
+  "lng": -79.38555,
+  "address": "294 Lawrence Avenue East"
+ },
+ "2024.PB16.9": {
+  "lat": 43.668156,
+  "lng": -79.40701,
+  "address": "171 Lowther Avenue"
+ },
+ "2024.PB16.13": {
+  "lat": 43.665838,
+  "lng": -79.380799,
+  "address": "68 Wellesley Street East"
+ },
+ "2024.PB16.12": {
+  "lat": 43.664549,
+  "lng": -79.382324,
+  "address": "36 Maitland Street"
+ },
+ "2024.PB16.11": {
+  "lat": 43.683559,
+  "lng": -79.39515,
+  "address": "64 Woodlawn Avenue West"
+ },
+ "2024.PB16.8": {
+  "lat": 43.649577,
+  "lng": -79.528256,
+  "address": "4888 Dundas Street West"
+ },
+ "2024.PB16.16": {
+  "lat": 43.658813,
+  "lng": -79.382138,
+  "address": "374 Yonge Street"
+ },
+ "2024.NY11.2": {
+  "lat": 43.774799,
+  "lng": -79.410327,
+  "address": "72 Church Avenue"
+ },
+ "2024.NY11.6": {
+  "lat": 43.733526,
+  "lng": -79.341718,
+  "address": "1053 Don Mills Road"
+ },
+ "2024.PH9.12": {
+  "lat": 43.61324,
+  "lng": -79.493,
+  "address": "78 Mimico Avenue"
+ },
+ "2024.PB15.10": {
+  "lat": 43.647999,
+  "lng": -79.37729,
+  "address": "49 Yonge Street"
+ },
+ "2024.PB15.11": {
+  "lat": 43.66732,
+  "lng": -79.38533,
+  "address": "625 Yonge Street"
+ },
+ "2024.PB15.13": {
+  "lat": 43.7103,
+  "lng": -79.37666,
+  "address": "1779 Bayview Avenue"
+ },
+ "2024.PB15.2": {
+  "lat": 43.66713,
+  "lng": -79.37968,
+  "address": "6 Cawthra Square"
+ },
+ "2024.NY11.13": {
+  "lat": 43.775528,
+  "lng": -79.415995,
+  "address": "26 Hounslow Avenue"
+ },
+ "2024.SC11.1": {
+  "lat": 43.747431,
+  "lng": -79.284539,
+  "address": "2157 Lawrence Avenue East"
+ },
+ "2024.SC11.3": {
+  "lat": 43.77346,
+  "lng": -79.18481,
+  "address": "4566 Kingston Road"
+ },
+ "2024.NY10.5": {
+  "lat": 43.726672,
+  "lng": -79.317762,
+  "address": "3 Swift Drive"
+ },
+ "2024.CC14.10": {
+  "lat": 43.716802,
+  "lng": -79.25936,
+  "address": "3585 St. Clair Avenue East"
+ },
+ "2024.MM14.17": {
+  "lat": 43.70676,
+  "lng": -79.38927,
+  "address": "717 Mount Pleasant Road"
+ },
+ "2024.EY10.5": {
+  "lat": 43.649707,
+  "lng": -79.528109,
+  "address": "4884 Dundas Street West"
+ },
+ "2024.SC10.5": {
+  "lat": 43.70204,
+  "lng": -79.25321,
+  "address": "54 Glen Everest Road"
+ },
+ "2024.SC10.3": {
+  "lat": 43.77175,
+  "lng": -79.282963,
+  "address": "2031 Kennedy Road"
+ },
+ "2023.NY9.4": {
+  "lat": 43.749014,
+  "lng": -79.440042,
+  "address": "55 Yeomans Road"
+ },
+ "2023.CC13.23": {
+  "lat": 43.661101,
+  "lng": -79.509608,
+  "address": "4174 Dundas Street West"
+ },
+ "2023.CC13.10": {
+  "lat": 43.679533,
+  "lng": -79.547041,
+  "address": "250 Wincott Drive"
+ },
+ "2023.MM13.14": {
+  "lat": 43.640238,
+  "lng": -79.539384,
+  "address": "8 Jopling Avenue South"
+ },
+ "2023.TE9.27": {
+  "lat": 43.652645,
+  "lng": -79.342223,
+  "address": "685 Lake Shore Boulevard East"
+ },
+ "2023.TE9.42": {
+  "lat": 43.674522,
+  "lng": -79.401084,
+  "address": "321 Davenport Road"
+ },
+ "2023.CC13.17": {
+  "lat": 43.680219,
+  "lng": -79.337578,
+  "address": "975 Danforth Avenue"
+ },
+ "2023.TE9.12": {
+  "lat": 43.64475,
+  "lng": -79.411072,
+  "address": "822 Richmond Street West"
+ },
+ "2023.NY9.18": {
+  "lat": 43.74735,
+  "lng": -79.44436,
+  "address": "7 Marwill Street"
+ },
+ "2023.MM12.17": {
+  "lat": 43.68133,
+  "lng": -79.32524,
+  "address": "169 Parkmount Road"
+ },
+ "2023.DM12.1": {
+  "lat": 43.743411,
+  "lng": -79.404309,
+  "address": "25 Old York Mills Road"
+ },
+ "2023.NY8.10": {
+  "lat": 43.716764,
+  "lng": -79.331266,
+  "address": "48 Grenoble Drive"
+ },
+ "2023.EY7.3": {
+  "lat": 43.640468,
+  "lng": -79.538967,
+  "address": "5 Jopling Avenue South"
+ },
+ "2023.PB10.3": {
+  "lat": 43.640726,
+  "lng": -79.433274,
+  "address": "220 Cowan Avenue"
+ },
+ "2023.TE7.26": {
+  "lat": 43.67085,
+  "lng": -79.29357,
+  "address": "104 Scarboro Beach Boulevard"
+ },
+ "2023.DM10.1": {
+  "lat": 43.7577,
+  "lng": -79.49092,
+  "address": "20 Broadoaks Drive"
+ },
+ "2023.TE6.21": {
+  "lat": 43.662117,
+  "lng": -79.36594,
+  "address": "325 Gerrard Street East"
+ },
+ "2023.MM8.6": {
+  "lat": 43.72724,
+  "lng": -79.38626,
+  "address": "64 Mildenhall Road"
+ },
+ "2023.EY6.2": {
+  "lat": 43.750386,
+  "lng": -79.515097,
+  "address": "2801 Jane Street"
+ },
+ "2023.SC6.6": {
+  "lat": 43.790616,
+  "lng": -79.302108,
+  "address": "750 Huntingwood Drive"
+ },
+ "2023.SC6.8": {
+  "lat": 43.790776,
+  "lng": -79.193691,
+  "address": "875 Morningside Avenue"
+ },
+ "2023.MM8.26": {
+  "lat": 43.76659,
+  "lng": -79.258157,
+  "address": "2 Cora Crescent"
+ },
+ "2023.SC6.22": {
+  "lat": 43.74855,
+  "lng": -79.29097,
+  "address": "31 Ellington Drive"
+ },
+ "2023.NY6.20": {
+  "lat": 43.7348,
+  "lng": -79.43911,
+  "address": "23 Laurentia Crescent"
+ },
+ "2023.NY6.22": {
+  "lat": 43.746111,
+  "lng": -79.33657,
+  "address": "146 Three Valleys Drive"
+ },
+ "2023.CC7.9": {
+  "lat": 43.640918,
+  "lng": -79.537265,
+  "address": "4 Beamish Drive"
+ },
+ "2023.TE5.9": {
+  "lat": 43.66271,
+  "lng": -79.326,
+  "address": "880 Eastern Avenue"
+ },
+ "2023.EY5.1": {
+  "lat": 43.766317,
+  "lng": -79.520441,
+  "address": "4500 Jane Street"
+ },
+ "2023.CC7.11": {
+  "lat": 43.728568,
+  "lng": -79.329499,
+  "address": "1 Concorde Gate"
+ },
+ "2023.PB7.9": {
+  "lat": 43.71365,
+  "lng": -79.40925,
+  "address": "94 Cortleigh Boulevard"
+ },
+ "2023.PB7.1": {
+  "lat": 43.668564,
+  "lng": -79.406696,
+  "address": "38 Walmer Road"
+ },
+ "2023.PB6.6": {
+  "lat": 43.665942,
+  "lng": -79.381812,
+  "address": "64 Wellesley Street East"
+ },
+ "2023.PB6.5": {
+  "lat": 43.68668,
+  "lng": -79.39376,
+  "address": "1404 Yonge Street"
+ },
+ "2023.NY5.28": {
+  "lat": 43.71484,
+  "lng": -79.40422,
+  "address": "136 Craighurst Avenue"
+ },
+ "2023.CC6.13": {
+  "lat": 43.753221,
+  "lng": -79.543287,
+  "address": "15 Toryork Drive"
+ },
+ "2023.MM6.41": {
+  "lat": 43.717584,
+  "lng": -79.233676,
+  "address": "73 Brooklawn Avenue"
+ },
+ "2023.PH3.13": {
+  "lat": 43.649577,
+  "lng": -79.528256,
+  "address": "4888 Dundas Street West"
+ },
+ "2023.EY4.9": {
+  "lat": 43.674123,
+  "lng": -79.489645,
+  "address": "400 Rockcliffe Boulevard"
+ },
+ "2023.TE4.13": {
+  "lat": 43.667332,
+  "lng": -79.387191,
+  "address": "25 St. Mary Street"
+ },
+ "2023.NY4.35": {
+  "lat": 43.804979,
+  "lng": -79.38647,
+  "address": "76 Covewood Street"
+ },
+ "2023.NY4.31": {
+  "lat": 43.743935,
+  "lng": -79.441269,
+  "address": "59 Palm Drive"
+ },
+ "2023.CC5.24": {
+  "lat": 43.728568,
+  "lng": -79.329499,
+  "address": "1 Concorde Gate"
+ },
+ "2023.CC5.22": {
+  "lat": 43.659219,
+  "lng": -79.381986,
+  "address": "399 Yonge Street"
+ },
+ "2023.PB4.10": {
+  "lat": 43.66848,
+  "lng": -79.38663,
+  "address": "5 Charles Street West"
+ },
+ "2023.CC3.6": {
+  "lat": 43.638907,
+  "lng": -79.538305,
+  "address": "5238 Dundas Street West"
+ },
+ "2023.SC2.1": {
+  "lat": 43.69084,
+  "lng": -79.2654,
+  "address": "1625 Kingston Road"
+ },
+ "2023.NY2.15": {
+  "lat": 43.75716,
+  "lng": -79.31755,
+  "address": "20 Pinemore Crescent"
+ },
+ "2023.NY2.14": {
+  "lat": 43.737118,
+  "lng": -79.351924,
+  "address": "31 Norden Crescent"
+ },
+ "2023.MM2.5": {
+  "lat": 43.616968,
+  "lng": -79.523548,
+  "address": "360 Evans Avenue"
+ },
+ "2023.PB1.4": {
+  "lat": 43.746896,
+  "lng": -79.577214,
+  "address": "51 Panorama Court"
+ },
+ "2023.SC1.9": {
+  "lat": 43.766666,
+  "lng": -79.238572,
+  "address": "2 Amberjack Boulevard"
+ },
+ "2023.TE1.6": {
+  "lat": 43.66651,
+  "lng": -79.35265,
+  "address": "415 Broadview Avenue"
+ },
+ "2023.NY1.10": {
+  "lat": 43.74948,
+  "lng": -79.36741,
+  "address": "25 Ames Circle"
+ },
+ "2023.CC1.5": {
+  "lat": 43.66651,
+  "lng": -79.35265,
+  "address": "415 Broadview Avenue"
+ }
+}

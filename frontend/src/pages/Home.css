@@ -93,3 +93,9 @@
     cursor: pointer;
   }
 }
+
+.home__mapnote {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
