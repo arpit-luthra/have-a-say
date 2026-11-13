@@ -54,36 +54,33 @@ export default function FindWard({ onFound }) {
 
   return (
     <form className="find-ward" role="search" onSubmit={handleSubmit}>
-      <label className="find-ward__label" htmlFor="find-ward-input">
-        Don't know your ward?
-      </label>
-      <div className="find-ward__row">
-        <input
-          id="find-ward-input"
-          className="find-ward__input"
-          type="text"
-          inputMode="search"
-          autoComplete="street-address"
-          placeholder="Address or postal code"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-        <button className="find-ward__button" type="submit" disabled={isSearching}>
-          {isSearching ? 'Finding…' : 'Find'}
-        </button>
+      <div className="find-ward__pill">
+        <div className="find-ward__row">
+          <input
+            className="find-ward__input"
+            type="text"
+            inputMode="search"
+            autoComplete="street-address"
+            aria-label="Find my ward: address or postal code"
+            placeholder="Find my ward: address or postal code"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          <button className="find-ward__button" type="submit" disabled={isSearching} aria-label="Search">
+            {/* A simple magnifying glass drawn with SVG, like Google's. */}
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M15 15l5.5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+        {/* Inside the white bar, so it's always readable, whatever the map looks like. */}
+        <p className="find-ward__note">We never save your address.</p>
       </div>
 
       {/* aria-live: screen readers announce this message when it appears. */}
       <p className="find-ward__error" aria-live="polite">
-        {error}
-      </p>
-
-      <p className="find-ward__note">
-        Looked up with{' '}
-        <a href="https://nominatim.openstreetmap.org/" target="_blank" rel="noreferrer">
-          OpenStreetMap
-        </a>
-        . We never save your address.
+        {isSearching ? 'Finding…' : error}
       </p>
     </form>
   )

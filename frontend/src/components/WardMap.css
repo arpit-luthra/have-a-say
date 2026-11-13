@@ -4,52 +4,6 @@
   inset: 0;
 }
 
-/* ---------- Hover card ---------- */
-
-.ward-tooltip {
-  pointer-events: none; /* so the card never "steals" the mouse from the map */
-  max-width: 280px !important;
-}
-
-/* Override MapLibre's default white popup with our own style. */
-.ward-tooltip .maplibregl-popup-content {
-  padding: 8px 12px 9px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--paper);
-  font: 400 12.5px/1.35 var(--font-sans);
-  box-shadow: 0 6px 20px rgb(20 28 38 / 0.22);
-  animation: tooltip-in 140ms ease-out;
-}
-
-/* Ward name on the first line, neighbourhoods underneath. */
-.ward-tooltip__body {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ward-tooltip strong {
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
-.ward-tooltip span {
-  color: rgb(246 245 241 / 0.75);
-}
-
-/* Hide the little pointer triangle: the card sits next to the cursor instead. */
-.ward-tooltip .maplibregl-popup-tip {
-  display: none;
-}
-
-@keyframes tooltip-in {
-  from {
-    opacity: 0;
-    transform: translateY(3px);
-  }
-}
-
 /* ---------- "You live here" pin ---------- */
 
 .home-pin {
@@ -90,8 +44,24 @@
 
 /* People who turn on "reduce motion" get no animations. */
 @media (prefers-reduced-motion: reduce) {
-  .home-pin,
-  .ward-tooltip .maplibregl-popup-content {
+  .home-pin {
     animation: none;
   }
+}
+
+/* ---------- Zoom buttons (Google-style: small, white, one rounded block) ---------- */
+
+.maplibregl-ctrl-bottom-right {
+  margin: 0 10px 24px 0;
+}
+
+.maplibregl-ctrl-group {
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
+  background: #ffffff;
+}
+
+.maplibregl-ctrl-group button {
+  width: 40px;
+  height: 40px;
 }
