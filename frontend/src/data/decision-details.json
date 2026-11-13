@@ -1,0 +1,255 @@
+{
+  "2026.IE27.17": {
+    "summary": "One block of Lennox Street is changing from one-way to two-way traffic for cars, and its bike-only lane on that block is being removed.",
+    "sections": [
+      {
+        "key": "changing",
+        "title": "What's changing?",
+        "text": "The block of Lennox Street between Palmerston Boulevard and Markham Street becomes two-way for cars. The current one-way (eastbound only) rule and the westbound bicycle contraflow lane on that block are removed.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "City Council decision, items 1–3",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "why",
+        "title": "Why?",
+        "text": "Drivers were making illegal turns onto Markham Street (one-way north) because traffic in the area is hard to get through: construction, the long closure of Markham Street north of Lennox, RapidTO streetcar lanes and the Palmerston greenway. Many local residents signed a petition asking for two-way traffic so drivers have a legal way out.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Item summary",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "where",
+        "title": "Where?",
+        "text": "Lennox Street between Palmerston Boulevard and Markham Street, a short residential street in the Bloor / Bathurst area. Ward 11, University–Rosedale.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Item summary and ward",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "who",
+        "title": "Who's affected?",
+        "text": "People who live on or near this block, drivers in the area, and cyclists, who lose the westbound bike-only lane (there is no other bike lane on Lennox). The City notes it may also bring more car traffic to Lennox, so it asked for traffic counts and a speed hump review to keep cyclists safe.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Item summary",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          },
+          {
+            "label": "City Council decision, items 4–5",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "stage",
+        "title": "Where is it in the process?",
+        "stages": [
+          {
+            "label": "Councillor's letter",
+            "date": "Feb 18, 2026",
+            "done": true,
+            "note": "Letter from Councillor Dianne Saxe"
+          },
+          {
+            "label": "Committee",
+            "date": "Feb 25, 2026",
+            "done": true,
+            "note": "Infrastructure and Environment Committee adopted it. It was added to the agenda as new business on the day."
+          },
+          {
+            "label": "City Council",
+            "date": "Mar 25–26, 2026",
+            "done": true,
+            "note": "Adopted without amendments"
+          },
+          {
+            "label": "Decided",
+            "date": "Mar 26, 2026",
+            "done": true
+          }
+        ],
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Tracking status",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "say",
+        "title": "Can I still have a say?",
+        "status": "closed",
+        "text": "This decision is final. Your next chance: Council asked Transportation Services to report to Toronto and East York Community Council on adding speed humps for cyclist safety, and to count traffic once Markham Street reopens. We couldn't confirm whether that report has come out yet, so check the City's site.",
+        "certainty": "partly-unclear",
+        "sources": [
+          {
+            "label": "City Council decision, items 4–5",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      },
+      {
+        "key": "input",
+        "title": "Public input",
+        "text": "Before the committee meeting, 13 residents emailed and 1 petition with 36 signatures was submitted. 1 more email was sent before the Council vote. (We show counts only, not names.)",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Communications",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17"
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "label": "Councillor's letter (PDF)",
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ie/bgrd/backgroundfile-284563.pdf"
+      }
+    ]
+  },
+  "2026.MM40.29": {
+    "summary": "City Council approved new parking, bike lane and traffic rules on Ontario Street in Cabbagetown, as part of the Cabbagetown Cycling Connections project.",
+    "sections": [
+      {
+        "key": "changing",
+        "title": "What's changing?",
+        "text": "Council approved changes to parking, a bike lane and traffic rules on Ontario Street as part of the Cabbagetown Cycling Connections project. The exact blocks and parking changes are listed in Attachment 1, which we haven't summarized yet.",
+        "certainty": "partly-unclear",
+        "sources": [
+          {
+            "label": "City Council decision",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          },
+          {
+            "label": "Attachment 1: Ontario Street by-law amendments (PDF)",
+            "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286241.pdf"
+          }
+        ]
+      },
+      {
+        "key": "why",
+        "title": "Why?",
+        "text": "It is part of the Cabbagetown Cycling Connections project. The detailed reasons are in the councillor's motion (PDF), which we haven't summarized yet.",
+        "certainty": "unclear",
+        "sources": [
+          {
+            "label": "Member motion MM40.29 (PDF)",
+            "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286235.pdf"
+          }
+        ]
+      },
+      {
+        "key": "where",
+        "title": "Where?",
+        "text": "Ontario Street in Cabbagetown. Ward 13, Toronto Centre.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Item title and ward",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          }
+        ]
+      },
+      {
+        "key": "who",
+        "title": "Who's affected?",
+        "text": "Based on what changed (parking, a bike lane and traffic rules), this likely affects people who park on Ontario Street, cyclists and drivers in Cabbagetown. Check the attachment for the exact blocks.",
+        "certainty": "inferred",
+        "sources": [
+          {
+            "label": "City Council decision",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          }
+        ]
+      },
+      {
+        "key": "stage",
+        "title": "Where is it in the process?",
+        "stages": [
+          {
+            "label": "Councillor's motion",
+            "date": "Apr 22, 2026",
+            "done": true,
+            "note": "Moved by Councillor Chris Moise, seconded by Deputy Mayor Ausma Malik"
+          },
+          {
+            "label": "Committee",
+            "date": "Skipped",
+            "done": false,
+            "skipped": true,
+            "note": "Council voted (two-thirds needed) to skip sending it to the Infrastructure and Environment Committee"
+          },
+          {
+            "label": "City Council",
+            "date": "Apr 22–23, 2026",
+            "done": true,
+            "note": "Adopted without amendments. By-laws 406-2026 and 407-2026."
+          },
+          {
+            "label": "Decided",
+            "date": "Apr 23, 2026",
+            "done": true
+          }
+        ],
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Tracking status and motions",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          }
+        ]
+      },
+      {
+        "key": "say",
+        "title": "Can I still have a say?",
+        "status": "closed",
+        "text": "This decision is final. Because it went straight to City Council and skipped committee, there was no committee meeting where residents could speak. People could still email Council before the vote.",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Motions (City Council)",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          }
+        ]
+      },
+      {
+        "key": "input",
+        "title": "Public input",
+        "text": "1 email was sent to City Council before the vote. (We show counts only, not names.)",
+        "certainty": "confirmed",
+        "sources": [
+          {
+            "label": "Communications",
+            "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29"
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "label": "Member motion (PDF)",
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286235.pdf"
+      },
+      {
+        "label": "Attachment 1: by-law amendments (PDF)",
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286241.pdf"
+      }
+    ]
+  }
+}

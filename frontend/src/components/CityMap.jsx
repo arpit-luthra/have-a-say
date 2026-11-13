@@ -79,7 +79,7 @@ export default function CityMap({ homeLocation }) {
   useEffect(() => {
     if (!isReady || !homeLocation) return
     const map = mapRef.current
-    const marker = new Marker({ element: createHomePin(), anchor: 'bottom' })
+    const marker = new Marker({ element: createHomePin(homeLocation.label), anchor: 'bottom' })
       .setLngLat([homeLocation.lng, homeLocation.lat])
       .addTo(map)
     map.flyTo(
@@ -186,12 +186,12 @@ function keepInsideToronto(map, wardFeatures) {
 }
 
 /** The "You live here" pin: a label above a dot. */
-function createHomePin() {
+function createHomePin(text) {
   const pin = document.createElement('div')
   pin.className = 'home-pin'
   const label = document.createElement('span')
   label.className = 'home-pin__label'
-  label.textContent = 'You live here'
+  label.textContent = text
   const dot = document.createElement('span')
   dot.className = 'home-pin__dot'
   pin.append(label, dot)

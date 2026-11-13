@@ -7,7 +7,7 @@
   --ink: #26303b; /* main text, ward outlines */
   --ink-muted: #5b6672; /* secondary text */
   --line: #d9d6ce; /* borders */
-  --civic-blue: #3d5a73; /* ward fill, links */
+  --brand: #0f766e; /* deep teal: the only brand colour */
 
   --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
@@ -33,4 +33,23 @@ body,
 button {
   font: inherit;
   color: inherit;
+}
+
+/* Top bar on top, page fills the rest. Each page scrolls inside its own box. */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app__page {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* Keyboard focus ring in brand teal. */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }

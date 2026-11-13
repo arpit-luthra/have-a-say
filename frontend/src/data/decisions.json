@@ -1,0 +1,34 @@
+[
+  {
+    "id": "2026.IE27.17",
+    "title": "Making Lennox Street two-way between Markham and Palmerston",
+    "topic": "Roads & traffic",
+    "stage": "Decided",
+    "ward": "Ward 11 University–Rosedale",
+    "neighbourhood": "The Annex",
+    "date": "March 26, 2026",
+    "say": "This decision has been made.",
+    "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17",
+    "dateISO": "2026-03-26",
+    "lat": 43.6615,
+    "lng": -79.4105,
+    "sayStatus": "closed",
+    "deadline": null
+  },
+  {
+    "id": "2026.MM40.29",
+    "title": "Cabbagetown Cycling Connects: parking and a bike lane on Ontario Street",
+    "topic": "Bike lanes",
+    "stage": "Decided",
+    "ward": "Ward 13 Toronto Centre",
+    "neighbourhood": "Cabbagetown",
+    "date": "April 23, 2026",
+    "say": "This decision has been made.",
+    "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29",
+    "dateISO": "2026-04-23",
+    "lat": 43.66,
+    "lng": -79.365,
+    "sayStatus": "closed",
+    "deadline": null
+  }
+]

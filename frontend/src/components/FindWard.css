@@ -1,17 +1,13 @@
-/* Floating search bar, top left, like Google Maps. */
+/* Search bar at the top of the list. */
 .find-ward {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: min(400px, calc(100% - 24px)); /* never wider than a phone screen */
+  position: relative;
 }
 
 /* The white rounded bar with a soft shadow. */
 .find-ward__pill {
   background: #ffffff;
   border-radius: 26px;
-  padding-bottom: 8px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  border: 1px solid var(--line);
   transition: box-shadow 150ms;
 }
 
@@ -21,7 +17,7 @@
 }
 
 .find-ward__pill:focus-within {
-  box-shadow: 0 2px 10px rgb(0 0 0 / 0.38);
+  box-shadow: 0 0 0 2px var(--brand);
 }
 
 .find-ward__input {
@@ -51,13 +47,13 @@
   margin-right: 2px;
   border: 0;
   border-radius: 50%;
-  background: none;
-  color: #5f6368;
+  background: var(--brand);
+  color: #ffffff;
   cursor: pointer;
 }
 
 .find-ward__button:hover {
-  color: var(--ink);
+  filter: brightness(0.9);
 }
 
 .find-ward__button:disabled {
@@ -80,9 +76,40 @@
   line-height: 1.4;
 }
 
-/* The small grey privacy line, inside the white bar under the input. */
-.find-ward__note {
-  margin: -4px 0 0 20px;
-  font-size: 12px;
-  color: #5f6368;
+/* The dropdown under the search bar. */
+.find-ward__menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% - 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgb(38 48 59 / 0.15);
+}
+
+.find-ward__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.find-ward__option:hover {
+  background: var(--paper);
+}
+
+.find-ward__option svg {
+  color: var(--brand);
 }
