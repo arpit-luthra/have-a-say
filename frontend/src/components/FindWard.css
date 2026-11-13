@@ -1,0 +1,81 @@
+.find-ward {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.find-ward__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.find-ward__row {
+  display: flex;
+  gap: 6px;
+}
+
+.find-ward__input {
+  flex: 1;
+  min-width: 0; /* lets the input shrink on narrow phones instead of overflowing */
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 16px; /* 16px stops iPhones from zooming in when you tap the box */
+  color: var(--ink);
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.find-ward__input:focus {
+  outline: none;
+  border-color: var(--civic-blue);
+  box-shadow: 0 0 0 3px rgb(61 90 115 / 0.18);
+}
+
+.find-ward__button {
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms, transform 100ms;
+}
+
+.find-ward__button:hover {
+  background: #3a4757;
+}
+
+.find-ward__button:active {
+  transform: scale(0.97);
+}
+
+.find-ward__button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.find-ward__error:empty {
+  display: none;
+}
+
+.find-ward__error {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.find-ward__note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.find-ward__note a {
+  color: inherit;
+}

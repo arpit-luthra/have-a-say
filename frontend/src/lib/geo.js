@@ -1,45 +1,34 @@
-// Small geography helpers. Kept separate from the map component so they are
+// Small geography helpers. Kept separate from the components so they are
 // easy to read, test and explain on their own.
 
 /**
- * Find the bounding box of a GeoJSON Polygon or MultiPolygon.
- * Returns [[west, south], [east, north]], the format MapLibre's fitBounds() expects.
+ * Is the point inside this ring (a closed loop of [lng, lat] points)?
  *
- * How it works: a ward's shape is just a long list of [longitude, latitude]
- * points. The box that contains it is the smallest and largest longitude
- * and latitude among all those points.
+ * "Ray casting": imagine a line from the point going right forever, and count
+ * how many edges of the shape it crosses. Odd = inside, even = outside.
  */
-export function getBounds(geometry) {
-  // A Polygon is a list of rings; a MultiPolygon is a list of Polygons.
-  // Turn both into one flat list of rings so we only need one loop.
-  const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates
-  const rings = polygons.flat()
-
-  let west = Infinity
-  let south = Infinity
-  let east = -Infinity
-  let north = -Infinity
-
-  for (const ring of rings) {
-    for (const [lng, lat] of ring) {
-      west = Math.min(west, lng)
-      east = Math.max(east, lng)
-      south = Math.min(south, lat)
-      north = Math.max(north, lat)
+function isPointInRing(lng, lat, ring) {
+  let inside = false
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [x1, y1] = ring[i]
+    const [x2, y2] = ring[j]
+    const crossesOurHeight = y1 > lat !== y2 > lat
+    if (crossesOurHeight && lng < ((x2 - x1) * (lat - y1)) / (y2 - y1) + x1) {
+      inside = !inside
     }
   }
-
-  return [
-    [west, south],
-    [east, north],
-  ]
+  return inside
 }
 
-/** Bounding box around several features (used to fit the whole city on screen). */
-export function getBoundsOfAll(features) {
-  const boxes = features.map((feature) => getBounds(feature.geometry))
-  return [
-    [Math.min(...boxes.map((b) => b[0][0])), Math.min(...boxes.map((b) => b[0][1]))],
-    [Math.max(...boxes.map((b) => b[1][0])), Math.max(...boxes.map((b) => b[1][1]))],
-  ]
+/** Inside a Polygon or MultiPolygon: inside an outer ring, and not inside one of its holes. */
+function isPointInGeometry(lng, lat, geometry) {
+  const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates
+  return polygons.some(
+    ([outer, ...holes]) => isPointInRing(lng, lat, outer) && !holes.some((hole) => isPointInRing(lng, lat, hole)),
+  )
+}
+
+/** The ward feature that contains this point, or undefined if it's outside Toronto. */
+export function findWardAt(lng, lat, wardFeatures) {
+  return wardFeatures.find((ward) => isPointInGeometry(lng, lat, ward.geometry))
 }
