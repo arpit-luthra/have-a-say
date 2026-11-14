@@ -22,6 +22,8 @@ import { loadWards, wardSummary } from '../lib/wardData.js'
 import { findWardAt } from '../lib/geo.js'
 import details from '../data/decision-details.json'
 import explanations from '../data/explanations.json'
+// Counts of public input, only where the official report or item page states them (counts only, never names).
+import publicInput from '../data/public-input.json'
 import CouncillorVote from '../components/CouncillorVote.jsx'
 import SayBox from '../components/SayBox.jsx'
 import YourCouncillor from '../components/YourCouncillor.jsx'
@@ -321,6 +323,7 @@ export default function DecisionPage() {
     .filter(Boolean)
     .join(' · ')
   const sources = buildSources(item, ex, info)
+  const inputCounts = publicInput.items[id] ?? [] // empty = we don't know, so the row is hidden
 
   // A small grey line under the status, for the two cases where it needs more explaining:
   //  - a committee adopted it but City Council hasn't voted yet (from the official page),
@@ -406,6 +409,20 @@ export default function DecisionPage() {
             </p>
           )}
         </Block>
+
+        {inputCounts.length > 0 && (
+          <Block title="Public input">
+            {inputCounts.map((part) => (
+              <p className="answer" key={part.text}>
+                {part.text}{' '}
+                <a className="src" href={part.page ? `${part.url}#page=${part.page}` : part.url} target="_blank" rel="noreferrer">
+                  {part.label}
+                </a>
+              </p>
+            ))}
+            <p className="dp__note">Counts only, never names. Each count links to where the City states it.</p>
+          </Block>
+        )}
 
         <Block title="Can I still have a say?">
           {saySentences.length > 0 && <Sentences sentences={saySentences} />}
