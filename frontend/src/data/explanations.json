@@ -1903,7 +1903,7 @@
    ],
    "where": [
     {
-     "text": "70 Gerrard Street East, at the northeast corner of Church Street and Gerrard Street East. This mainly matters for visitors, neighbours, tenants, and vulnerable members of the community.",
+     "text": "70 Gerrard Street East, at the northeast corner of Church Street and Gerrard Street East. This mainly matters for visitors, neighbours, and tenants.",
      "cites": [
       {
        "doc": 1,
@@ -1947,7 +1947,7 @@
   "sections": {
    "happening": [
     {
-     "text": "A report proposes tearing down the old building at 1337 Queen Street West and building a new 16-storey mixed-use tower with a 4-storey podium.",
+     "text": "This is part of the City-led Parkdale Hub project, which includes affordable housing.",
      "cites": [
       {
        "doc": 1,
@@ -1956,7 +1956,25 @@
      ]
     },
     {
-     "text": "The height of the 4-storey podium is proposed to grow by 1.2 metres.",
+     "text": "It proposes tearing down the existing building at 1337 Queen Street West, which is not one of the district's heritage buildings, and building a new 16-storey tower with a 4-storey base.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "City Council already approved a heritage permit for this project on June 24 and 25, 2026.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "This report is about one change: the 4-storey base of the new building gets 1.2 metres taller.",
      "cites": [
       {
        "doc": 1,
