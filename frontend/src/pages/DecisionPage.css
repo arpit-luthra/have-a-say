@@ -238,3 +238,101 @@
   line-height: 1.4;
   color: #6b7280;
 }
+
+/* Card layout for decisions we only know from open data */
+.decision--basic {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 96px;
+  background: transparent;
+}
+.dcard {
+  margin-top: 20px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 62, 115, 0.12);
+  font-size: 17px;
+  line-height: 1.6;
+}
+.dcard p {
+  margin: 0 0 10px;
+}
+.dcard--accent {
+  background: var(--brand-light);
+}
+.dcard__title {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.dcard p.dcard__big {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.dcard__toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  color: #6b7280;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.dcard p.dcard__official {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+.say__main,
+.councillor__name {
+  font-weight: 700;
+}
+.say__link,
+.councillor__btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.say__link:hover,
+.councillor__btn:hover {
+  background: var(--brand-dark, #0f3e73);
+}
+.councillor__ward {
+  color: #6b7280;
+  font-size: 14px;
+}
+.decision__official-link {
+  margin-top: 28px;
+  font-size: 16px;
+}
+.decision__official-link a {
+  color: var(--brand);
+}
+
+/* Inside the hand-written pages' answer column */
+.row__a .say,
+.row__a .councillor {
+  margin-top: 14px;
+}
+.row__a .say__link,
+.row__a .councillor__btn {
+  display: inline-block;
+}
+.row__a p.say__main,
+.row__a p.councillor__name {
+  display: block;
+}
+.row__a .say p,
+.row__a .councillor p {
+  display: block;
+  margin-bottom: 8px;
+}
