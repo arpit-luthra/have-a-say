@@ -1,7 +1,9 @@
 // Guess a topic from keywords in the title. This is a simple guess, not a fact:
 // the first rule that matches wins, so the order matters. No match -> "Other".
 const RULES = [
-  ['Bike lanes', ['cycling', 'bike', 'bicycle']],
+  ['Other', ['airport', 'runway']], // not "Police and safety"
+  ['Bike lanes', ['cycling', 'bike', 'bicycle', 'scooter', 'e-bike', 'micromobility']],
+  ['Housing', ['homes', 'rent', 'multiplex', 'missing middle', 'renovict']],
   ['Parking', ['parking']],
   ['Transit', ['ttc', 'transit', 'subway', 'streetcar', 'bus', 'light rail', 'lrt']],
   ['Housing', ['zoning', 'official plan', 'housing', 'rezoning', 'residential', 'tenant', 'condominium']],
@@ -9,7 +11,7 @@ const RULES = [
   ['Taxes & budget', ['budget', 'tax', 'fees', 'levy', 'financial']],
   ['Heritage', ['heritage']],
   // Words like "street" or "avenue" are left out on purpose: they are just addresses.
-  ['Roads & traffic', ['traffic', 'speed', 'intersection', 'sidewalk', 'road safety', 'vision zero', 'bridge']],
+  ['Roads & traffic', ['traffic', 'speed', 'intersection', 'sidewalk', 'road safety', 'vision zero', 'bridge', 'gardiner', 'expressway', 'roads']],
   ['Environment', ['climate', 'environment', 'waste', 'energy', 'green']],
   ['Safety', ['safety', 'police', 'fire', 'crime']],
   ['Business & licences', ['licen', 'business', 'bylaw', 'by-law']],
