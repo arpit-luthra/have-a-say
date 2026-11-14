@@ -30,7 +30,7 @@ const STALE_AFTER_MONTHS = 6
 
 /** True when the latest recorded vote is over 6 months old and the item isn't decided. */
 export function isStale(item) {
-  if (item.detailed || item.upcoming || !item.dateISO) return false
+  if (item.detailed || item.upcoming || item.official || !item.dateISO) return false
   const body = item.committee
   if (body === 'City Council' || FINAL_DECISION_BODIES.has(body)) return false
   const cutoff = new Date()
@@ -54,33 +54,51 @@ export function getStageSteps(item) {
     }
   }
 
+  // Status checked by hand on the official City page (official-status.json): it overrides any guess from the voting record.
+  if (item.official) {
+    const { status, finalBody } = item.official
+    const steps = STEP_NAMES.map((name) => ({ name, state: 'upcoming', note: null }))
+    steps[0].state = 'reached'
+    steps[1].state = 'reached'
+    if (finalBody === 'City Council') {
+      steps[2].state = 'reached'
+    } else {
+      steps[2] = { ...steps[2], state: 'not-needed', note: 'Not needed' } // this body was given the power to decide
+    }
+    const decidedNote = status === 'Rejected' ? 'Rejected' : 'Approved'
+    steps[3] = { name: 'Decided', state: status === 'Rejected' ? 'rejected' : 'reached', note: decidedNote }
+    return { steps, label: decidedNote, next: null, uncertain: false }
+  }
+
   // Our 2 hand-checked decisions: both were adopted by City Council, and we know the path.
   const known = item.detailed
   const body = known ? 'City Council' : item.committee
-  const lost = !known && item.result.startsWith('Lost')
   const isMemberMotion = item.id.includes('.MM')
 
   const steps = STEP_NAMES.map((name) => ({ name, state: 'upcoming', note: null }))
   steps[0].state = 'reached'
+
+  // A "Lost" vote can be on a motion about the item (an amendment, say), not on the item itself.
+  // So a lost vote never makes an item "Rejected": we only say the status is unclear.
+  if (!known && item.result.startsWith('Lost')) {
+    steps[1].state = 'reached'
+    return { steps, label: 'Status unclear', next: null, uncertain: true, unclear: true }
+  }
 
   if (body === 'City Council') {
     steps[1] = isMemberMotion
       ? { name: steps[1].name, state: 'skipped', note: 'Skipped' } // went straight to Council
       : { ...steps[1], state: 'reached' }
     steps[2].state = 'reached'
-    steps[3] = lost
-      ? { name: 'Decided', state: 'rejected', note: 'Rejected' }
-      : { name: 'Decided', state: 'reached', note: 'Approved' }
-    return { steps, label: lost ? 'Rejected' : 'Approved', next: null, uncertain: !known }
+    steps[3] = { name: 'Decided', state: 'reached', note: 'Approved' }
+    return { steps, label: 'Approved', next: null, uncertain: !known }
   }
 
   if (FINAL_DECISION_BODIES.has(body)) {
     steps[1].state = 'reached'
     steps[2] = { ...steps[2], state: 'not-needed', note: 'Not needed' }
-    steps[3] = lost
-      ? { name: 'Decided', state: 'rejected', note: `Rejected by ${body}` }
-      : { name: 'Decided', state: 'reached', note: `Decided by ${body}` }
-    return { steps, label: lost ? 'Rejected' : `Decided by ${body}`, next: null, uncertain: true }
+    steps[3] = { name: 'Decided', state: 'reached', note: `Decided by ${body}` }
+    return { steps, label: `Decided by ${body}`, next: null, uncertain: true }
   }
 
   // Any other committee or community council: the next stop is City Council.

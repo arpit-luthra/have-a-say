@@ -4,15 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import FindWard from '../components/FindWard.jsx'
 import DecisionCard from '../components/DecisionCard.jsx'
 import { allItems } from '../lib/allItems.js'
-import { statusWord } from '../lib/statusWord.js'
 import { useResident } from '../lib/ResidentContext.jsx'
 import './Landing.css'
 
-// The 4 newest items that already have a final answer.
-const recentlyDecided = allItems
-  .filter((d) => statusWord(d) !== 'In progress')
-  .sort((a, b) => b.dateISO.localeCompare(a.dateISO))
-  .slice(0, 4)
+// Four relatable decisions that have a full explanation (picked by hand, not the newest ones).
+const RECENT_IDS = ['2026.MM43.128', '2026.TE28.12', '2026.IE27.17', '2026.NY34.12']
+const recentlyDecided = RECENT_IDS.map((id) => allItems.find((d) => d.id === id)).filter(Boolean)
 
 const STEPS = [
   {

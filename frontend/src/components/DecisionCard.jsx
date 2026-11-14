@@ -16,7 +16,6 @@ export default function DecisionCard({ decision, distanceKm = null, active = fal
       onMouseLeave={() => onHover(null)}
     >
       {decision.topic !== 'Other' && <p className="card__topic">{decision.topic}</p>}
-      {decision.fullExplanation && <span className="card__badge">Full explanation</span>}
       <h2 className="card__title">{decision.title}</h2>
       <p className="card__meta">
         {decision.upcoming ? <span className="card__open">Open for comments</span> : statusWord(decision)}

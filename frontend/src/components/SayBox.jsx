@@ -6,9 +6,11 @@ import { formatDate } from '../lib/formatDate.js'
 
 export default function SayBox({ item, headlineOnly = false }) {
   // An upcoming item: the meeting has not happened, so people can still comment or ask to speak.
-  // Both buttons open the official item page, which has the real deadline and the forms. We never guess a deadline.
+  // The buttons open the City's own comment and speaking-request forms for this item; the official page has the deadline. We never guess a deadline.
   if (item.upcoming) {
     const { body, date, time } = item.meeting
+    // The City's own forms for this item (opened in a new tab).
+    const forms = `https://secure.toronto.ca/council/#/public-participation/${item.id}`
     return (
       <div className="say">
         <p className="say__main">Yes, you can still have a say.</p>
@@ -16,10 +18,10 @@ export default function SayBox({ item, headlineOnly = false }) {
           Send a written comment or ask to speak at the {body} meeting on {formatDate(date)} at {time} (City Hall or video).
         </p>
         <div className="say__buttons">
-          <a className="say__link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+          <a className="say__link" href={`${forms}/comments`} target="_blank" rel="noreferrer">
             Submit a comment
           </a>
-          <a className="say__link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+          <a className="say__link" href={`${forms}/speaking-request`} target="_blank" rel="noreferrer">
             Ask to speak
           </a>
         </div>

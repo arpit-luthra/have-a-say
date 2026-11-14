@@ -14,7 +14,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
 import { tooltipText } from '../lib/cardText.js'
 import { loadWards } from '../lib/wardData.js'
-import { findWardAt, isPointInGeometry } from '../lib/geo.js'
+import { findWardAt } from '../lib/geo.js'
 import './CityMap.css'
 
 setWorkerUrl(workerUrl)
@@ -30,7 +30,7 @@ const BEARING = -17
 // Respect the "reduce motion" setting some people turn on in their device.
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-const PIN_RED = '#b3261e' // deep red for the pins and the highlighted building
+const PIN_RED = '#b3261e' // deep red for the pins
 
 // The close-up 3D view when a pin is clicked.
 const CLOSE_UP = { zoom: 17.5, pitch: 60, bearing: BEARING + 20, duration: 2200 }
@@ -50,7 +50,6 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
   const pinsRef = useRef(pins)
   pinsRef.current = pins
   const cityCameraRef = useRef(null) // the flat "whole Toronto" view, to fly back to
-  const flightRef = useRef(0) // counts selections, so a slow old one can't finish after a new one
   const wasSelectedRef = useRef(false)
 
   // --- 1. Create the map once, when the component first appears. ---
@@ -88,7 +87,6 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
       map.setMaxBounds(cityBox(points, 0.03))
       keepInsideToronto(map, wards.features)
       hidePlaceNamesOutsideToronto(map, wards.features)
-      addBuildingHighlight(map)
       await addPinLayers(map, (id) => onHoverPinRef.current(id), (id) => onSelectPinRef.current(id))
       if (cancelled) return
       cityCameraRef.current = camera
@@ -155,12 +153,6 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     mapRef.current.getSource('decisions').setData({ type: 'FeatureCollection', features })
   }, [pins, isReady])
 
-  // --- 4. Close-up view: show ONLY the selected decision's pin (all pins again when nothing is selected). ---
-  useEffect(() => {
-    if (!isReady) return
-    mapRef.current.setFilter('pin-points', selectedId ? ['==', ['get', 'id'], selectedId] : null)
-  }, [selectedId, isReady])
-
   // --- 4b. Hovering a pin (or its card in the list) shows a small tooltip with the plain title. ---
   useEffect(() => {
     if (!isReady || !hoveredId) return
@@ -176,12 +168,10 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     return () => tooltip.remove()
   }, [hoveredId, isReady])
 
-  // --- 5. Selecting a pin: fly in close in 3D (and back out when it is cleared). ---
+  // --- 5. Selecting a pin: fly in close in 3D (and back out when it is cleared). All nearby pins stay visible. ---
   useEffect(() => {
     if (!isReady) return
     const map = mapRef.current
-    const flight = ++flightRef.current
-    showBuilding(map, null) // clear any earlier highlight
     const pin = pinsRef.current.find((d) => d.id === selectedId)
 
     if (!pin) {
@@ -201,14 +191,6 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
       { center: [pin.lng, pin.lat], ...CLOSE_UP, duration: prefersReducedMotion ? 0 : CLOSE_UP.duration, essential: true },
       { fromApp: true },
     )
-    // "approximate" pins (a whole street, not one address) get no building highlight.
-    // Only Housing and Heritage pins with an exact address get the site outline.
-    if (!pin.detailed && !pin.approximate && (pin.topic === 'Housing' || pin.topic === 'Heritage')) {
-      // 'idle' = the flight is over and the close-up map tiles are loaded, so footprints can be read.
-      map.once('idle', () => {
-        if (flight === flightRef.current) showBuilding(map, buildingAt(map, pin.lng, pin.lat))
-      })
-    }
   }, [selectedId, isReady])
 
   return <div ref={containerRef} className="city-map" aria-label="Map of Toronto" />
@@ -238,114 +220,6 @@ function hidePlaceNamesOutsideToronto(map, wardFeatures) {
     if (layer.type !== 'symbol' || !['place', 'aerodrome_label'].includes(layer['source-layer'])) continue
     map.setFilter(layer.id, layer.filter ? ['all', layer.filter, insideToronto] : insideToronto)
   }
-}
-
-const MAX_BUILDING_DISTANCE_M = 15 // a building further than this from the pin is not "the" building
-
-/** Distance in metres from a point to a polygon's outline (rough flat-earth maths, fine at this size). */
-function metresToOutline(lng, lat, ring) {
-  const toMetres = ([x, y]) => [(x - lng) * Math.cos((lat * Math.PI) / 180) * 111320, (y - lat) * 110540]
-  const points = ring.map(toMetres)
-  let nearest = Infinity
-  for (let i = 0, j = points.length - 1; i < points.length; j = i++) {
-    const [x1, y1] = points[j]
-    const [x2, y2] = points[i]
-    const [dx, dy] = [x2 - x1, y2 - y1]
-    // closest spot on this edge to the pin (which is at 0,0 in these coordinates)
-    const t = dx || dy ? Math.max(0, Math.min(1, -(x1 * dx + y1 * dy) / (dx * dx + dy * dy))) : 0
-    nearest = Math.min(nearest, Math.hypot(x1 + t * dx, y1 + t * dy))
-  }
-  return nearest
-}
-
-/**
- * The ONE building footprint at this spot, or null. We read the buildings drawn on screen
- * around the pin, split any multi-building shapes into single polygons, and keep the closest
- * polygon: the one containing the pin, or else one within 15 m. Returns { geometry, properties }.
- */
-function buildingAt(map, lng, lat) {
-  const { x, y } = map.project([lng, lat])
-  const nearby = map.queryRenderedFeatures([[x - 80, y - 80], [x + 80, y + 80]], { layers: ['building-3d'] })
-
-  let best = null
-  for (const feature of nearby) {
-    const { type, coordinates } = feature.geometry
-    for (const polygon of type === 'Polygon' ? [coordinates] : coordinates) {
-      const geometry = { type: 'Polygon', coordinates: polygon }
-      const distance = isPointInGeometry(lng, lat, geometry) ? 0 : metresToOutline(lng, lat, polygon[0])
-      if (distance <= MAX_BUILDING_DISTANCE_M && (!best || distance < best.distance)) {
-        best = { distance, geometry, properties: feature.properties }
-      }
-    }
-  }
-  return best
-}
-
-const HIGHLIGHT_GROW_M = 0.5 // how far the outline is pushed outward on every side
-
-/**
- * The "site" of a decision: a thin soft-red outline and a very light red fill, flat on the ground
- * (no 3D block), plus a small label. Drawn above the grey buildings, under the pins.
- */
-function addBuildingHighlight(map) {
-  map.addSource('building-highlight', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } })
-  const layers = map.getStyle().layers
-  const above3d = layers[layers.findIndex((layer) => layer.id === 'building-3d') + 1]
-  map.addLayer({ id: 'building-highlight', type: 'fill', source: 'building-highlight', paint: { 'fill-color': PIN_RED, 'fill-opacity': 0.12 } }, above3d?.id)
-  map.addLayer({ id: 'building-highlight-line', type: 'line', source: 'building-highlight', paint: { 'line-color': PIN_RED, 'line-opacity': 0.7, 'line-width': 1.5 } }, above3d?.id)
-  map.addLayer({
-    id: 'building-highlight-label',
-    type: 'symbol',
-    source: 'building-highlight',
-    layout: { 'text-field': 'Site of this decision', 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top', 'text-allow-overlap': true },
-    paint: { 'text-color': PIN_RED, 'text-halo-color': '#fff', 'text-halo-width': 1.5 },
-  })
-}
-
-/**
- * Pushes every corner of a polygon outward by `metres` (inner courtyard holes shrink instead,
- * so the solid part grows everywhere). Each corner moves along the average of its two
- * neighbouring edges' outward directions.
- */
-function growPolygon(rings, metres) {
-  return rings.map((ring, ringIndex) => {
-    const lat0 = ring[0][1]
-    const lngPerMetre = 1 / (111320 * Math.cos((lat0 * Math.PI) / 180))
-    const latPerMetre = 1 / 110540
-    const flat = ring.slice(0, -1).map(([lng, lat]) => [(lng - ring[0][0]) / lngPerMetre, (lat - lat0) / latPerMetre])
-    const n = flat.length
-    // Which way is "right" of an edge? Depends on whether the ring runs clockwise or not.
-    const area = flat.reduce((sum, [x, y], i) => sum + (x * flat[(i + 1) % n][1] - flat[(i + 1) % n][0] * y), 0)
-    const side = (area > 0 ? 1 : -1) * (ringIndex === 0 ? 1 : -1)
-    const normal = (a, b) => {
-      const [dx, dy] = [b[0] - a[0], b[1] - a[1]]
-      const length = Math.hypot(dx, dy) || 1
-      return [(dy / length) * side, (-dx / length) * side]
-    }
-    const moved = flat.map((point, i) => {
-      const before = normal(flat[(i + n - 1) % n], point)
-      const after = normal(point, flat[(i + 1) % n])
-      const [mx, my] = [before[0] + after[0], before[1] + after[1]]
-      const mLength = Math.hypot(mx, my) || 1
-      // On sharp corners the move is lengthened so the SIDES (not just the corner) shift by `metres`; capped.
-      const stretch = Math.min(2, 1 / Math.max(0.5, (mx * before[0] + my * before[1]) / mLength))
-      return [point[0] + (mx / mLength) * metres * stretch, point[1] + (my / mLength) * metres * stretch]
-    })
-    const out = moved.map(([x, y]) => [ring[0][0] + x * lngPerMetre, lat0 + y * latPerMetre])
-    return [...out, out[0]] // close the ring again
-  })
-}
-
-/** Outline this building's footprint, or clear the highlight when `building` is undefined/null. */
-function showBuilding(map, building) {
-  const features = building
-    ? [{
-        type: 'Feature',
-        geometry: { type: 'Polygon', coordinates: growPolygon(building.geometry.coordinates, HIGHLIGHT_GROW_M) },
-        properties: {},
-      }]
-    : []
-  map.getSource('building-highlight').setData({ type: 'FeatureCollection', features })
 }
 
 // A realistic pushpin as SVG text: a small glossy dark-red sphere (10px wide in city view),

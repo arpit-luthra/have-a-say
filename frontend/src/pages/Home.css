@@ -186,9 +186,3 @@
   margin: 0;
   accent-color: var(--brand);
 }
-.map-stack__back {
-  color: var(--brand);
-}
-.map-stack__back:hover {
-  color: var(--brand-dark);
-}

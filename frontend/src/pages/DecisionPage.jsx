@@ -197,6 +197,14 @@ function trackerDates(item, info) {
     // The board meeting date is on the agenda. The Council date is not set yet, and we don't guess it.
     return [item.staffReportDate ? formatDate(item.staffReportDate) : '', `${formatDate(item.meeting.date)}, ${item.meeting.time}`, 'Date not set yet', '']
   }
+  if (item.official) {
+    // From the official City page. A body that was given the power to decide has one date: the decision.
+    const { date, steps } = item.official
+    const dates = ['', '', '', formatDate(date)]
+    for (const st of steps ?? []) dates[st.body.includes('City Council') ? 2 : 1] = formatDate(st.date)
+    if (!steps) dates[1] = formatDate(date)
+    return dates
+  }
   const stages = info?.sections.find((sec) => sec.stages)?.stages
   if (stages) return stages.map((st) => (st.skipped ? '' : st.date))
   const dates = ['', '', '', '']
@@ -218,7 +226,11 @@ function buildSources(item, ex, info) {
   const official = {
     label: 'Official City of Toronto page',
     url: item.sourceUrl,
-    date: item.upcoming ? `meeting ${formatDate(item.meeting.date)}` : `latest vote ${formatDate(item.dateISO)}`,
+    date: item.upcoming
+      ? `meeting ${formatDate(item.meeting.date)}`
+      : item.official
+        ? `final status ${formatDate(item.official.date)}`
+        : `latest vote ${formatDate(item.dateISO)}`,
     itemNumber: item.id,
   }
   if (ex) return [official, ...ex.documents.map((d) => ({ label: d.title, url: d.url, date: d.date }))]
@@ -263,7 +275,20 @@ export default function DecisionPage() {
   const why = ex ? fromExplanation(ex, 'why') : info ? fromHandChecked(info, 'why') : []
   const whereWho = ex ? fromExplanation(ex, 'where') : info ? fromHandChecked(info, 'where', 'who') : []
   const conditions = ex ? fromExplanation(ex, 'conditions') : []
-  const processSentences = ex ? fromExplanation(ex, 'process') : []
+  // Process: the staff report step comes from the PDF. For items checked on the official City page, the
+  // other steps come from that page (cited "Official City page") and replace the voting-record guess.
+  const officialLink = [{ label: 'Official City page', url: item.sourceUrl }]
+  const officialSteps = item.official
+    ? (item.official.steps ?? [{ body: item.official.finalBody, date: item.official.date, text: item.official.text }]).map((st) => ({
+        step: st.body.includes('City Council') ? 'council' : 'committee',
+        date: formatDate(st.date),
+        text: st.text,
+        links: officialLink,
+      }))
+    : []
+  const processSentences = ex
+    ? [...fromExplanation(ex, 'process').filter((st) => !item.official || st.step === 'staff'), ...officialSteps]
+    : officialSteps
   // With a full explanation, the say box (our stage logic) answers this. Only the older hand-written text has its own.
   const saySentences = info ? fromHandChecked(info, 'say') : []
 
@@ -274,8 +299,8 @@ export default function DecisionPage() {
     item.upcoming
       ? [`In progress · ${item.meeting.body} meets ${formatDate(item.meeting.date)}`, item.place]
       : [
-          statusLine(statusWord(voteItem), body),
-          formatDate(item.dateISO),
+          statusLine(statusWord(voteItem), item.official?.finalBody ?? body),
+          formatDate(item.official?.date ?? item.dateISO),
           item.ward?.match(/^Ward \d+/)?.[0], // only when we really know the ward (our 2 hand-checked decisions)
           item.place && `${item.place}${item.approximate ? ' (approximate)' : ''}`,
         ]

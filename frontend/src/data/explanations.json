@@ -765,20 +765,12 @@
     "title": "Notice of Public Meeting",
     "date": "August 29, 2024",
     "pages": 3
-   },
-   {
-    "n": 5,
-    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
-    "title": "City of Toronto voting record",
-    "date": "Sep 25, 2024",
-    "pages": 0,
-    "record": true
    }
   ],
   "sections": {
    "happening": [
     {
-     "text": "The proposal recommends a 46-storey building with 615 homes and some non-business space.",
+     "text": "The proposal recommends a 46-storey building with 615 homes and some non-residential space.",
      "cites": [
       {
        "doc": 1,
@@ -840,7 +832,7 @@
    ],
    "process": [
     {
-     "text": "City staff recommended that City Council to change the rules for what can be built on this site for 214-230 Sherbourne Street.",
+     "text": "City staff recommended that City Council change the rules for what can be built on this site for 214-230 Sherbourne Street.",
      "cites": [
       {
        "doc": 1,
@@ -849,16 +841,6 @@
      ],
      "date": "September 9, 2024",
      "step": "staff"
-    },
-    {
-     "text": "Approved by City committee.",
-     "step": "committee",
-     "date": "Sep 25, 2024",
-     "cites": [
-      {
-       "doc": 5
-      }
-     ]
     }
    ]
   }
@@ -1360,14 +1342,6 @@
     "title": "Application to Remove a Private Tree – 425 Manor Road East",
     "date": "November 15, 2024",
     "pages": 5
-   },
-   {
-    "n": 2,
-    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
-    "title": "City of Toronto voting record",
-    "date": "Jan 9, 2025",
-    "pages": 0,
-    "record": true
    }
   ],
   "sections": {
@@ -1441,16 +1415,6 @@
      ],
      "date": "November 15, 2024",
      "step": "staff"
-    },
-    {
-     "text": "Rejected by City committee.",
-     "step": "committee",
-     "date": "Jan 9, 2025",
-     "cites": [
-      {
-       "doc": 2
-      }
-     ]
     }
    ]
   }
@@ -1610,14 +1574,6 @@
     "title": "Application to Remove a Private Tree – 10 Glencairn Avenue",
     "date": "November 6, 2025",
     "pages": 5
-   },
-   {
-    "n": 2,
-    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
-    "title": "City of Toronto voting record",
-    "date": "Jan 6, 2026",
-    "pages": 0,
-    "record": true
    }
   ],
   "sections": {
@@ -1684,16 +1640,6 @@
      ],
      "date": "November 6, 2025",
      "step": "staff"
-    },
-    {
-     "text": "Approved by City committee.",
-     "step": "committee",
-     "date": "Jan 6, 2026",
-     "cites": [
-      {
-       "doc": 2
-      }
-     ]
     }
    ]
   }
@@ -1708,14 +1654,6 @@
     "title": "Application to Remove a Private Tree – 390 Glencairn Avenue",
     "date": "March 4, 2025",
     "pages": 5
-   },
-   {
-    "n": 2,
-    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
-    "title": "City of Toronto voting record",
-    "date": "Apr 30, 2025",
-    "pages": 0,
-    "record": true
    }
   ],
   "sections": {
@@ -1778,16 +1716,6 @@
      ],
      "date": "March 4, 2025",
      "step": "staff"
-    },
-    {
-     "text": "Approved by City committee.",
-     "step": "committee",
-     "date": "Apr 30, 2025",
-     "cites": [
-      {
-       "doc": 2
-      }
-     ]
     }
    ]
   }

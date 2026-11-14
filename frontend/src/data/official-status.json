@@ -1,0 +1,9 @@
+{
+  "note": "Final status checked by hand on each item's official City of Toronto page (Tracking Status), Nov 14, 2026. Overrides the status guessed from the voting record.",
+  "items": {
+    "2024.TE16.5": { "status": "Approved", "finalBody": "City Council", "date": "2024-10-10", "text": "City Council adopted this item on October 9 and 10, 2024 with amendments.", "steps": [{"body": "Toronto and East York Community Council", "date": "2024-09-25", "text": "Sent to City Council without recommendations."}, {"body": "City Council", "date": "2024-10-10", "text": "Adopted with amendments."}] },
+    "2025.NY20.1": { "status": "Approved", "finalBody": "North York Community Council", "date": "2025-01-09", "text": "North York Community Council adopted this item without amendment. City Council gave North York Community Council the authority to decide, so this decision is final." },
+    "2026.NY29.1": { "status": "Approved", "finalBody": "North York Community Council", "date": "2026-01-06", "text": "North York Community Council adopted this item with amendments. City Council gave North York Community Council the authority to decide, so this decision is final." },
+    "2025.NY23.4": { "status": "Approved", "finalBody": "North York Community Council", "date": "2025-04-30", "text": "North York Community Council adopted this item with amendments. City Council gave North York Community Council the authority to decide, so this decision is final." }
+  }
+}

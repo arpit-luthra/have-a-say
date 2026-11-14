@@ -7,7 +7,8 @@ import Landing from './pages/Landing.jsx'
 import Home from './pages/Home.jsx'
 import DecisionPage from './pages/DecisionPage.jsx'
 import HaveYourSay from './pages/HaveYourSay.jsx'
-import Placeholder from './pages/Placeholder.jsx'
+import HowItWorks from './pages/HowItWorks.jsx'
+import About from './pages/About.jsx'
 import { ResidentProvider } from './lib/ResidentContext.jsx'
 import { navTrail } from './lib/navTrail.js'
 
@@ -44,8 +45,8 @@ export default function App() {
           <Route path="/explore" element={null} />
           <Route path="/decision/:id" element={<DecisionPage />} />
           <Route path="/have-your-say" element={<HaveYourSay />} />
-          <Route path="/how-it-works" element={<Placeholder title="How council works" />} />
-          <Route path="/about" element={<Placeholder title="About & sources" />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </div>

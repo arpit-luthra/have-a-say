@@ -10,13 +10,14 @@ import geocoded from '../data/item-locations.json'
 // Pins we placed BY HAND (e.g. a ferry terminal, which is not in the title). Kept in their own file
 // so re-running the geocoding script never wipes them. "approximate": true = the place is a landmark, not the exact spot.
 import manual from '../data/manual-locations.json'
-import explanations from '../data/explanations.json'
 // Real items from agendas for meetings that have NOT happened yet (so no vote, and not in open data). Made by hand.
 import upcomingData from '../data/upcoming-items.json'
+// Final status checked by hand on each item's official City page. It overrides the guess from the voting record.
+import officialStatus from '../data/official-status.json'
 
 const locations = { ...geocoded, ...manual }
 
-const detailed = decisions.map((d) => ({ ...d, detailed: true, fullExplanation: Boolean(explanations[d.id]) }))
+const detailed = decisions.map((d) => ({ ...d, detailed: true }))
 const detailedIds = new Set(detailed.map((d) => d.id))
 
 // Open-data items only know: number, title, committee, date, last vote result.
@@ -31,8 +32,8 @@ const fromOpenData = openData.items
     const spot = locations[item.id] // undefined = no pin for this one
     return {
       ...item,
+      official: officialStatus.items[item.id] ?? null,
       ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address, approximate: Boolean(spot.approximate) }),
-      fullExplanation: Boolean(explanations[item.id]), // gets the small "Full explanation" badge on its card
       title: plain || item.title,
       officialTitle: plain ? item.title : null,
       topic: guessTopic(item.title), // guess from the OFFICIAL title: it has more keywords
@@ -59,7 +60,6 @@ const upcoming = upcomingData.items.map((item) => {
     detailed: false,
     sayStatus: 'open', // the person can still comment, so "Open now" in the filters
     deadline: null, // never guessed: the official page has the exact deadline
-    fullExplanation: Boolean(explanations[item.id]),
     ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address }),
   }
 })
@@ -81,12 +81,7 @@ function isFinal(item) {
 }
 
 function matchTitleToStatus(item) {
-  if (item.detailed || item.upcoming) return item
-  if (isFinal(item)) {
-    // Final vote LOST: a title that says "approved" would be wrong.
-    if (item.result?.startsWith('Lost')) return { ...item, title: item.title.replace(/^New building approved at /, 'New building rejected at ') }
-    return item
-  }
+  if (item.detailed || item.upcoming || isFinal(item)) return item
   let title = item.title
   for (const [pattern, replacement] of NOT_FINAL_WORDING) title = title.replace(pattern, replacement)
   return { ...item, title }
@@ -98,7 +93,7 @@ export const allItems = [...detailed, ...fromOpenData, ...upcoming].map(matchTit
 export function titleProblems() {
   return allItems
     .filter((item) => !item.detailed && !item.upcoming)
-    .filter((item) => (isFinal(item) ? item.result?.startsWith('Lost') && /\bapproved\b/i.test(item.title) : CLAIMS_OUTCOME.test(item.title)))
+    .filter((item) => !isFinal(item) && CLAIMS_OUTCOME.test(item.title))
     .map((item) => `${item.id}: "${item.title}" (${item.committee}, ${item.result})`)
 }
 

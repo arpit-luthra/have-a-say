@@ -158,18 +158,6 @@ export default function Home() {
               Show all of Toronto
             </label>
           )}
-          {selected && (
-            <button
-              className="map-stack__item map-stack__back"
-              type="button"
-              onClick={() => {
-                setSelectedId(null)
-                setScrolledTo(null)
-              }}
-            >
-              ← Back to all of Toronto
-            </button>
-          )}
         </div>
         <MapPanel decision={selected} />
       </section>

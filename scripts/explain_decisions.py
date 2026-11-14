@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "frontend" / "src" / "data"
 FEATURED_FILE = DATA_DIR / "featured.json"  # what we want explained (you edit this)
 VOTES_FILE = DATA_DIR / "open-data-items.json"  # the voting record (latest vote on each item)
+OFFICIAL_FILE = DATA_DIR / "official-status.json"  # status checked by hand on the official City pages (wins over the voting record)
 HAND_CHECKED_FILE = DATA_DIR / "decisions.json"  # our 2 hand-checked decisions (not in the voting record)
 OUTPUT_FILE = DATA_DIR / "explanations.json"  # what this script writes (the site reads this)
 ENV_FILE = ROOT / "backend" / ".env"
@@ -332,6 +333,7 @@ SWAPS = [
     (r"Tier \d of the City's green building rules", "the City's green building rules"),
     (r"zoning rules", "building rules"),
     (r"height and setbacks", "height and how far it sits back from the property edges"),
+    (r"that City Council to change", "that City Council change"),  # tidies the sentence after the swaps above
 ]
 SWAPS = [(re.compile(pattern, re.I), new) for pattern, new in SWAPS]
 
@@ -390,6 +392,8 @@ def body_name(committee):
 def voting_record_step(item_id):
     """The "process" answer, taken ONLY from the voting record (or, for our 2 hand-checked decisions that are not
     in it, from their official agenda item page). Returns (sentence, document) or None. The PDFs are never used here."""
+    if item_id in load_json(OFFICIAL_FILE, {"items": {}})["items"]:
+        return None  # the website shows the hand-checked official status for this item instead
     votes = {row["id"]: row for row in load_json(VOTES_FILE, {"items": []})["items"]}
     row = votes.get(item_id)
     if row:
