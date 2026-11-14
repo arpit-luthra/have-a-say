@@ -1,6 +1,6 @@
 // The short text shown on cards, the map tooltip and the map panel.
 // Long titles are NOT used here: they only appear on the decision page.
-import { statusWord } from './statusWord.js'
+import { statusText } from './statusWord.js'
 
 const SHORT = { Avenue: 'Ave', Street: 'St', Road: 'Rd', Crescent: 'Cres', Boulevard: 'Blvd', Drive: 'Dr', Court: 'Ct', Place: 'Pl', Lane: 'Ln', Square: 'Sq', Terrace: 'Terr', East: 'E', West: 'W', North: 'N', South: 'S' }
 
@@ -16,7 +16,7 @@ export function placeOf(decision) {
 
 /** "214–230 Sherbourne St · In progress · 0.8 km away" (distance only when known). */
 export function subline(decision, km = null) {
-  const parts = [placeOf(decision), statusWord(decision)]
+  const parts = [placeOf(decision), statusText(decision)]
   if (km != null) parts.push(`${km.toFixed(1)} km away`)
   return parts.join(' · ')
 }

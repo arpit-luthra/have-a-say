@@ -2069,5 +2069,2244 @@
     }
    ]
   }
+ },
+ "2026.TTC17.1": {
+  "generatedAt": "2026-11-14T08:32:18+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ttc/bgrd/backgroundfile-290079.pdf",
+    "title": "Fitness For Duty Grievance Update",
+    "date": "August 5, 2026",
+    "pages": 2
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A report gives an update on an arbitration decision about drug and alcohol testing and next steps.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "An arbitrator released a decision on July 13, 2026, that allowed a union policy grievance challenging random drug and alcohol testing and ordered the reinstatement of eight grievors.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "This mainly matters for transit workers and staff.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that the TTC Board approve the confidential recommendation and keep the information in the confidential attachment secret.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "August 5, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.TTC16.9": {
+  "generatedAt": "2026-11-14T08:32:21+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ttc/bgrd/backgroundfile-289450.pdf",
+    "title": "Fare Collection System Update",
+    "date": "July 22, 2026",
+    "pages": 3
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report provides an update on the outsourcing agreement for the automated fare collection system and notes that staff are evaluating submissions from a request for information that closed on July 17, 2026.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The current agreement's initial 15-year term expires on November 28, 2027, and Metrolinx chose to opt-out of the automatic five-year renewal and negotiate a new contract.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "This mainly matters for transit riders across the city using the automated fare collection system.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended adopting the recommendations in Confidential Attachment 2.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "July 22, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.IE31.8": {
+  "generatedAt": "2026-11-14T08:32:27+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ie/bgrd/backgroundfile-286719.pdf",
+    "title": "2025–2026 Annual Winter Maintenance Report and Amendment to Blanket Contracts #C78, #C87, #C88 and #C89 with Rafat General Contractor Inc. for the Non-Exclusive Supply of All Labour, Equipment and Materials Necessary to Provide Single Axle, Tandem and Tri Axle Dump Trucks with Operators for Trucking Services",
+    "date": "May 5, 2026",
+    "pages": 38
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ie/bgrd/backgroundfile-289470.pdf",
+    "title": "Pedestrian access to Laneway Houses in Ward 11 during snow events",
+    "date": "Monday, July 6, 2026",
+    "pages": 1
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report proposes increasing the total value of four blanket contracts for trucking services with Rafat General Contractor Inc. by $53,815,445 net of all taxes and charges ($54,762,598 net of HST recoveries), raising the total contract value to $80,004,968 net of all taxes and charges ($81,413,056 net of HST recoveries).",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 1,
+       "page": 5
+      },
+      {
+       "doc": 1,
+       "page": 28
+      }
+     ]
+    },
+    {
+     "text": "A motion also proposes that Transportation Services report back at the first 2027 meeting with recommendations on snow clearing sufficient to permit pedestrian access to lawfully constructed laneway homes in Ward 11, starting with Shaftesbury Court and Croft Street.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this old contract with a different supplier.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "Record snowfall in January 2026 produced over 90 cm of snow and required much more snow removal and trucking than originally expected to keep emergency access, transit corridors, bridge decks, and hospital access open.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    },
+    {
+     "text": "Families have built laneway homes whose only road access is via public lanes, and the city's current lack of snow clearing in lanes creates serious access issues for these residents during severe winter weather.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Across the Toronto-East York District (Wards 4, 9, 10, 11, 12, 13, 14, 19), Etobicoke-York District (Wards 1, 2, 3, 5, 7), North York District (Wards 6, 8, 15, 16, 17, 18), and Scarborough District (Wards 20-25), this mainly matters for motorists, pedestrians, cyclists, public transit users, residents, business owners, seniors, and persons with disabilities.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 8
+      },
+      {
+       "doc": 1,
+       "page": 26
+      }
+     ]
+    },
+    {
+     "text": "At Shaftesbury Court and Croft Street in Ward 11, this mainly matters for residents of laneway homes.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that the Infrastructure and Environment Committee grant authority to the General Manager, Transportation Services to amend the four blanket contracts with Rafat General Contractor Inc. to increase their award values.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ],
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.IE31.9": {
+  "generatedAt": "2026-11-14T08:32:29+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ie/bgrd/backgroundfile-289576.pdf",
+    "title": "Motion to IEC",
+    "date": "Monday, July 6, 2026",
+    "pages": 1
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A motion is proposed to study how to make the College streetcar faster and more reliable.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The motion says Toronto streetcars are the slowest in the world because they get stuck in traffic and lack priority.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "More than half of Ward 11 residents do not own cars and rely on transit.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "College Street, and the Dundas, College, Bathurst and Spadina streetcar lines. This mainly matters for residents, transit riders and people who walk or bike in Ward 11.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": []
+  }
+ },
+ "2026.SC33.9": {
+  "generatedAt": "2026-11-14T08:32:36+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288578.pdf",
+    "title": "Report for Action - 507, 511 and 513 Victoria Park Avenue and 4, 6, 7, 11 and 14 Thora Avenue",
+    "date": "June 22, 2026",
+    "pages": 36
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288579.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "",
+    "pages": 3
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288971.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 11
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288246.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 18, 2026",
+    "pages": 3
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to build two mixed-use buildings of 35 and 17 storeys with a shared L-shaped podium containing 510 homes, retail space, community space, a private daycare, and a new public park.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 6
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to replace an underutilized site and auto-related commercial uses to support increased population and employment growth in proximity to higher-order transit.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 507, 511 and 513 Victoria Park Avenue and 4, 6, 7, 11 and 14 Thora Avenue, this mainly matters for residents, neighbours, tenants, visitors, and drivers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must provide a revised Pedestrian Level Wind Study including a Wind Tunnel Study with recommendations implemented.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must enter into a land exchange agreement to acquire 6 Thora Avenue in exchange for nearby parkland of equal or greater size and utility.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    },
+    {
+     "text": "The owner must apply for and receive approval for the permanent closure of a portion of the public laneway abutting 6 Thora Avenue, 511 and 513 Victoria Park Avenue.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    },
+    {
+     "text": "At least 34 percent of the total homes must have 2 or more bedrooms, and at least 11 percent must have 3 or more bedrooms.",
+     "cites": [
+      {
+       "doc": 3,
+       "page": 6
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the application to change the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 22, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC33.2": {
+  "generatedAt": "2026-11-14T08:32:41+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288618.pdf",
+    "title": "Decision Report - Approval",
+    "date": "June 22, 2026",
+    "pages": 30
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-289091.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 11
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288620.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 10
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287694.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 4, 2026",
+    "pages": 3
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to build an 11-storey mixed-use building with 275 homes, two levels of underground parking, and ground-floor shops at 3310, 3312, and 3314 Kingston Road.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal adds housing and shops along a major transit corridor.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 3310, 3312, and 3314 Kingston Road. This mainly matters for neighbours, tenants, visitors, and drivers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "A hold on building is placed on the site until an updated report proves existing water, sewer, and watermain systems have enough capacity for the new development.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 14
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a revised hydrogeological review summary that satisfies the Director of Engineering Review.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 14
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the changes to the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 22, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC33.54": {
+  "generatedAt": "2026-11-14T08:32:44+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287892.pdf",
+    "title": "Introduction of Overnight On-Street Permit Parking - Wood Glen Road",
+    "date": "June 8, 2026",
+    "pages": 5
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report proposes starting overnight permit parking on Wood Glen Road between Kingston Road and Anndale Road from 12:01 a.m. to 7:00 a.m. on the even side.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "$386 is moved to funding from the Transportation Services City budget to set up the permit parking.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "Residents asked for overnight permit parking so they have a place to park for a long time.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Wood Glen Road between Kingston Road to Anndale Road. This mainly matters for residents.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended adding overnight permit parking on the even side of Wood Glen Road and stopping parking completely on the other side.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 8, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC33.1": {
+  "generatedAt": "2026-11-14T08:32:53+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288608.pdf",
+    "title": "Decision Report - Approval - 1911 and 1921 Eglinton Avenue East",
+    "date": "June 22, 2026",
+    "pages": 41
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288609.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "2026",
+    "pages": 12
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288610.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 28
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287820.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 5, 2026",
+    "pages": 3
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to replace the two existing low-rise non-residential buildings with a mixed-use development consisting of eight buildings ranging from 12 to 48 storeys, a 2,516-square-metre public park, and two new public streets.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 26
+      }
+     ]
+    },
+    {
+     "text": "The proposal includes 2,243 homes and 185,105 square metres of gross floor area, of which 38,233 square metres will be non-residential space.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The changes are proposed to implement a master planned community consistent with the emerging context and evolution of lands in the Golden Mile to a more intense, mixed-use form of development.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 1911 and 1921 Eglinton Avenue East, this mainly matters for residents, business owners, and future occupants of the area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "Prior to the issuance of the first above-grade building permit, the owner must convey to the City an on-site parkland dedication of a minimum size of 2,541 square metres.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must secure a minimum of four per cent of the residential gross floor area as affordable rental housing for a minimum of 40 years.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 1,
+       "page": 15
+      }
+     ]
+    },
+    {
+     "text": "The lands must be classified as a Class 4 Noise Area pursuant to Ministry of Environment, Conservation and Parks guidelines.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended that City Council approve the application to change the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 22, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC33.5": {
+  "generatedAt": "2026-11-14T08:32:59+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288556.pdf",
+    "title": "Decision Report - Approval - 251 Staines Road (formerly 311 Staines Road)",
+    "date": "June 22, 2026",
+    "pages": 32
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288553.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "",
+    "pages": 4
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-288554.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 7
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287928.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 11, 2026",
+    "pages": 2
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to build a non-profit community centre and recreational sports field as Phase 1, and an auditorium as Phase 2.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The proposed community centre will provide a multi-purpose facility to serve the Tamil Community as well as the surrounding community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposed changes allow the construction and operation of a non-profit community facility on City-owned land leased to the Tamil Community Centre.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 251 Staines Road (formerly addressed 311 Staines Road). This mainly matters for residents in the surrounding low-rise neighbourhood, visitors, and members of the Tamil community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must submit a parking assessment that evaluates parking demand based on the maximum potential of the auditorium combined with the community centre.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 14
+      },
+      {
+       "doc": 1,
+       "page": 15
+      }
+     ]
+    },
+    {
+     "text": "The owner must secure sufficient parking, such as onsite parking, off-site arrangements, shared parking, or a reduction in auditorium capacity, to the satisfaction of the Director, Engineering Review, Development Review.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 15
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended that Council approve the changes to the rules for what can be built on this sites.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 15
+      }
+     ],
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.TE34.217": {
+  "generatedAt": "2026-11-14T08:33:01+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-289306.pdf",
+    "title": "Creek Place",
+    "date": "July 7th 2026",
+    "pages": 1
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The motion proposes to study reclassifying a public laneway into a local road and provide winter maintenance services right away.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this road.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "Residents have faced long-standing challenges with road servicing and access to their properties.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "This helps people get proper maintenance and winter services for their main way to reach their homes.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Creek Place, and Donora Drive, and Dawes Road. This mainly matters for residents living on Creek Place.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": []
+  }
+ },
+ "2026.TE34.12": {
+  "generatedAt": "2026-11-14T08:33:08+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-288451.pdf",
+    "title": "TORONTO REPORT FOR ACTION",
+    "date": "June 19, 2026",
+    "pages": 30
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-288759.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 7
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-288452.pdf",
+    "title": "NOTICE OF PUBLIC MEETING",
+    "date": "June 9, 2026",
+    "pages": 3
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-289953.pdf",
+    "title": "CITY OF TORONTO BY-LAW XXX",
+    "date": "",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-289934.pdf",
+    "title": "CITY OF TORONTO BY-LAW No. ####-2026",
+    "date": "",
+    "pages": 8
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report proposes building a 10 and 7 storey mixed use building with 141 affordable rental units, including 54 rental replacement units, and institutional spaces.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The project is getting fee waivers estimated at $105,028 under the Rental Housing Supply Program's Affordable Rental and Rent Controlled Housing Incentives (ARRCHI) Stream.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "This proposal is made to expand affordable housing and community support services along a transit-supported corridor.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 9
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 1497 and 1501 Queen Street West and 89 and 91 Beaty Avenue, this mainly matters for returning tenants, adults experiencing homelessness living with mental health and/or substance use challenges, and individuals requiring affordable housing in the Parkdale community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 9
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "City Council must approve a Rental Housing Demolition Application to permit the demolition of 50 existing rental homes before introducing the necessary Bills for enactment.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a detailed Conservation Plan prepared by a qualified heritage consultant.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 13
+      }
+     ]
+    },
+    {
+     "text": "The owner must have entered into a legal agreement to protect the heritage building.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 13
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approval of the application to change the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 19, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.NY34.44": {
+  "generatedAt": "2026-11-14T08:33:22+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-287438.pdf",
+    "title": "Request for a Fence Exemption to the Toronto Municipal Code, Chapter 447 - 460 Balliol Street",
+    "date": "May 27, 2026",
+    "pages": 7
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The property owner asks for permission to keep an existing wood fence with a lattice extension that is taller than the rules allow.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The owner wants the taller fence for privacy because a neighbour changed their backyard and increased its height, and to help stop trespassing.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "460 Balliol Street, and this mainly matters for the property owner and neighbours.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that North York Community Council refuse to grant the application for exemption.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "May 27, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.NY34.9": {
+  "generatedAt": "2026-11-14T08:33:35+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288664.pdf",
+    "title": "Report for Action - 1377 Sheppard Avenue West (Downsview West District) - Zoning By-law Amendment",
+    "date": "June 23, 2026",
+    "pages": 56
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-289031.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 45
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288666.pdf",
+    "title": "Affordable Rental Housing Terms",
+    "date": "",
+    "pages": 5
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-289857.pdf",
+    "title": "Supplementary Report - Community Benefits Plan and Affordable Housing",
+    "date": "July 22, 2026",
+    "pages": 4
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The proposal recommends a changes to the rules for what can be built on this site and related plans to redevelop the Downsview West District into a mixed-use community with about 9,250 homes, parks, and new streets.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to transform vacant former military and aviation lands into an inclusive, complete community with housing, jobs, and public spaces near transit.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 18
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "1377 Sheppard Avenue West, and this mainly matters for neighbours, tenants, visitors, and drivers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "At least 10 percent of the residential gross floor area must be secured as affordable rental housing for a minimum of 25 years.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a minimum 930 square metre community space.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide three non-profit licensed child care facilities, each with a minimum of 929 square metres of indoor space and 279 square metres of outdoor space.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must commission a public art installation valued at not less than one million dollars ($1,000,000 million).",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving changes to the rules for what can be built on this site, with a hold on building until some conditions are met.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 23, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.NY34.1": {
+  "generatedAt": "2026-11-14T08:33:39+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-287669.pdf",
+    "title": "Request for a Fence Exemption to the Toronto Municipal Code, Chapter 447 - 112 Dell Park Avenue",
+    "date": "April 24, 2026",
+    "pages": 11
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-287730.pdf",
+    "title": "Request for a Fence Exemption to the Toronto Municipal Code, Chapter 447 - 112 Dell Park Avenue",
+    "date": "June 3, 2026",
+    "pages": 12
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The property owner asks for permission to keep a pool fence that does not meet the City's standard rules for pool fences.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The proposed fence does not create any sightline obstruction or visibility concerns for pedestrians or vehicular traffic.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The application arose from deficiencies found during a pool enclosure review.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 2,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner wants relief from rules requiring minimum separation distance from the pool water's edge and clearance from the last step of the dwelling.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "112 Dell Park Avenue. This mainly matters for the property owner and visitors to the property.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that North York Community Council refuse to grant the application for exemption.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ],
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.CT20.14": {
+  "generatedAt": "2026-11-14T08:33:54+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ct/bgrd/backgroundfile-287986.pdf",
+    "title": "Engagement with Tenant Companies of the St. Lawrence Centre for the Arts",
+    "date": "",
+    "pages": 16
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report proposes updating the vision and mandate of TO Live, consulting tenant companies on infrastructure, giving at least 18 months' notice for closures, and repurposing ground-floor office space for accessibility.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    },
+    {
+     "text": "The report also recommends that TO Live activate an advisory committee, reform booking procedures to ensure 18-month confirmation and first right of refusal, enhance marketing, and offer flexible ticketing options.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 11
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "A review of TO Live's mandate is timely as the previous mandate was established 11 years ago when City Council voted to consolidate Toronto's civic theatres.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 6
+      }
+     ]
+    },
+    {
+     "text": "This helps reground the centre in its original community service mandate and supports local artists and cultural participation.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 6
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "St. Lawrence Centre for the Arts. This mainly matters for not-for-profit tenant companies, local artists, performers, and audiences.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 6
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": []
+  }
+ },
+ "2026.TTC15.9": {
+  "generatedAt": "2026-11-14T08:33:57+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ttc/bgrd/backgroundfile-287304.pdf",
+    "title": "TTC and CUPE, Local 2 – Collective Agreement Ratification",
+    "date": "June 3, 2026",
+    "pages": 2
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The report proposes adopting a new contract agreement between the Toronto Transit Commission and the Canadian Union of Public Employees, Local 2.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "If this passes, staff will carry out all the items in the new agreement.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any other changes to workers' jobs or pay outside of the confidential papers.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "The old contract for these workers ran out on March 31, 2026, so a new one is needed.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "This agreement sets out the rules and pay for electrical skilled trades workers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "This mainly matters for about 700 electrical skilled trades workers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that the TTC Board adopt the recommendations in the confidential attachment and release the details once both sides ratify the tentative agreement.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 3, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.TTC15.4": {
+  "generatedAt": "2026-11-14T08:33:59+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ttc/bgrd/backgroundfile-287450.pdf",
+    "title": "TTC Indigenous Wayfinding Queen Station Pilot Project",
+    "date": "",
+    "pages": 36
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The presentation proposes a pilot project for Indigenous wayfinding at Queen Station using animal icons inspired by the Seven Grandfather Teachings to help riders find exits.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 15
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this station.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "Navigation apps tell riders to take the north entrance, but existing signs do not identify entrances that way and stations have multiple exits that confuse riders.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    },
+    {
+     "text": "The proposal aims to reduce rider stress, remove navigation barriers, and decolonize how people orient themselves by showing Indigenous knowledge as infrastructure.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 1,
+       "page": 12
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Queen Station, and this mainly matters for transit riders and commuters.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 18
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": []
+  }
+ },
+ "2026.SC32.2": {
+  "generatedAt": "2026-11-14T08:34:05+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286852.pdf",
+    "title": "Report for Action - 468 to 480 Danforth Road and 509 Birchmount Road – Zoning By-law Amendment Application – Decision Report – Approval",
+    "date": "May 14, 2026",
+    "pages": 32
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287183.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "05/14/2026",
+    "pages": 10
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286853.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 10
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286900.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "April 30, 2026",
+    "pages": 3
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to build a 14-storey building with 524 homes and shops on the ground floor at 468 to 480 Danforth Road and 509 Birchmount Road.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The proposal also includes expanding Sadler Parkette with a 754 square metre park.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal adds new homes and retail space along transit routes to support a growing population and provide spaces where people can live, work, and shop in the same area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 7
+      },
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "468 to 480 Danforth Road and 509 Birchmount Road. This mainly matters for neighbours, tenants, visitors, and drivers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 12
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "Prior to the first above grade building permit, the owner must convey an on-site parkland dedication with a minimum size of 742 square metres to the City.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must transfer the parkland to the City with no legal claims or rights of others on it, in an acceptable environmental condition.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The development must include a minimum of 340 parking spaces and 394 bicycle parking spaces.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the application to amend the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "May 14, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC32.1": {
+  "generatedAt": "2026-11-14T08:34:12+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286854.pdf",
+    "title": "Decision Report - Approval - 5, 7, 9 and 11 Bellamy Road South",
+    "date": "May 11, 2026",
+    "pages": 32
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-287173.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 9
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286855.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 9
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286720.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "May 6, 2026",
+    "pages": 2
+   },
+   {
+    "n": 5,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-288386.pdf",
+    "title": "Supplementary Report - 5, 7, 9 and 11 Bellamy Road South",
+    "date": "June 19, 2026",
+    "pages": 4
+   },
+   {
+    "n": 6,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-288402.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 8
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "It is proposed to build three blocks of four-storey stacked and back-to-back townhouses with 110 homes at 5, 7, 9 and 11 Bellamy Road South.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The new townhouses would replace three detached houses.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to add family-size homes and gentle density in a stable neighbourhood close to bus service and a GO station.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 7
+      },
+      {
+       "doc": 1,
+       "page": 14
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 5, 7, 9 and 11 Bellamy Road South. This mainly matters for neighbours, residents and visitors in the area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "At least 32% of the lot must be landscaping, with at least 50% of that being soft landscaping.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 4
+      },
+      {
+       "doc": 3,
+       "page": 4
+      }
+     ]
+    },
+    {
+     "text": "Outdoor amenity space must be provided at the rate of at least 6.0 square metres for each home.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 4
+      },
+      {
+       "doc": 3,
+       "page": 4
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the changes to the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "May 11, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.SC32.8": {
+  "generatedAt": "2026-11-14T08:34:15+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/sc/bgrd/backgroundfile-286409.pdf",
+    "title": "120 Donside Drive - Application for Fence Exemption",
+    "date": "April 22, 2026",
+    "pages": 7
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "An application was made to allow a gate fence beam at 120 Donside Drive to be 2.48 meters tall instead of the allowed 2 meters.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "City rules only allow fence gates to be up to 2 meters high.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "An inspection found that the horizontal beam above the east side gate is 2.48 meters high, which breaks the rules.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "120 Donside Drive, and this mainly matters for the property owner.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended refusing to grant an exemption for the existing fence.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "April 22, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.NY33.21": {
+  "generatedAt": "2026-11-14T08:34:18+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-286695.pdf",
+    "title": "Application to Remove a Private Tree – 5 Vonda Avenue",
+    "date": "May 5, 2026",
+    "pages": 5
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A permit is requested to remove one silver maple tree at 5 Vonda Avenue.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "If the condition of the tree worsens, the applicant can reapply for a permit to remove the tree.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The applicant wants to remove the tree due to a concern for potential future failure.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The City wants to protect healthy trees to reach its goal of 40 percent tree cover across Toronto by 2050.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 5 Vonda Avenue, this mainly matters for the property owner and the local community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that the North York Community Council deny the request for a permit to remove one privately-owned tree.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "May 5, 2026",
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.EY32.8": {
+  "generatedAt": "2026-11-14T08:34:21+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ey/bgrd/backgroundfile-287232.pdf",
+    "title": "Request for a Fence Exemption - 4 Berryton Avenue",
+    "date": "April 13, 2026",
+    "pages": 8
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ey/bgrd/backgroundfile-286326.pdf",
+    "title": "Request for a Fence Exemption - 4 Berryton Avenue",
+    "date": "April 13, 2026",
+    "pages": 9
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The property owner of 4 Berryton Avenue is asking for permission to use a Juliette-style gate and enclosure for a pool instead of building a fourth fence between the pool and the deck.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "If the owner had to build a fourth fence, it would limit how people can move around that area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The owner wants to use a Juliette-style gate at the rear access point to prevent access into the pool area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 4 Berryton Avenue. This mainly matters for the property owner.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that Etobicoke York Community Council refuse to grant the application for exemption because the fence fails to comply with the provisions of Toronto Municipal Code, Chapter 447 Fences.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ],
+     "step": "staff"
+    }
+   ]
+  }
+ },
+ "2026.EY32.5": {
+  "generatedAt": "2026-11-14T08:34:25+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ey/bgrd/backgroundfile-286766.pdf",
+    "title": "3100 Weston Road – Zoning By-law Amendment Application – Appeal Report",
+    "date": "May 7, 2026",
+    "pages": 24
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The proposal asks to build three four-storey residential buildings with 125 homes, while keeping the Carmine Stefano Community Centre and existing heritage structures on the site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "The applicant appealed to the Ontario Land Tribunal because Council did not make a decision within the time frame set by the Planning Act.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The proposal aims to add new homes to a major street while protecting the natural environment and local heritage buildings.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 6
+      },
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 3100 Weston Road, this mainly matters for neighbours, visitors, and people using the nearby parks, trails, and community centre.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 1,
+       "page": 5
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "A hold on building must stay in place until the owner submits a revised water, sewer and drainage report showing adequate capacity.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    },
+    {
+     "text": "The owner must secure design, construction, and financial security for any new or upgraded water, sewer and drainage infrastructure needed.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 8
+      },
+      {
+       "doc": 1,
+       "page": 9
+      }
+     ]
+    },
+    {
+     "text": "The owner must submit a revised hydrological assessment report to check groundwater quality and quantity.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 12
+      }
+     ]
+    },
+    {
+     "text": "The owner must address all outstanding urban forestry, natural heritage, ravine protection, transportation, and urban design issues.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 12
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended that the City Solicitor and appropriate staff attend the Ontario Land Tribunal hearing to oppose the application in its current form and continue discussions with the applicant to resolve outstanding issues.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "May 7, 2026",
+     "step": "staff"
+    }
+   ]
+  }
  }
 }

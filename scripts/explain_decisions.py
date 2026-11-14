@@ -9,6 +9,8 @@ How it works, for each entry in frontend/src/data/featured.json:
   2. Pull the text out of each page, keeping the page number.
   3. Ask Gemini to answer 4 questions (what's happening, why, who's affected, conditions) using ONLY that text,
      citing {doc, page} for every sentence.
+     If the item has official Tracking Status text (official-tracking.json), it is given to the AI as context so it never
+     contradicts the real outcome. The website writes the outcome sentence itself from that text (frontend/src/lib/trackingStatus.js).
   4. Add "Where is it in the process?" ourselves from the open-data voting record (never from the PDF or the AI).
      "Can I still have a say?" is not written here: the website's own stage logic answers it.
   5. Check the answer (every citation must point at a real document and page), then save it
@@ -33,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "frontend" / "src" / "data"
 FEATURED_FILE = DATA_DIR / "featured.json"  # what we want explained (you edit this)
 VOTES_FILE = DATA_DIR / "open-data-items.json"  # the voting record (latest vote on each item)
+TRACKING_FILE = DATA_DIR / "official-tracking.json"  # "Tracking Status" text copied from each official City page
 OFFICIAL_FILE = DATA_DIR / "official-status.json"  # status checked by hand on the official City pages (wins over the voting record)
 HAND_CHECKED_FILE = DATA_DIR / "decisions.json"  # our 2 hand-checked decisions (not in the voting record)
 OUTPUT_FILE = DATA_DIR / "explanations.json"  # what this script writes (the site reads this)
@@ -44,7 +47,7 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 MAX_PDF_BYTES = 40 * 1024 * 1024
 MAX_TOTAL_CHARS = 600_000  # roughly 150k tokens: more than this and we refuse rather than silently cut text off
 NOT_CLEAR = "Not clear from the report"
-NOT_MENTIONED = "The report doesn't mention"  # "The report doesn't mention any plan to replace this building." needs no citation
+NOT_MENTIONED = ("The report doesn't mention", "The report does not mention")  # e.g. "The report doesn't mention any plan to replace this building." needs no citation
 
 # Only official City of Toronto document links may be downloaded.
 ALLOWED_HOST = "www.toronto.ca"
@@ -95,7 +98,8 @@ Rules you must follow:
 2. The documents are usually a motion, a staff report or a recommendation. They do NOT tell you what was decided.
    So describe what is in them as "recommended" or "proposed" (for example "The motion proposes free rides..."
    or "Staff recommend approving..."). Never say Council "decided", "approved" or "changed" something, and never say it already happened.
-   The result of the vote is written somewhere else. Do not mention votes or results.
+   If the text starts with an OFFICIAL TRACKING STATUS block, that is the real outcome: never contradict it, and do not repeat it
+   (the website shows it first). Everywhere else keep using "proposed" / "recommended" wording, and do not mention votes or results.
 3. "why" must answer "Why now?" first, if the document says: the law change, deadline or event that forces this decision
    (for example "A law change called Bill 23 says listed buildings must be protected or taken off the Heritage Register by
    January 1, 2027"). Say plainly what happens if nothing is done, only if the document says so. Then one sentence on why the
@@ -236,10 +240,10 @@ def build_document_text(docs):
 
 # ---------- asking Gemini ----------
 
-def ask_gemini(api_key, document_text):
+def ask_gemini(api_key, document_text, tracking=None):
     body = {
         "systemInstruction": {"parts": [{"text": INSTRUCTIONS}]},
-        "contents": [{"parts": [{"text": document_text}]}],
+        "contents": [{"parts": [{"text": (f"[[OFFICIAL TRACKING STATUS]]\n{tracking}\n\n" if tracking else "") + document_text}]}],
         "generationConfig": {
             "temperature": 0.1,  # as low as possible: stick to the text
             "responseMimeType": "application/json",
@@ -289,7 +293,7 @@ def clean_sentences(sentences, docs):
             if isinstance(doc, int) and 1 <= doc <= len(docs) and isinstance(page, int) and 1 <= page <= len(docs[doc - 1]["pages"]):
                 if {"doc": doc, "page": page} not in cites:
                     cites.append({"doc": doc, "page": page})
-        if not cites and not text.startswith((NOT_CLEAR, NOT_MENTIONED)):
+        if not cites and not text.startswith((NOT_CLEAR, *NOT_MENTIONED)):
             print(f"  dropped a sentence with no valid source: {text[:60]}...")
             continue
         row = {"text": text, "cites": cites}
@@ -342,6 +346,11 @@ SWAPS = [
     (r"zoning rules", "building rules"),
     (r"height and setbacks", "height and how far it sits back from the property edges"),
     (r"that City Council to change", "that City Council change"),  # tidies the sentence after the swaps above
+    (r"approval of the changes to the rules for what can be built on this site application", "approving changes to the rules for what can be built on this site"),
+    (r"a series of holding provisions", "a hold on building until some conditions are met"),
+    (r"holding provisions?", "hold on building until some conditions are met"),
+    (r"free and clear of all easements, encumbrances, and encroachments", "with no legal claims or rights of others on it"),
+    (r"each dwelling unit", "each home"),
 ]
 SWAPS = [(re.compile(pattern, re.I), new) for pattern, new in SWAPS]
 
@@ -400,8 +409,8 @@ def body_name(committee):
 def voting_record_step(item_id):
     """The "process" answer, taken ONLY from the voting record (or, for our 2 hand-checked decisions that are not
     in it, from their official agenda item page). Returns (sentence, document) or None. The PDFs are never used here."""
-    if item_id in load_json(OFFICIAL_FILE, {"items": {}})["items"]:
-        return None  # the website shows the hand-checked official status for this item instead
+    if item_id in load_json(OFFICIAL_FILE, {"items": {}})["items"] or item_id in load_json(TRACKING_FILE, {"items": {}})["items"]:
+        return None  # the website shows the status from the official City page for this item instead
     votes = {row["id"]: row for row in load_json(VOTES_FILE, {"items": []})["items"]}
     row = votes.get(item_id)
     if row:
@@ -465,7 +474,9 @@ def explain_one(entry, api_key):
     if len(text) > MAX_TOTAL_CHARS:
         raise ValueError(f"documents are too long ({len(text):,} characters). Use fewer or shorter PDFs")
     print(f"  asking {MODEL} ({len(text):,} characters)...")
-    return build_explanation(ask_gemini(api_key, text), docs, entry["id"])
+    tracking = load_json(TRACKING_FILE, {"items": {}})["items"].get(entry["id"], {}).get("tracking")
+    answer = ask_gemini(api_key, text, tracking)
+    return build_explanation(answer, docs, entry["id"])
 
 
 def main():

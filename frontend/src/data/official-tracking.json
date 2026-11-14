@@ -1,0 +1,74 @@
+{
+  "note": "Tracking Status copied from each item's official City of Toronto page on Nov 14, 2026, for items the voting record left 'In progress'. Use this text to set the real status.",
+  "items": {
+    "2026.TTC17.1": {
+      "tracking": "This item was considered by Toronto Transit Commission on August 5, 2026 and was adopted with amendments."
+    },
+    "2026.TTC16.9": {
+      "tracking": "This item was considered by Toronto Transit Commission on July 22, 2026 and was adopted with amendments."
+    },
+    "2026.IE31.8": {
+      "tracking": "This item was considered by Infrastructure and Environment Committee on July 15, 2026. The Infrastructure and Environment Committee has referred this item to an official or other body without making a decision."
+    },
+    "2026.IE31.9": {
+      "tracking": "This item was considered by Infrastructure and Environment Committee on July 15, 2026 and was adopted without amendment."
+    },
+    "2026.SC33.9": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 without amendments and without debate. Scarborough Community Council considered it on July 9, 2026 and adopted it with amendments."
+    },
+    "2026.SC33.2": {
+      "tracking": "This item was considered by Scarborough Community Council on July 9, 2026. The Scarborough Community Council postponed consideration of this item."
+    },
+    "2026.SC33.54": {
+      "tracking": "This item was considered by Scarborough Community Council on July 9, 2026 and was adopted without amendment. City Council has delegated authority for this matter to the Scarborough Community Council and therefore, the decision is final."
+    },
+    "2026.SC33.1": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 without amendments and without debate. Scarborough Community Council considered it on July 9, 2026 and adopted it without amendment."
+    },
+    "2026.SC33.5": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 without amendments and without debate. Scarborough Community Council considered it on July 9, 2026 and adopted it without amendment."
+    },
+    "2026.TE34.217": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 without amendments. Toronto and East York Community Council considered it on July 8 and 9, 2026 and adopted it without amendment."
+    },
+    "2026.TE34.12": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 with amendments. Toronto and East York Community Council considered it on July 8 and 9, 2026 and adopted it with amendments."
+    },
+    "2026.NY34.44": {
+      "tracking": "This item was considered by North York Community Council on July 7, 2026 and was adopted with amendments. City Council has delegated authority for this matter to the North York Community Council and therefore, the decision is final."
+    },
+    "2026.NY34.9": {
+      "tracking": "City Council adopted this item on July 29 and 30, 2026 with amendments. North York Community Council considered it on July 7, 2026 and adopted it with amendments."
+    },
+    "2026.NY34.1": {
+      "tracking": "This item was considered by North York Community Council on July 7, 2026 and was adopted with amendments. City Council has delegated authority for this matter to the North York Community Council and therefore, the decision is final."
+    },
+    "2026.CT20.14": {
+      "tracking": "This item was considered by TO Live on June 15, 2026. TO Live has referred this item to an official or other body without making a decision."
+    },
+    "2026.TTC15.9": {
+      "tracking": "This item was considered by Toronto Transit Commission on June 3, 2026 and was adopted without amendment."
+    },
+    "2026.TTC15.4": {
+      "tracking": "This item was considered by the Toronto Transit Commission on June 3, 2026. It was received for information only. No further action will be taken on this item."
+    },
+    "2026.SC32.2": {
+      "tracking": "City Council adopted this item on June 24 and 25, 2026 without amendments and without debate. Scarborough Community Council considered it on May 28, 2026 and adopted it without amendment."
+    },
+    "2026.SC32.1": {
+      "tracking": "City Council adopted this item on June 24 and 25, 2026 with amendments. Scarborough Community Council considered it on May 28, 2026 and adopted it without amendment."
+    },
+    "2026.SC32.8": {
+      "tracking": "This item was considered by Scarborough Community Council on May 28, 2026 and was not adopted. The motion to grant the fence exemption lost, so the fence exemption was not granted. City Council has delegated authority for this matter to the Scarborough Community Council and therefore, the decision is final."
+    },
+    "2026.NY33.21": {
+      "tracking": "North York Community Council on May 26, 2026 denied the request for a permit to remove one privately-owned tree at 5 Vonda Avenue, as staff recommended. City Council has delegated authority for this matter to the North York Community Council and therefore, the decision is final."
+    },
+    "2026.EY32.8": {
+      "tracking": "Etobicoke York Community Council on May 26, 2026 granted the fence exemption permit at 4 Berryton Avenue for a Juliette-style gate and enclosure. City Council has delegated authority for this matter to the Etobicoke York Community Council and therefore, the decision is final."
+    },
+    "2026.EY32.5": {
+      "tracking": "City Council adopted this item on June 24 and 25, 2026 without amendments and without debate. Etobicoke York Community Council considered it on May 26, 2026 and adopted it with amendments."
+    }
+  }
+}

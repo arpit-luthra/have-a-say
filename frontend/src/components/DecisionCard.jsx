@@ -1,7 +1,7 @@
 // One item in a list: topic, plain title, status · distance, and two buttons.
 // The card itself is not a link: "Show on map" and "Read more" do the two jobs.
 import { Link } from 'react-router-dom'
-import { statusWord } from '../lib/statusWord.js'
+import { statusText } from '../lib/statusWord.js'
 import './DecisionCard.css'
 
 // `onHover(id | null)` lets the page highlight this card's map pin; `active` = its pin is hovered.
@@ -18,7 +18,7 @@ export default function DecisionCard({ decision, distanceKm = null, active = fal
       {decision.topic !== 'Other' && <p className="card__topic">{decision.topic}</p>}
       <h2 className="card__title">{decision.title}</h2>
       <p className="card__meta">
-        {decision.upcoming ? <span className="card__open">Open for comments</span> : statusWord(decision)}
+        {decision.upcoming ? <span className="card__open">Open for comments</span> : statusText(decision)}
         {distanceKm != null && ` · ${distanceKm.toFixed(1)} km away`}
       </p>
       <div className="card__actions">

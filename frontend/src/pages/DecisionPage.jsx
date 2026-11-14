@@ -29,7 +29,7 @@ import StageTracker from '../components/StageTracker.jsx'
 import './DecisionPage.css'
 
 const NOT_CLEAR = 'Not clear from the report'
-const NOT_MENTIONED = "The report doesn't mention" // e.g. "The report doesn't mention any plan to replace this building."
+const NOT_MENTIONED = ["The report doesn't mention", 'The report does not mention'] // e.g. "The report doesn't mention any plan to replace this building."
 const STEP_NAMES = {
   staff: 'Staff recommendation',
   committee: 'Committee decision',
@@ -111,7 +111,7 @@ function Sentences({ sentences, bullets = false }) {
         const note = certaintyNote(s.certainty)
         return (
           <p className="answer" key={i}>
-            <span className={s.text.startsWith(NOT_CLEAR) || s.text.startsWith(NOT_MENTIONED) ? 'answer__unclear' : undefined}>{s.text}</span>{' '}
+            <span className={s.text.startsWith(NOT_CLEAR) || NOT_MENTIONED.some((start) => s.text.startsWith(start)) ? 'answer__unclear' : undefined}>{s.text}</span>{' '}
             {s.links.map((l) => (
               <a className="src" key={l.url} href={l.url} target="_blank" rel="noreferrer">
                 {l.label}
@@ -190,6 +190,14 @@ function statusLine(status, body) {
   return status // "Status unclear"
 }
 
+// The same line for an item whose status comes from the official City page (it can carry a detail like "Postponed").
+function officialStatusLine(o, word) {
+  const detail = o.label && o.label !== word ? ` · ${o.label}` : ''
+  if (word === 'Approved' || word === 'Rejected') return `${word} by ${o.finalBody}${detail}`
+  if (word === 'In progress') return `In progress${detail} · ${o.steps[0].body}`
+  return `${word} · ${o.finalBody}` // "Noted, no action"
+}
+
 // The date shown under each of the 4 tracker steps.
 // Our hand-checked decisions know all their dates. For the others we only know the LATEST vote,
 // so only the step that vote belongs to gets a date (we never invent the others).
@@ -200,8 +208,8 @@ function trackerDates(item, info) {
   }
   if (item.official) {
     // From the official City page. A body that was given the power to decide has one date: the decision.
-    const { date, steps } = item.official
-    const dates = ['', '', '', formatDate(date)]
+    const { date, steps, final } = item.official
+    const dates = ['', '', '', final ? formatDate(date) : '']
     for (const st of steps ?? []) dates[st.body.includes('City Council') ? 2 : 1] = formatDate(st.date)
     if (!steps) dates[1] = formatDate(date)
     return dates
@@ -230,7 +238,7 @@ function buildSources(item, ex, info) {
     date: item.upcoming
       ? `meeting ${formatDate(item.meeting.date)}`
       : item.official
-        ? `final status ${formatDate(item.official.date)}`
+        ? `${item.official.final ? 'final status' : 'latest step'} ${formatDate(item.official.date)}`
         : `latest vote ${formatDate(item.dateISO)}`,
     itemNumber: item.id,
   }
@@ -274,7 +282,9 @@ export default function DecisionPage() {
 
   const officialLink = [{ label: 'Official City page', url: item.sourceUrl }]
   // A hand-checked outcome (official-status.json) is the first sentence of "What's happening?".
-  const outcome = item.official?.outcome ? [{ text: item.official.outcome, links: officialLink }] : []
+  // Hand-checked (official-status.json) or written from the official page's Tracking Status text (trackingStatus.js).
+  const outcomeText = item.official?.outcome
+  const outcome = outcomeText ? [{ text: outcomeText, links: officialLink }] : []
   const happening = [...outcome, ...(ex ? fromExplanation(ex, 'happening') : info ? fromHandChecked(info, 'changing') : [])]
   const why = ex ? fromExplanation(ex, 'why') : info ? fromHandChecked(info, 'why') : []
   const whereWho = ex ? fromExplanation(ex, 'where') : info ? fromHandChecked(info, 'where', 'who') : []
@@ -302,7 +312,7 @@ export default function DecisionPage() {
     item.upcoming
       ? [`In progress · ${item.meeting.body} meets ${formatDate(item.meeting.date)}`, item.place]
       : [
-          statusLine(statusWord(voteItem), item.official?.finalBody ?? body),
+          item.official ? officialStatusLine(item.official, statusWord(voteItem)) : statusLine(statusWord(voteItem), body),
           formatDate(item.official?.date ?? item.dateISO),
           item.ward?.match(/^Ward \d+/)?.[0], // only when we really know the ward (our 2 hand-checked decisions)
           item.place && `${item.place}${item.approximate ? ' (approximate)' : ''}`,

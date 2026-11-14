@@ -14,6 +14,17 @@ import manual from '../data/manual-locations.json'
 import upcomingData from '../data/upcoming-items.json'
 // Final status checked by hand on each item's official City page. It overrides the guess from the voting record.
 import officialStatus from '../data/official-status.json'
+// Tracking Status text copied from the official pages, for items the voting record left "In progress". Parsed into a status.
+import officialTracking from '../data/official-tracking.json'
+import { parseTracking } from './trackingStatus.js'
+
+// Hand-checked entries (official-status.json) win over parsed tracking text, which wins over the voting record.
+function officialFor(id) {
+  const hand = officialStatus.items[id]
+  if (hand) return { word: hand.status, label: null, final: true, ...hand }
+  const tracked = officialTracking.items[id]
+  return tracked ? parseTracking(tracked.tracking) : null
+}
 
 const locations = { ...geocoded, ...manual }
 
@@ -32,7 +43,7 @@ const fromOpenData = openData.items
     const spot = locations[item.id] // undefined = no pin for this one
     return {
       ...item,
-      official: officialStatus.items[item.id] ?? null,
+      official: officialFor(item.id),
       ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address, approximate: Boolean(spot.approximate) }),
       // A hand-checked plain title (official-status.json) beats the generated one.
       title: officialStatus.items[item.id]?.plainTitle || plain || item.title,
