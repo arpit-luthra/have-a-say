@@ -396,3 +396,231 @@ a.say__link:hover {
 .sources__date {
   color: var(--ink-muted);
 }
+
+/* ================= Decision page (".dp") =================
+   One centred 760px column. Header, then 8 bordered blocks.
+   Type: title 32 / headings 18 semibold / body 16 / small 14. Spacing: 16 between blocks, 24 inside.
+   Blue only for links and buttons. No shadows. */
+.dp {
+  --text: #1c2733;
+  --grey: #5d6b7a;
+  --rule: #e1e7ef;
+  min-height: 100%;
+  padding: 0 24px 40px;
+  background: var(--paper);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.dp__wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.dp .decision__back {
+  margin-top: 24px;
+  font-size: 14px;
+}
+.dp a {
+  color: var(--brand);
+}
+.dp p {
+  margin: 0 0 8px;
+}
+.dp .mono {
+  font-family: var(--font-mono);
+}
+
+.dp__header {
+  margin: 24px 0 24px;
+}
+.dp__title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.dp__meta {
+  margin: 0 0 8px;
+  color: var(--grey);
+}
+.dp .dcard__toggle {
+  font-size: 14px;
+  color: var(--grey);
+}
+.dp .dcard__official {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--grey);
+}
+
+/* A block: white, 1px light border, 8px corners, no shadow, 24px padding, 16px gap between blocks */
+.dp__block {
+  margin-bottom: 16px;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: #fff;
+}
+.dp__heading {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.dp p.answer {
+  margin: 0 0 8px;
+}
+.dp p.dp__soon,
+.dp p.dp__note {
+  color: var(--grey);
+}
+.dp p.dp__note {
+  margin: 16px 0 0;
+  font-size: 14px;
+}
+.src {
+  margin-left: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.answer__unclear,
+.answer__note {
+  font-style: italic;
+  color: var(--grey);
+}
+.steps__item {
+  margin-top: 16px;
+}
+.steps__name {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.steps__date {
+  font-weight: 400;
+  color: var(--grey);
+}
+
+/* Say box + councillor */
+.dp .say p,
+.dp .councillor p {
+  margin-bottom: 8px;
+}
+.dp .say__main,
+.dp .councillor__name {
+  font-weight: 600;
+}
+.dp .councillor__ward {
+  color: var(--grey);
+  font-size: 14px;
+}
+.dp a.say__link,
+.dp a.councillor__btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.dp a.say__link:visited,
+.dp a.councillor__btn:visited,
+.dp a.say__link:focus,
+.dp a.councillor__btn:focus {
+  color: #fff;
+}
+.dp a.say__link:hover,
+.dp a.councillor__btn:hover {
+  background: var(--brand-dark);
+  color: #fff;
+}
+.dp p.row__note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--grey);
+}
+.dp .votes__all {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.dp .votes__all summary {
+  cursor: pointer;
+  color: var(--brand);
+}
+.dp .votes__all ul {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.dp .votes__all li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* Tracker: text colour and grey, not blue */
+.dp .tracker__dot--reached {
+  background: var(--text);
+}
+.dp .tracker__step--reached .tracker__line {
+  background: var(--text);
+}
+.dp .tracker__dot--rejected {
+  background: var(--grey);
+}
+.dp .tracker__step {
+  min-width: 0;
+  padding-right: 8px;
+}
+.dp .tracker__steps {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.dp .tracker__name {
+  font-size: 14px;
+}
+
+/* Sources: small, grey */
+.dp .sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--grey);
+}
+.dp .sources li {
+  margin-bottom: 8px;
+}
+.dp .sources li:last-child {
+  margin-bottom: 0;
+}
+
+/* Address box inside the councillor block: flat, same style as the page */
+.dp .find-ward {
+  margin: 8px 0 16px;
+}
+
+@media (max-width: 600px) {
+  .dp {
+    padding: 0 16px 24px;
+  }
+  .dp__title {
+    font-size: 28px;
+  }
+  .dp__block {
+    padding: 16px;
+  }
+}
+
+.dp .bullets {
+  margin: 0;
+  padding-left: 24px;
+}
+.dp .bullets li {
+  margin-bottom: 8px;
+}

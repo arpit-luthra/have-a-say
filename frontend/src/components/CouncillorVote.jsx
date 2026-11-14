@@ -6,7 +6,7 @@ import { useResident } from '../lib/ResidentContext.jsx'
 import './CouncillorVote.css'
 
 export const TERM_NOTE =
-  'A new City Council term starts November 15, 2026. Votes shown were cast by the councillors in office at the time.'
+  'A new council term starts Nov 15, 2026. Votes were cast by the councillors in office at the time.'
 
 /** The sentence about the resident's own councillor. `null` if there is nothing to say. */
 function wardSentence(ward, summary) {
@@ -19,7 +19,7 @@ function wardSentence(ward, summary) {
   return `Ward ${ward.number}'s councillor at the time, ${name}, ${action}`
 }
 
-export default function CouncillorVote({ item, full = false }) {
+export default function CouncillorVote({ item, full = false, hideWard = false }) {
   const { ward } = useResident()
   const data = useVoteData()
   const summary = summariseVote(data, item.id, ward?.number)
@@ -34,14 +34,14 @@ export default function CouncillorVote({ item, full = false }) {
   return (
     <>
       {!summary ? (
-        <p>
+        hideWard ? null : <p>
           {data
             ? "Individual votes for this item aren't in the open data."
             : 'Loading votes…'}
         </p>
       ) : (
         <>
-          <p>{wardSentence(ward, summary)}</p>
+          {!hideWard && <p>{wardSentence(ward, summary)}</p>}
           <details className="votes__all">
             <summary>See how all councillors voted</summary>
             <p>
@@ -58,7 +58,6 @@ export default function CouncillorVote({ item, full = false }) {
               ))}
             </ul>
           </details>
-          <p className="row__note">This is the latest recorded vote on this item.</p>
         </>
       )}
       <p className="row__note">{TERM_NOTE}</p>

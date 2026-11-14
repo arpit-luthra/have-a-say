@@ -3,7 +3,8 @@
 import { getStageSteps } from '../lib/stageSteps.js'
 import './StageTracker.css'
 
-export default function StageTracker({ item, compact = false }) {
+// `dates`: optional list of 4 strings (or empty) shown under each step. `quiet`: hide the small notes under the tracker.
+export default function StageTracker({ item, compact = false, dates = null, quiet = false }) {
   const { steps, label, next, uncertain } = getStageSteps(item)
 
   if (compact) {
@@ -29,12 +30,13 @@ export default function StageTracker({ item, compact = false }) {
               {i < steps.length - 1 && <span className="tracker__line" aria-hidden="true" />}
             </span>
             <span className="tracker__name">{s.name}</span>
+            {dates?.[i] && <span className="tracker__date">{dates[i]}</span>}
             {s.note && <em className="tracker__note">{s.note}</em>}
           </li>
         ))}
       </ol>
-      {next && <p className="tracker__next">{next}</p>}
-      {uncertain && <p className="tracker__uncertain">Based on the latest recorded vote.</p>}
+      {!quiet && next && <p className="tracker__next">{next}</p>}
+      {!quiet && uncertain && <p className="tracker__uncertain">Based on the latest recorded vote.</p>}
     </div>
   )
 }

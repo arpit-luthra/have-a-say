@@ -21,7 +21,7 @@ export function subline(decision, km = null) {
   return parts.join(' · ')
 }
 
-/** Map hover tooltip: just the topic word, e.g. "Housing". */
+/** Map hover tooltip: the short plain title, e.g. "New building approved at 245 Eglinton Ave E". */
 export function tooltipText(decision) {
-  return decision.topic
+  return decision.title
 }

@@ -2,17 +2,24 @@
 // thin lines between sections. EVERY decision gets the same sections in the same order:
 //   What's happening? > Why? > Where, and who's affected? > Conditions (only if any)
 //   > Where is it in the process? > Can I still have a say? > Your councillor > Sources
+// Each is its own bordered block. Without a report, the story blocks say "Coming soon" (said once per block).
 //
 // Where the words come from (best first):
 //   1. explanations.json   made by scripts/explain_decisions.py from the official PDFs; every sentence has a page link
 //   2. decision-details.json   our 2 hand-checked decisions
 //   3. nothing yet: we show the plain title/address and say we don't have the report
 // The process tracker, say box, councillor and sources come from open data, so they are always filled.
-import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { navTrail } from '../lib/navTrail.js'
 import { allItems } from '../lib/allItems.js'
 import { formatDate } from '../lib/formatDate.js'
-import { bodyName, outcomeWord } from '../lib/voteWords.js'
+import { bodyName } from '../lib/voteWords.js'
+import { statusWord } from '../lib/statusWord.js'
+import { getStageSteps } from '../lib/stageSteps.js'
+import { useResident } from '../lib/ResidentContext.jsx'
+import { loadWards, wardSummary } from '../lib/wardData.js'
+import { findWardAt } from '../lib/geo.js'
 import details from '../data/decision-details.json'
 import explanations from '../data/explanations.json'
 import CouncillorVote from '../components/CouncillorVote.jsx'
@@ -22,7 +29,6 @@ import StageTracker from '../components/StageTracker.jsx'
 import './DecisionPage.css'
 
 const NOT_CLEAR = 'Not clear from the report'
-const NO_REPORT = "We don't have the report for this decision yet."
 const STEP_NAMES = {
   staff: 'Staff recommendation',
   committee: 'Committee decision',
@@ -34,10 +40,13 @@ const STEP_NAMES = {
 // so the page below only has to know one thing.
 
 // "Report, p. 4" linking to the PDF opened at page 4. (#page=4 is a standard PDF link parameter.)
+// The voting record is cited like a document but has no pages: it just links to the record.
 function pageLinks(sentence, documents) {
+  const reports = documents.filter((d) => !d.record)
   return sentence.cites.map((c) => {
     const doc = documents.find((d) => d.n === c.doc)
-    const name = documents.length === 1 ? 'Report' : `Doc ${c.doc}`
+    if (doc.record) return { label: doc.title, url: doc.url }
+    const name = reports.length === 1 ? 'Report' : `Doc ${c.doc}`
     return { label: `${name}, p. ${c.page}`, url: `${doc.url}#page=${c.page}` }
   })
 }
@@ -78,7 +87,23 @@ function OfficialTitle({ title, plain }) {
 }
 
 // Sentences, each followed by its small source links. "Not clear from the report" is shown in italics.
-function Sentences({ sentences }) {
+function Sentences({ sentences, bullets = false }) {
+  if (bullets) {
+    return (
+      <ul className="bullets">
+        {sentences.map((s, i) => (
+          <li key={i}>
+            {s.text}{' '}
+            {s.links.map((l) => (
+              <a className="src" key={l.url} href={l.url} target="_blank" rel="noreferrer">
+                {l.label}
+              </a>
+            ))}
+          </li>
+        ))}
+      </ul>
+    )
+  }
   return (
     <>
       {sentences.map((s, i) => {
@@ -95,18 +120,6 @@ function Sentences({ sentences }) {
           </p>
         )
       })}
-    </>
-  )
-}
-
-// Shown when we have no report for this decision: what open data tells us, plus an honest note.
-function NoReport({ lines }) {
-  return (
-    <>
-      {lines.map((line) => (
-        <p className="answer" key={line}>{line}</p>
-      ))}
-      <p className="answer answer__unclear">{NO_REPORT}</p>
     </>
   )
 }
@@ -157,21 +170,52 @@ function ProcessSteps({ sentences }) {
   )
 }
 
-function Row({ title, say = false, children }) {
+// One bordered block: heading, then content.
+function Block({ title, children }) {
   return (
-    <section className="row">
-      <h2 className={`row__q${say ? ' row__q--say' : ''}`}>{title}</h2>
-      <div className="row__a">{children}</div>
+    <section className="dp__block">
+      <h2 className="dp__heading">{title}</h2>
+      {children}
     </section>
   )
+}
+
+const COMING_SOON = "Coming soon. We're adding the full report for this decision."
+
+// "Approved by City Council", "In progress at City committee"... the only place the status is written in words.
+function statusLine(status, body) {
+  if (status === 'Approved' || status === 'Rejected') return `${status} by ${body}`
+  if (status === 'In progress') return `In progress at ${body}`
+  return status // "Status unclear"
+}
+
+// The date shown under each of the 4 tracker steps.
+// Our hand-checked decisions know all their dates. For the others we only know the LATEST vote,
+// so only the step that vote belongs to gets a date (we never invent the others).
+function trackerDates(item, info) {
+  const stages = info?.sections.find((sec) => sec.stages)?.stages
+  if (stages) return stages.map((st) => (st.skipped ? '' : st.date))
+  const dates = ['', '', '', '']
+  const date = formatDate(item.dateISO)
+  const steps = getStageSteps(item).steps
+  if (item.committee === 'City Council') {
+    dates[2] = date
+    if (steps[3].state !== 'upcoming') dates[3] = date
+  } else if (steps[2].state === 'not-needed') {
+    dates[3] = date // a board that decides for itself
+  } else {
+    dates[1] = date
+  }
+  return dates
 }
 
 // Every document we used, with its date. The official page is always first.
 function buildSources(item, ex, info) {
   const official = {
-    label: `Official City page for item ${item.id}`,
+    label: 'Official City of Toronto page',
     url: item.sourceUrl,
-    date: item.dateISO ? `latest vote ${formatDate(item.dateISO)}` : '',
+    date: `latest vote ${formatDate(item.dateISO)}`,
+    itemNumber: item.id,
   }
   if (ex) return [official, ...ex.documents.map((d) => ({ label: d.title, url: d.url, date: d.date }))]
   if (info) return [official, ...info.documents.map((d) => ({ label: d.label, url: d.url, date: '' }))]
@@ -180,7 +224,22 @@ function buildSources(item, ex, info) {
 
 export default function DecisionPage() {
   const { id } = useParams() // the part of the address after /decision/
+  const navigate = useNavigate()
+  const { ward } = useResident() // the ward of the address the person searched (if any)
   const item = allItems.find((d) => d.id === id)
+
+  // The ward this decision is in, worked out from its pin. Used when no address was searched.
+  const [areaWard, setAreaWard] = useState(null)
+  useEffect(() => {
+    setAreaWard(null)
+    if (item?.lat == null) return
+    loadWards()
+      .then((wards) => {
+        const match = findWardAt(item.lng, item.lat, wards.features)
+        setAreaWard(match ? wardSummary(match.properties) : null)
+      })
+      .catch(() => setAreaWard(null))
+  }, [item?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!item) {
     return (
@@ -196,99 +255,128 @@ export default function DecisionPage() {
   const ex = explanations[id]
   const info = !ex ? details[id] : null // hand-checked text is only used when there is no generated explanation
 
-  // The three "story" sections.
   const happening = ex ? fromExplanation(ex, 'happening') : info ? fromHandChecked(info, 'changing') : []
   const why = ex ? fromExplanation(ex, 'why') : info ? fromHandChecked(info, 'why') : []
   const whereWho = ex ? fromExplanation(ex, 'where') : info ? fromHandChecked(info, 'where', 'who') : []
   const conditions = ex ? fromExplanation(ex, 'conditions') : []
   const processSentences = ex ? fromExplanation(ex, 'process') : []
-  const saySentences = ex ? fromExplanation(ex, 'say') : info ? fromHandChecked(info, 'say') : []
-  const timeline = info?.sections.find((sec) => sec.stages)?.stages
+  // With a full explanation, the say box (our stage logic) answers this. Only the older hand-written text has its own.
+  const saySentences = info ? fromHandChecked(info, 'say') : []
 
-  const placeLine = item.place ? `Where: ${item.place}${item.approximate ? ' (approximate spot on the map)' : ''}` : null
-  const sources = buildSources(item, ex, info)
-  const fallbackLines = [item.title]
   // Our 2 hand-checked decisions have no vote record of their own; both were adopted by City Council.
   const voteItem = item.detailed ? { ...item, committee: 'City Council', result: 'Carried' } : item
+  const body = bodyName(voteItem.committee)
+  const headerLine = [
+    statusLine(statusWord(voteItem), body),
+    formatDate(item.dateISO),
+    item.place && `${item.place}${item.approximate ? ' (approximate)' : ''}`,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+  const sources = buildSources(item, ex, info)
 
   return (
-    <main className="decision">
-      <div className="decision__band">
-        <Link className="decision__back" to="/">
+    <main className="dp">
+      <div className="dp__wrap">
+        {/* Came from Explore: go back in history (the Explore page is still there, exactly as it was).
+            Otherwise open Explore, which still remembers the last searched address. */}
+        <a
+          className="decision__back"
+          href="/explore"
+          onClick={(event) => {
+            event.preventDefault()
+            if (navTrail.previousPath === '/explore') navigate(-1)
+            else navigate('/explore')
+          }}
+        >
           ← Back to decisions
-        </Link>
+        </a>
 
-        <header className="decision__header">
-          <p className="decision__ref">
-            Item <span className="mono">{item.id}</span> · {item.topic}
-            {ex && <span className="decision__full"> · Full explanation</span>}
-          </p>
-          <h1 className="decision__title">{item.title}</h1>
+        <header className="dp__header">
+          <h1 className="dp__title">{item.title}</h1>
+          <p className="dp__meta">{headerLine}</p>
           <OfficialTitle title={item.officialTitle} plain={item.title} />
-          <p className="decision__where">
-            {item.ward && <>{item.ward} · </>}
-            {item.place && <>{item.place} · </>}
-            <span className="mono">{formatDate(item.dateISO)}</span>
-          </p>
-          {info && <p className="decision__summary">{info.summary}</p>}
         </header>
-      </div>
 
-      <Row title="What's happening?">
-        {happening.length ? <Sentences sentences={happening} /> : <NoReport lines={fallbackLines} />}
-      </Row>
+        <Block title="What's happening?">
+          {happening.length ? <Sentences sentences={happening} /> : <p className="dp__soon">{COMING_SOON}</p>}
+        </Block>
 
-      <Row title="Why?">
-        {why.length ? <Sentences sentences={why} /> : <NoReport lines={[]} />}
-      </Row>
+        <Block title="Why?">
+          {why.length ? <Sentences sentences={why} /> : <p className="dp__soon">{COMING_SOON}</p>}
+        </Block>
 
-      <Row title="Where, and who's affected?">
-        {whereWho.length ? (
-          <Sentences sentences={whereWho} />
-        ) : (
-          <NoReport lines={placeLine ? [placeLine] : []} />
+        <Block title="Where, and who's affected?">
+          {whereWho.length > 0 ? (
+            <Sentences sentences={whereWho} />
+          ) : (
+            <>
+              {item.place && (
+                <p className="answer">
+                  {item.place}
+                  {item.approximate && ' (approximate spot)'}
+                </p>
+              )}
+              <p className="dp__soon">Who is affected: coming soon.</p>
+            </>
+          )}
+          {item.lat != null && (
+            <p className="answer">
+              <Link to={`/explore?focus=${item.id}`}>Show on map</Link>
+            </p>
+          )}
+        </Block>
+
+        {conditions.length > 0 && (
+          <Block title="Conditions">
+            <Sentences sentences={conditions} bullets />
+          </Block>
         )}
-      </Row>
 
-      {conditions.length > 0 && (
-        <Row title="Conditions">
-          <Sentences sentences={conditions} />
-        </Row>
-      )}
+        <Block title="Where is it in the process?">
+          <StageTracker item={item} dates={trackerDates(item, details[id])} quiet />
+          <ProcessSteps sentences={processSentences} />
+          {/* With a cited voting-record step above, this line would say the same thing twice. */}
+          {processSentences.length === 0 && (
+            <p className="dp__note">
+              Latest recorded vote: {body}, {formatDate(item.dateISO)}
+            </p>
+          )}
+        </Block>
 
-      <Row title="Where is it in the process?">
-        <StageTracker item={item} />
-        <p className="answer answer__latest">
-          Latest recorded vote: {bodyName(voteItem.committee)} · {outcomeWord(voteItem.result)} ·{' '}
-          <span className="mono">{formatDate(item.dateISO)}</span>
-        </p>
-        {timeline && <Timeline stages={timeline} />}
-        <ProcessSteps sentences={processSentences} />
-      </Row>
+        <Block title="Can I still have a say?">
+          {saySentences.length > 0 && <Sentences sentences={saySentences} />}
+          {/* Our hand-written answers already say it all; everything else gets the box. */}
+          {!info && <SayBox item={item} />}
+        </Block>
 
-      <Row title="Can I still have a say?" say>
-        {saySentences.length > 0 && <Sentences sentences={saySentences} />}
-        <SayBox item={item} />
-      </Row>
+        {/* Searched an address: their own councillor. Otherwise the councillor for the decision's area.
+            City-wide decisions (no location) only get the list of how everyone voted. */}
+        <Block title={ward ? 'Your councillor' : areaWard ? 'Councillor for this area' : 'How councillors voted'}>
+          {(ward || areaWard) && <YourCouncillor item={voteItem} ward={ward ?? areaWard} />}
+          <CouncillorVote item={voteItem} full hideWard={Boolean(ward || areaWard)} />
+        </Block>
 
-      <Row title="Your councillor">
-        <YourCouncillor item={voteItem} />
-        <CouncillorVote item={voteItem} full />
-      </Row>
-
-      <Row title="Sources">
-        <ol className="sources">
-          {sources.map((src, i) => (
-            <li key={src.url}>
-              <span className="mono">[{i + 1}]</span>{' '}
-              <a href={src.url} target="_blank" rel="noreferrer">
-                {src.label}
-              </a>
-              {src.date && <span className="sources__date"> · {src.date}</span>}
-            </li>
-          ))}
-        </ol>
-      </Row>
+        <Block title="Sources">
+          <ol className="sources">
+            {sources.map((src, i) => (
+              <li key={src.url}>
+                <span className="mono">[{i + 1}]</span>{' '}
+                <a href={src.url} target="_blank" rel="noreferrer">
+                  {src.label}
+                </a>
+                {src.itemNumber && (
+                  <span className="sources__date">
+                    {' '}
+                    · Item <span className="mono">{src.itemNumber}</span>
+                  </span>
+                )}
+                {src.date && <span className="sources__date"> · {src.date}</span>}
+              </li>
+            ))}
+          </ol>
+        </Block>
+      </div>
     </main>
   )
 }

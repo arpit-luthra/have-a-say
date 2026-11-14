@@ -105,8 +105,39 @@
 }
 
 /* Small "Filters" button: the filter row opens only when asked for. */
-.home__filters {
+.home__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
   margin: 16px 0 0;
+}
+.home__status {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  overflow: hidden;
+}
+.home__status-btn {
+  padding: 8px 16px;
+  border: 0;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.home__status-btn:hover {
+  color: var(--brand);
+}
+.home__status-btn--on,
+.home__status-btn--on:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.home__filters {
+  margin: 0;
   padding: 8px 18px;
   border: 1px solid var(--line);
   border-radius: 999px;

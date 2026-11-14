@@ -15,8 +15,10 @@ function emailLink(councillor, item, ward) {
   return `mailto:${councillor.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
-export default function YourCouncillor({ item }) {
-  const { ward } = useResident()
+// `ward`: use this ward instead of the resident's own (for "Councillor for this area", the ward of the decision).
+export default function YourCouncillor({ item, showVote = true, ward: wardOverride = null }) {
+  const resident = useResident()
+  const ward = wardOverride ?? resident.ward
   const data = useVoteData()
 
   if (!ward) return <p>Enter your address to see your councillor.</p>
@@ -31,13 +33,13 @@ export default function YourCouncillor({ item }) {
     <div className="councillor">
       <p className="councillor__name">{councillor.name}</p>
       <p className="councillor__ward">Ward {ward.number}</p>
-      <p>
+      {showVote && <p>
         {vote
           ? VOTE_WORDS[vote.code]
           : summary
             ? 'Not listed in the vote on this item.'
             : "We don't have individual votes for this item."}
-      </p>
+      </p>}
       {councillor.email && (
         <a className="councillor__btn" href={emailLink(councillor, item, ward)}>
           Email your councillor

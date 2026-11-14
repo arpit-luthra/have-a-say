@@ -100,3 +100,9 @@
   }
 }
 .tracker + .timeline { margin-top: 28px; }
+
+.tracker__date {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-muted);
+}

@@ -161,7 +161,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     mapRef.current.setFilter('pin-points', selectedId ? ['==', ['get', 'id'], selectedId] : null)
   }, [selectedId, isReady])
 
-  // --- 4b. Hovering a pin (or its card in the list) shows a small tooltip with the topic and place. ---
+  // --- 4b. Hovering a pin (or its card in the list) shows a small tooltip with the plain title. ---
   useEffect(() => {
     if (!isReady || !hoveredId) return
     const map = mapRef.current

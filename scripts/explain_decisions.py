@@ -7,8 +7,11 @@
 How it works, for each entry in frontend/src/data/featured.json:
   1. Download its PDFs. ONLY https://www.toronto.ca/legdocs/ links are allowed.
   2. Pull the text out of each page, keeping the page number.
-  3. Ask Gemini to answer 6 fixed questions using ONLY that text, citing {doc, page} for every sentence.
-  4. Check the answer (every citation must point at a real document and page), then save it
+  3. Ask Gemini to answer 4 questions (what's happening, why, who's affected, conditions) using ONLY that text,
+     citing {doc, page} for every sentence.
+  4. Add "Where is it in the process?" ourselves from the open-data voting record (never from the PDF or the AI).
+     "Can I still have a say?" is not written here: the website's own stage logic answers it.
+  5. Check the answer (every citation must point at a real document and page), then save it
      to frontend/src/data/explanations.json straight away, so a crash never loses finished work.
 
 Needs one extra library:   pip install pdfplumber
@@ -29,6 +32,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "frontend" / "src" / "data"
 FEATURED_FILE = DATA_DIR / "featured.json"  # what we want explained (you edit this)
+VOTES_FILE = DATA_DIR / "open-data-items.json"  # the voting record (latest vote on each item)
+HAND_CHECKED_FILE = DATA_DIR / "decisions.json"  # our 2 hand-checked decisions (not in the voting record)
 OUTPUT_FILE = DATA_DIR / "explanations.json"  # what this script writes (the site reads this)
 ENV_FILE = ROOT / "backend" / ".env"
 
@@ -50,7 +55,8 @@ except ImportError:
     SSL_CONTEXT = ssl.create_default_context()
 
 # The 6 questions the AI answers. `key` is the name used in explanations.json.
-SECTION_KEYS = ["happening", "why", "where", "conditions", "process", "say"]
+SECTION_KEYS = ["happening", "why", "where", "conditions"]  # written by the AI, from the PDFs only
+VOTING_RECORD_URL = "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/"
 
 INSTRUCTIONS = f"""You explain one City of Toronto council decision to residents, using ONLY the document text you are given.
 The text is split into pages marked like [[DOC 1 PAGE 4]].
@@ -62,29 +68,40 @@ where that fact is found. A sentence may cite more than one page.
 Answer these:
 - "happening": What's happening?
 - "why": Why?
-- "where": Where, and who is affected? (name the street or address, then who: neighbours, renters, drivers, cyclists, businesses, and so on)
-- "conditions": Important conditions or amendments attached to the decision. Use an EMPTY list if there are none.
-- "process": Where is it in the process? Keep three steps SEPARATE, each its own sentence with its own "step":
-  "staff" = what City staff recommended, "committee" = what the committee decided, "council" = what City Council decided.
-  Give each step's date in "date" (as written in the document, or "" if no date is given). Skip a step the documents say nothing about.
-- "say": Can I still have a say? Only what the documents say about commenting, speaking, deadlines or appeals.
+- "where": Where, and who is affected? Say the street or address first, then who.
+- "conditions": Important conditions or changes attached to it. ONE short sentence per condition (they are shown as bullet points).
+  Use an EMPTY list if there are none.
 
 Rules you must follow:
 1. Use only facts that are in the documents. Never add outside knowledge.
-2. If something is not clear, write exactly "{NOT_CLEAR}" as the sentence instead of guessing (use an empty "cites" list).
-3. NEVER work out a comment deadline from a meeting date. Give a deadline only if the documents state it as a deadline.
-4. Never include the name of any resident or member of the public who wrote in or spoke. Councillors and City staff roles may be named.
-5. Do not use legal or council jargon. Say "rule change" not "by-law amendment", "new building" not "development application".
-6. Also return "documents": for each document, its number, a short plain title, and its date as printed in it ("" if none).
-7. Each sentence must not contain a citation like "(p. 4)" in its text. Put citations only in "cites".
+2. The documents are usually a motion, a staff report or a recommendation. They do NOT tell you what was decided.
+   So describe what is in them as "recommended" or "proposed" (for example "The motion proposes free rides..."
+   or "Staff recommend approving..."). Never say Council "decided", "approved" or "changed" something, and never say it already happened.
+   The result of the vote is written somewhere else. Do not mention votes or results.
+3. Who is affected: name only groups the document itself names. If you have to infer a group, say so softly,
+   for example "This mainly matters for children, youth and older adults, who the motion says it hopes will use the free fares."
+4. Use the real numbers from the document when they matter, in short form, and say where money comes from or goes to
+   (for example "$1.39 million is moved to funds from the 1-7 Yonge St development"). Do not invent or round to a different number.
+5. If something is not clear, write exactly "{NOT_CLEAR}" as the sentence instead of guessing (use an empty "cites" list).
+6. NEVER work out a deadline from a meeting date. Mention a deadline only if the document states it as a deadline.
+7. Never include the name of any resident or member of the public who wrote in or spoke. Councillors and City staff roles may be named.
+8. Do not use legal or council jargon. Say "rule change" not "by-law amendment", "new building" not "development application".
+9. Also return "documents": for each document, its number, a short plain title, and its date as printed in it ("" if none).
+10. Conditions and everything else must be plain everyday language, NOT copied from the document's legal wording.
+    Never write phrases like "direct the General Manager", "amend the Capital Budget", account names, "Debt/Capital From Current",
+    "Section 37", "Tier 2", "POPS". Say what it means for people instead. Examples:
+    "The ferry is free for children, youth and older adults from Aug 1 to Aug 31, 2026."
+    "$1.39 million is moved from other City money to funds from the 1-7 Yonge St development, so the ferry money is replaced."
+    "At least 250 square metres must stay open to the public, like a small plaza."
+    Keep exact dollar amounts, sizes and dates, but write them simply ($1.39 million, not $1,389,589.69).
+11. For "where": the address or place first, then who. Start the who part with "This mainly matters for ..." and name only groups the document names.
+12. Do not write citations like "(p. 4)" inside a sentence. Put citations only in "cites".
 """
 
 SENTENCE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
         "text": {"type": "STRING"},
-        "step": {"type": "STRING", "enum": ["staff", "committee", "council", ""]},
-        "date": {"type": "STRING"},
         "cites": {
             "type": "ARRAY",
             "items": {
@@ -218,7 +235,8 @@ def ask_gemini(api_key, document_text):
                 print(f"  Gemini said {error.code}, waiting {wait}s and trying again...")
                 time.sleep(wait)
                 continue
-            raise RuntimeError(f"Gemini error {error.code}")
+            detail = error.read().decode(errors="replace")[:300]  # Gemini's own explanation (never contains our key)
+            raise RuntimeError(f"Gemini error {error.code}: {detail}")
         except (TimeoutError, urllib.error.URLError):
             if attempt < 3:
                 print("  Gemini timed out (30s), trying again...")
@@ -255,7 +273,41 @@ def clean_sentences(sentences, docs):
     return kept
 
 
-def build_explanation(answer, docs):
+def format_date(iso):
+    """2026-07-30 -> Jul 30, 2026"""
+    d = datetime.strptime(iso, "%Y-%m-%d")
+    return f"{d.strftime('%b')} {d.day}, {d.year}"
+
+
+def body_name(committee):
+    """Same plain names the website uses."""
+    if committee == "City Council":
+        return "City Council"
+    return "TTC board" if committee == "Toronto Transit Commission" else "City committee"
+
+
+def voting_record_step(item_id):
+    """The "process" answer, taken ONLY from the voting record (or, for our 2 hand-checked decisions that are not
+    in it, from their official agenda item page). Returns (sentence, document) or None. The PDFs are never used here."""
+    votes = {row["id"]: row for row in load_json(VOTES_FILE, {"items": []})["items"]}
+    row = votes.get(item_id)
+    if row:
+        outcome = "Rejected" if row["result"].startswith("Lost") else "Approved"
+        step = "council" if row["committee"] == "City Council" else "committee"
+        return (
+            {"text": f"{outcome} by {body_name(row['committee'])}.", "step": step, "date": format_date(row["dateISO"])},
+            {"title": "City of Toronto voting record", "url": VOTING_RECORD_URL, "date": format_date(row["dateISO"])},
+        )
+    hand = {d["id"]: d for d in load_json(HAND_CHECKED_FILE, [])}.get(item_id)
+    if hand:  # both hand-checked decisions were adopted by City Council (we checked the official page)
+        return (
+            {"text": "Approved by City Council.", "step": "council", "date": format_date(hand["dateISO"])},
+            {"title": "City of Toronto agenda item page", "url": hand["sourceUrl"], "date": format_date(hand["dateISO"])},
+        )
+    return None
+
+
+def build_explanation(answer, docs, item_id):
     meta = {d.get("doc"): d for d in answer.get("documents", [])}
     documents = []
     for n, doc in enumerate(docs, start=1):
@@ -268,6 +320,14 @@ def build_explanation(answer, docs):
             "pages": len(doc["pages"]),
         })
     sections = {key: clean_sentences(answer.get(key, []), docs) for key in SECTION_KEYS}
+    # "Where is it in the process?" comes from the voting record, cited like a document (no page number).
+    sections["process"] = []
+    step = voting_record_step(item_id)
+    if step:
+        sentence, record = step
+        n = len(documents) + 1
+        documents.append({"n": n, "url": record["url"], "title": record["title"], "date": record["date"], "pages": 0, "record": True})
+        sections["process"] = [{**sentence, "cites": [{"doc": n}]}]
     # The three must-have answers need at least one sentence; otherwise the page shows its fallback text.
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -291,7 +351,7 @@ def explain_one(entry, api_key):
     if len(text) > MAX_TOTAL_CHARS:
         raise ValueError(f"documents are too long ({len(text):,} characters). Use fewer or shorter PDFs")
     print(f"  asking {MODEL} ({len(text):,} characters)...")
-    return build_explanation(ask_gemini(api_key, text), docs)
+    return build_explanation(ask_gemini(api_key, text), docs, entry["id"])
 
 
 def main():

@@ -1,1 +1,1039 @@
-{}
+{
+ "2026.MM43.128": {
+  "generatedAt": "2026-11-14T07:25:34+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-290013.pdf",
+    "title": "Celebrating the win: Free August ferry rides for kids and seniors",
+    "date": "July 29th & 30th 2026",
+    "pages": 1
+   },
+   {
+    "n": 2,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jul 30, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The motion proposes making round-trip Toronto Island Ferry tickets free for children, youth, and older adults from August 1 to August 31, 2026.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "It also proposes moving money around in the 2026 budgets so the lost ticket money is replaced without changing total project costs.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "This celebrates the federal government deciding not to expand the Island airport, and thanks the many people who spoke up about it.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "It also aims to show more people why the Toronto Islands and their green space are so special.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At the Toronto Island Ferry, this mainly matters for families, young people, seniors, and children, youth and older adults who the motion hopes will use the free fares.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "Infants already ride free.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "$1,389,589.69 is moved from city debt to funds from the 1-7 Yonge Street development for ferry terminal improvements.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "$940,000 in lost ticket money is replaced using other corporate accounts so the operating budget stays balanced.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Jul 30, 2026",
+     "cites": [
+      {
+       "doc": 2
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.TE32.10": {
+  "generatedAt": "2026-11-14T07:25:39+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-286057.pdf",
+    "title": "Decision Report - Approval - 17-19, 23 and 25 Toronto Street and 55 and 57 Adelaide Street East",
+    "date": "April 14, 2026",
+    "pages": 24
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-286531.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 7
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-286058.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "April 2, 2026",
+    "pages": 3
+   },
+   {
+    "n": 4,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "May 20, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "Staff recommend approving a rule change to permit a 91-storey mixed-use building with 840 homes and non-residential space.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The report proposes the new rule to allow for high-density growth in this downtown area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      },
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 17-19, 23 and 25 Toronto Street and 55 and 57 Adelaide Street East, this mainly matters for people living in the city and future residents of the building.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must sign a heritage agreement with the City for specific properties.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a detailed conservation plan that satisfies the Senior Manager of Heritage Planning.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "May 20, 2026",
+     "cites": [
+      {
+       "doc": 4
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.TE32.11": {
+  "generatedAt": "2026-11-14T07:25:44+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-285996.pdf",
+    "title": "Toronto Report for Action: 17-19, 23 and 25 Toronto Street and 55 Adelaide Street East - Alterations to Heritage Properties, Demolition, Approval of Replacement Building and HEA",
+    "date": "April 1, 2026",
+    "pages": 29
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-286525.pdf",
+    "title": "Toronto Preservation Board Decision Letter",
+    "date": "April 27, 2026",
+    "pages": 4
+   },
+   {
+    "n": 3,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "May 20, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "City staff recommend approving changes to heritage properties, the demolition of one building, and a new 91-storey mixed-use tower.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 6
+      },
+      {
+       "doc": 2,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The proposal includes keeping some entire buildings, keeping some outer walls, and signing a Heritage Easement Agreement.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 6
+      },
+      {
+       "doc": 2,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The plan allows for new spaces while protecting the cultural heritage value of the St. Lawrence Neighbourhood Heritage Conservation District.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 7
+      },
+      {
+       "doc": 2,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 17-19, 23, and 25 Toronto Street and 55 and 57 Adelaide Street East, this mainly matters for people who live, work, and visit in the Downtown East neighbourhood and the St. Lawrence Neighbourhood Heritage Conservation District.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 5
+      },
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The related zoning rule change must come into full force and effect.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 2,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "A detailed Conservation Plan must be provided and followed.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 2,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "A Heritage Lighting Plan, Interpretation Plan, Landscape Plan, and Signage Plan must be submitted and carried out.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 2,
+       "page": 2
+      },
+      {
+       "doc": 2,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "A financial guarantee must be provided to secure the conservation and interpretation work.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      },
+      {
+       "doc": 2,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "May 20, 2026",
+     "cites": [
+      {
+       "doc": 3
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.MM40.29": {
+  "generatedAt": "2026-11-14T07:25:46+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286235.pdf",
+    "title": "Cabbagetown Cycling Connects - Ontario Street parking by-law amendments",
+    "date": "April 22, 2026",
+    "pages": 1
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286241.pdf",
+    "title": "ATTACHMENT 1: Cabbagetown Cycling Connects - Ontario Street parking by-law amendments",
+    "date": "",
+    "pages": 4
+   },
+   {
+    "n": 3,
+    "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29",
+    "title": "City of Toronto agenda item page",
+    "date": "Apr 23, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The motion proposes new bike lanes, traffic rule changes, and parking updates on Ontario Street.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "Road work, watermain repairs, and sidewalk fixes are also planned for Ontario Street in 2026.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The project connects existing cycling routes, fixes damaged sidewalks, and improves public spaces.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Ontario Street, between Wellesley Street East and Prospect Street, and between Aberdeen Avenue and Carlton Street. This mainly matters for residents and people who travel along Ontario Street.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "Sidewalks must be made universally accessible and asphalt in boulevards replaced with pavers north of the park.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "New contra-flow bike lanes must be added north of the park.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The cycle track between Aberdeen Avenue and Carlton Street must be changed to a bike lane next to parking to allow curbside parking.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "A new permanent loading zone must be added near Garner Lane.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "Safety upgrades such as a raised pedestrian crossing at Aberdeen Avenue and a curb extension with landscape elements at Carlton Street must be built south of the park.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Apr 23, 2026",
+     "cites": [
+      {
+       "doc": 3
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.CC36.10": {
+  "generatedAt": "2026-11-14T07:25:50+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-264661.pdf",
+    "title": "Alterations and HEA - 353-355 Sherbourne St & 157 Carlton St",
+    "date": "January 26, 2026",
+    "pages": 23
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-284215.pdf",
+    "title": "Decision Letter - Toronto Preservation Board",
+    "date": "January 19, 2026",
+    "pages": 3
+   },
+   {
+    "n": 3,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Feb 4, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "City staff recommend approving alterations to a heritage property to allow for a new 48-storey residential tower and a 4-storey mixed-use podium.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The project includes about 440 residential units, with at least 30 percent as affordable housing, and a community event hall inside the historic church.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 1,
+       "page": 6
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to provide affordable housing, public realm improvements, high building performance, and expanded community spaces while retaining a significant historic building.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 11
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for residents and people who use the community and housing spaces.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must enter into a Heritage Easement Agreement with the City.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a detailed Conservation Plan prepared by a qualified heritage consultant.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The related Official Plan and Zoning By-law Amendments must come into full force and effect.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a Heritage Lighting Plan, an Interpretation Plan, a detailed Landscape Plan, and a Signage Plan.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide building permit drawings and specifications for conservation and protective measures.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a Letter of Credit to secure all work included in the approved Conservation and Interpretation Plans.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Feb 4, 2026",
+     "cites": [
+      {
+       "doc": 3
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.TE28.12": {
+  "generatedAt": "2026-11-14T07:25:55+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-261269.pdf",
+    "title": "Toronto Report for Action: 353-355 Sherbourne Street and 157 Carlton Street – Official Plan and Zoning By-law Amendment Application – Decision Report – Approval",
+    "date": "December 18, 2025",
+    "pages": 33
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-261545.pdf",
+    "title": "Draft Zoning By-law",
+    "date": "",
+    "pages": 12
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-261270.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "December 17, 2025",
+    "pages": 3
+   },
+   {
+    "n": 4,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Feb 4, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "Staff recommend approving changes to the Official Plan and Zoning By-law to allow a 48-storey mixed-use building that includes 440 homes and community space.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    },
+    {
+     "text": "The proposal keeps the existing heritage church building on site and uses it as part of the new building's base.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      },
+      {
+       "doc": 1,
+       "page": 12
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The project aims to add housing units, including affordable rental homes, and community spaces while preserving a designated heritage property.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 11
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for people looking for housing, members of St. Luke’s United Church, and local residents who use the community spaces and social programs.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      },
+      {
+       "doc": 1,
+       "page": 10
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "At least 30 percent of the new homes must be affordable rental dwelling units.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "A minimum of 250 square metres must be secured as a Privately Owned Publicly-Accessible Space along the Sherbourne Street and Carlton Street frontages.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 8
+      }
+     ]
+    },
+    {
+     "text": "The owner must update and have accepted a Functional Servicing and Stormwater Management Report and secure any needed municipal infrastructure updates before the holding provision can be removed.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 14
+      },
+      {
+       "doc": 1,
+       "page": 16
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Feb 4, 2026",
+     "cites": [
+      {
+       "doc": 4
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2024.TE16.5": {
+  "generatedAt": "2026-11-14T07:26:01+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248596.pdf",
+    "title": "Decision Report - Approval - 214-230 Sherbourne Street",
+    "date": "September 9, 2024",
+    "pages": 23
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248931.pdf",
+    "title": "City of Toronto By-law XXX-2024",
+    "date": "",
+    "pages": 4
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248906.pdf",
+    "title": "City of Toronto By-law [Clerks to insert By-law number]",
+    "date": "",
+    "pages": 12
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248603.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "August 29, 2024",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Sep 25, 2024",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "City staff recommend approving rule changes to the Official Plan and Zoning By-law to allow a 46-storey residential building with non-space in a kept heritage house.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The proposed building has 615 homes and about 479 square metres of non-residential floor area.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The rule changes are proposed because the project needs changes to height limits, setbacks and floor area rules to be built.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 214-230 Sherbourne Street, this mainly matters for future residents living in the 615 new homes and people using the non-residential spaces in the heritage building.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The historic William Dineen House at 230 Sherbourne Street must be kept in its place and fully restored as part of the project.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    },
+    {
+     "text": "At least 15 percent of the homes must have two or more bedrooms, 10 percent must have three or more bedrooms, and another 15 percent must be convertible two or three-bedroom units.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    },
+    {
+     "text": "A total of 10 vehicle parking spaces and 616 bicycle parking spaces must be provided.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City committee.",
+     "step": "committee",
+     "date": "Sep 25, 2024",
+     "cites": [
+      {
+       "doc": 5
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.IE27.17": {
+  "generatedAt": "2026-11-14T07:26:03+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ie/bgrd/backgroundfile-284563.pdf",
+    "title": "Lennox Street Two Way Markham to Palmerston",
+    "date": "Wednesday, February 18, 2026",
+    "pages": 2
+   },
+   {
+    "n": 2,
+    "url": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17",
+    "title": "City of Toronto agenda item page",
+    "date": "Mar 26, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A City Councillor recommends changing a one-way block of Lennox Street to two-way traffic for cars.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "Drivers are making illegal turns because of the current one-way rule and nearby street closures.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "Lennox Street between Palmerston Boulevard and Markham Street, this mainly matters for local residents and drivers.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "City staff must count the traffic on Lennox Street after Markham Street reopens and the street changes are made.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "City staff must report back with ideas for speed humps to keep cyclists safe.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Mar 26, 2026",
+     "cites": [
+      {
+       "doc": 2
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

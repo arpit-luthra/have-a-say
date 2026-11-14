@@ -3,7 +3,7 @@ import MultiSelect from './MultiSelect.jsx'
 import { TOPICS, STAGES, SAY_OPTIONS, SORTS } from '../lib/filterDecisions.js'
 import './FilterBar.css'
 
-export const NO_FILTERS = { topics: [], stages: [], says: [], sort: 'Newest' }
+export const NO_FILTERS = { topics: [], stages: [], says: [], sort: 'Newest', status: 'All' }
 
 export default function FilterBar({ filters, onChange, count }) {
   const set = (key) => (value) => onChange({ ...filters, [key]: value })
@@ -18,7 +18,7 @@ export default function FilterBar({ filters, onChange, count }) {
       <p className="filters__count" aria-live="polite">
         {count} {count === 1 ? 'decision' : 'decisions'}
         {isFiltered ? (
-          <button className="filters__clear" type="button" onClick={() => onChange({ ...NO_FILTERS, sort: filters.sort })}>
+          <button className="filters__clear" type="button" onClick={() => onChange({ ...NO_FILTERS, sort: filters.sort, status: filters.status })}>
             Clear filters
           </button>
         ) : null}
