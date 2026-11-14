@@ -28,6 +28,7 @@ import CouncillorVote from '../components/CouncillorVote.jsx'
 import SayBox from '../components/SayBox.jsx'
 import YourCouncillor from '../components/YourCouncillor.jsx'
 import StageTracker from '../components/StageTracker.jsx'
+import FlyerIcon from '../components/FlyerIcon.jsx'
 import './DecisionPage.css'
 
 const NOT_CLEAR = 'Not clear from the report'
@@ -358,7 +359,11 @@ export default function DecisionPage() {
         </a>
 
         <header className="dp__header">
-          <h1 className="dp__title">{item.title}</h1>
+          {/* The flyer icon sits top-right, lined up with the title. */}
+          <div className="dp__titlerow">
+            <h1 className="dp__title">{item.title}</h1>
+            {ex && <FlyerIcon id={item.id} tooltip="below" />}
+          </div>
           <p className="dp__meta">{headerLine}</p>
           {basisLine && <p className="dp__basis">{basisLine}</p>}
           <OfficialTitle title={item.officialTitle} plain={item.title} />

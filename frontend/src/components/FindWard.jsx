@@ -24,7 +24,8 @@ const MESSAGES = {
 }
 
 // `hero` = the big version on the start page (link under the bar instead of a dropdown).
-export default function FindWard({ onFound, hero = false }) {
+// `hasLocation` + `onClear`: after a search, a small "×" inside the box clears the address again.
+export default function FindWard({ onFound, hero = false, hasLocation = false, onClear = null }) {
   const [query, setQuery] = useState('')
   const [isSearching, setIsSearching] = useState(false)
   const [error, setError] = useState(null)
@@ -149,6 +150,15 @@ export default function FindWard({ onFound, hero = false }) {
     }
   }
 
+  function clearAddress() {
+    justPicked.current = true // emptying the box must not start a new lookup
+    setQuery('')
+    setFound([])
+    setError(null)
+    setIsOpen(false)
+    onClear?.()
+  }
+
   const showMenu = isOpen && (suggestions.length > 0 || !hero)
 
   return (
@@ -175,6 +185,11 @@ export default function FindWard({ onFound, hero = false }) {
             aria-controls="address-suggestions"
             aria-autocomplete="list"
           />
+          {hasLocation && onClear && (
+            <button className="find-ward__clear" type="button" aria-label="Clear address and show all of Toronto" onClick={clearAddress}>
+              ×
+            </button>
+          )}
           <button className="find-ward__button" type="submit" disabled={isSearching} aria-label="Search">
             {/* A simple magnifying glass drawn with SVG, like Google's. */}
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">

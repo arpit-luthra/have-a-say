@@ -6,6 +6,7 @@ import TopBar from './components/TopBar.jsx'
 import Landing from './pages/Landing.jsx'
 import Home from './pages/Home.jsx'
 import DecisionPage from './pages/DecisionPage.jsx'
+import FlyerPage from './pages/FlyerPage.jsx'
 import HaveYourSay from './pages/HaveYourSay.jsx'
 import HowItWorks from './pages/HowItWorks.jsx'
 import About from './pages/About.jsx'
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/explore" element={null} />
           <Route path="/decision/:id" element={<DecisionPage />} />
+          <Route path="/decision/:id/flyer" element={<FlyerPage />} />
           <Route path="/have-your-say" element={<HaveYourSay />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/about" element={<About />} />

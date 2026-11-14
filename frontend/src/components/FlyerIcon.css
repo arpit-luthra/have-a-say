@@ -1,0 +1,43 @@
+/* A 20px outline icon inside a 28px hit area (8/16/24-friendly). No border, no background. */
+.flyer-icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: #6b7280; /* grey */
+  text-decoration: none;
+  transition: color 120ms;
+}
+.flyer-icon:hover,
+.flyer-icon:focus-visible {
+  color: var(--brand);
+}
+
+/* Tooltip: a small dark chip, hidden until hover or keyboard focus. */
+.flyer-icon::after {
+  content: attr(data-tip);
+  position: absolute;
+  right: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font: 600 12px/1.2 var(--font-sans);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms;
+  z-index: 2;
+}
+.flyer-icon--above::after {
+  bottom: calc(100% + 8px);
+}
+.flyer-icon--below::after {
+  top: calc(100% + 8px);
+}
+.flyer-icon:hover::after,
+.flyer-icon:focus-visible::after {
+  opacity: 1;
+}

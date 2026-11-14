@@ -60,13 +60,11 @@
 .recent {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  align-items: start; /* each card keeps its own natural height, so the gaps inside every card stay identical */
+  gap: 24px;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.recent .card {
-  height: 100%;
 }
 
 .steps {

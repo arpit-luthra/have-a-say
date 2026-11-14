@@ -51,6 +51,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
   pinsRef.current = pins
   const cityCameraRef = useRef(null) // the flat "whole Toronto" view, to fly back to
   const wasSelectedRef = useRef(false)
+  const hadHomeRef = useRef(false) // was an address set before? (so clearing it can reset the view)
 
   // --- 1. Create the map once, when the component first appears. ---
   useEffect(() => {
@@ -69,6 +70,8 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
     mapRef.current = map
     // Just the + and - buttons (no compass), bottom right.
     map.addControl(new NavigationControl({ showCompass: false }), 'bottom-right')
+    // Added after the zoom buttons, so it sits just ABOVE them in the corner. Only visible while the map is tilted.
+    map.addControl(new ResetViewControl(), 'bottom-right')
 
     map.on('load', async () => {
       hideBusStops(map)
@@ -115,8 +118,21 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
 
   // --- 2. The "You live here" pin, then zoom to that area. Only kept in memory. ---
   useEffect(() => {
-    if (!isReady || !homeLocation) return
+    if (!isReady) return
     const map = mapRef.current
+    if (!homeLocation) {
+      // The address was cleared: back to the flat, default view of all of Toronto.
+      if (hadHomeRef.current && cityCameraRef.current) {
+        const { center, zoom } = cityCameraRef.current
+        map.flyTo(
+          { center, zoom, bearing: BEARING, pitch: 0, duration: prefersReducedMotion ? 0 : 1400, essential: true },
+          { fromApp: true },
+        )
+      }
+      hadHomeRef.current = false
+      return
+    }
+    hadHomeRef.current = true
     const marker = new Marker({ element: createHomePin(homeLocation.label), anchor: 'bottom' })
       .setLngLat([homeLocation.lng, homeLocation.lat])
       .addTo(map)
@@ -194,6 +210,32 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
   }, [selectedId, isReady])
 
   return <div ref={containerRef} className="city-map" aria-label="Map of Toronto" />
+}
+
+/** A small "Reset view" button in the map's corner. It only shows while the map is tilted, and flattens it. */
+class ResetViewControl {
+  onAdd(map) {
+    this.container = document.createElement('div')
+    this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group reset-view'
+    const button = document.createElement('button')
+    button.type = 'button'
+    button.textContent = 'Reset view'
+    button.setAttribute('aria-label', 'Reset view: flatten the map')
+    button.addEventListener('click', () => {
+      map.easeTo({ pitch: 0, bearing: BEARING, duration: prefersReducedMotion ? 0 : 700 }, { fromApp: true })
+    })
+    this.container.appendChild(button)
+    this.update = () => {
+      this.container.style.display = map.getPitch() > 1 ? '' : 'none'
+    }
+    map.on('pitch', this.update)
+    this.update()
+    return this.container
+  }
+
+  onRemove() {
+    this.container.remove()
+  }
 }
 
 /** Hide bus stops (they clutter the map). Every other place marker stays. */

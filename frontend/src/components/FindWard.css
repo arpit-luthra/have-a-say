@@ -144,3 +144,24 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* "×" inside the search box: clears the address. */
+.find-ward__clear {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-muted);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.find-ward__clear:hover {
+  background: var(--brand-light);
+  color: var(--ink);
+}

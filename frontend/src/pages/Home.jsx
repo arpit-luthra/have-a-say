@@ -21,7 +21,7 @@ const NEAR_KM = 2
 const WIDE_KM = 5
 
 export default function Home() {
-  const { homeLocation, setFound } = useResident() // kept in memory for the whole visit
+  const { homeLocation, setFound, clearFound } = useResident() // kept in memory for the whole visit
   const [filters, setFilters] = useState({ ...NO_FILTERS, sort: 'Closest to me' })
   const [radius, setRadius] = useState(NEAR_KM) // km around the searched spot
   const focusId = useSearchParams()[0].get('focus') // from a decision page's "Show on map" link
@@ -81,11 +81,23 @@ export default function Home() {
     <main className={`home ${showMap ? 'home--map' : ''}`}>
       <section className="home__list">
         <h1 className="home__title">{heading}</h1>
-        <FindWard onFound={(found) => {
-          setFound(found)
-          setRadius(NEAR_KM)
-          setVisible(PAGE_SIZE)
-        }} />
+        <FindWard
+          hasLocation={Boolean(homeLocation)}
+          onClear={() => {
+            // Back to all of Toronto: forget the address, show every decision, and let the map flatten and reset.
+            clearFound()
+            setShowAll(false)
+            setRadius(NEAR_KM)
+            setVisible(PAGE_SIZE)
+            setSelectedId(null)
+            setScrolledTo(null)
+          }}
+          onFound={(found) => {
+            setFound(found)
+            setRadius(NEAR_KM)
+            setVisible(PAGE_SIZE)
+          }}
+        />
         {nearOnly && shown.length === 0 && radius < WIDE_KM && (
           <button className="home__more" type="button" onClick={() => setRadius(WIDE_KM)}>
             Look within {WIDE_KM} km

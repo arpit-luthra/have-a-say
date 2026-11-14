@@ -6,7 +6,7 @@ import { createContext, useContext, useState } from 'react'
 import { loadWards, wardSummary } from './wardData.js'
 import { findWardAt } from './geo.js'
 
-const ResidentContext = createContext({ homeLocation: null, ward: null, setFound: () => {} })
+const ResidentContext = createContext({ homeLocation: null, ward: null, setFound: () => {}, clearFound: () => {} })
 
 export function ResidentProvider({ children }) {
   const [homeLocation, setHomeLocation] = useState(null)
@@ -26,7 +26,13 @@ export function ResidentProvider({ children }) {
     }
   }
 
-  return <ResidentContext.Provider value={{ homeLocation, ward, setFound }}>{children}</ResidentContext.Provider>
+  // The "×" in the search box: forget the address and ward again (they were only ever kept in memory).
+  function clearFound() {
+    setHomeLocation(null)
+    setWard(null)
+  }
+
+  return <ResidentContext.Provider value={{ homeLocation, ward, setFound, clearFound }}>{children}</ResidentContext.Provider>
 }
 
 export function useResident() {

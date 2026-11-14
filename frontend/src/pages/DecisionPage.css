@@ -431,25 +431,41 @@ a.say__link:hover {
 }
 
 .dp__header {
-  margin: 24px 0 24px;
+  margin: 24px 0; /* spacing scale: 8 between the lines of the header, 24 around it */
+}
+.dp__titlerow {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+/* 28px icon box centred on the first line of the title (40px line at 32px type) */
+.dp__titlerow .flyer-icon {
+  flex: none;
+  margin-top: 6px;
+  margin-right: -4px;
 }
 .dp__title {
-  margin: 0 0 8px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
-.dp__meta {
-  margin: 0 0 8px;
+.dp p.dp__meta {
+  margin: 8px 0 0;
   color: var(--grey);
 }
 .dp .dcard__toggle {
+  display: block; /* its own line under the status line */
+  margin: 8px 0 0;
   font-size: 14px;
+  line-height: 1.6;
   color: var(--grey);
 }
 .dp .dcard__official {
-  margin-top: 8px;
+  margin: 8px 0 0;
   font-size: 14px;
   color: var(--grey);
 }
@@ -612,6 +628,9 @@ a.say__link:hover {
   .dp__title {
     font-size: 28px;
   }
+  .dp__titlerow .flyer-icon {
+    margin-top: 4px; /* 35px title line on phones */
+  }
   .dp__block {
     padding: 16px;
   }
@@ -646,7 +665,8 @@ a.say__link:hover {
 }
 
 .dp p.dp__basis {
-  margin: 0 0 8px;
+  margin: 8px 0 0;
   font-size: 14px;
   color: var(--grey);
 }
+

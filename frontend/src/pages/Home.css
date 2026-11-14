@@ -72,6 +72,10 @@
     visibility: hidden;
   }
 
+  /* The map's credit box sets its own visibility, so hide everything inside while the map is hidden. */
+  .home:not(.home--map) .home__map * {
+    visibility: hidden !important;
+  }
   .home--map .home__map {
     visibility: visible;
   }
