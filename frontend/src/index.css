@@ -61,3 +61,15 @@ button {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
+
+/* Explore stays mounted (so Back finds it unchanged) but is hidden on other pages: hide ALL of it, including the map's
+   credit box, which would otherwise float on top of those pages. */
+.explore-hidden,
+.explore-hidden * {
+  visibility: hidden !important;
+}
+
+/* Map credit: small, in the map's bottom-right corner. */
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}

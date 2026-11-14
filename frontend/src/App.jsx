@@ -15,6 +15,7 @@ import { navTrail } from './lib/navTrail.js'
 // The Explore page stays mounted (just hidden) once it has been opened. That way, coming back from a
 // decision page finds the same address, filters, map position and scroll position, with nothing to save or restore.
 const HIDDEN = { position: 'absolute', inset: 0, visibility: 'hidden', pointerEvents: 'none' }
+// (The map's credit box sets `visibility: visible` on itself, which beats a hidden parent, so index.css also hides everything inside.)
 
 export default function App() {
   const { pathname } = useLocation()
@@ -36,7 +37,11 @@ export default function App() {
       <TopBar />
       <div className="app__page">
         {everOpenedExplore.current && (
-          <div style={pathname === '/explore' ? { height: '100%' } : HIDDEN} aria-hidden={pathname !== '/explore'}>
+          <div
+            className={pathname === '/explore' ? undefined : 'explore-hidden'}
+            style={pathname === '/explore' ? { height: '100%' } : HIDDEN}
+            aria-hidden={pathname !== '/explore'}
+          >
             <Home />
           </div>
         )}

@@ -55,6 +55,18 @@ export default function Home() {
     document.getElementById(`card-${selected.id}`)?.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' })
     setScrolledTo(selected.id)
   }, [selected?.id, visible]) // eslint-disable-line react-hooks/exhaustive-deps
+  // The heading follows the All / In progress / Decided toggle, and says "near you" after an address search.
+  const near = homeLocation && !showAll
+  const n = shown.length
+  const noun = n === 1 ? 'decision' : 'decisions'
+  const heading =
+    nearOnly && n === 0
+      ? `Nothing within ${radius} km right now`
+      : filters.status === 'In progress'
+        ? `${n} ${noun} still in progress${near ? ' near you' : ''}`
+        : filters.status === 'Decided'
+          ? `${n} decided${near ? ' near you' : ''}`
+          : `${n} ${noun} ${near ? 'near you' : 'in Toronto'}`
   const [showMap, setShowMap] = useState(Boolean(focusId)) // only matters on phones
   // Home stays mounted while a decision page is open, so a new "Show on map" link arrives as a changed ?focus=.
   useEffect(() => {
@@ -68,15 +80,7 @@ export default function Home() {
   return (
     <main className={`home ${showMap ? 'home--map' : ''}`}>
       <section className="home__list">
-        <h1 className="home__title">
-          {!homeLocation
-            ? `${shown.length} ${shown.length === 1 ? 'decision' : 'decisions'} in Toronto`
-            : showAll
-              ? `${shown.length} decisions in Toronto`
-              : shown.length === 0
-                ? `Nothing within ${radius} km right now`
-                : `${shown.length} ${shown.length === 1 ? 'decision' : 'decisions'} near you`}
-        </h1>
+        <h1 className="home__title">{heading}</h1>
         <FindWard onFound={(found) => {
           setFound(found)
           setRadius(NEAR_KM)

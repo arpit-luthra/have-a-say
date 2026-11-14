@@ -20,7 +20,9 @@ export default function About() {
             <li>{link('https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/', 'Toronto Open Data: Members of Toronto City Council voting record')}. Which items were voted on, by whom, and when.</li>
             <li>{link('https://secure.toronto.ca/council/', 'City of Toronto agenda pages')} and the official reports (PDFs) linked from them. Every explanation links back to these.</li>
             <li>{link('https://open.toronto.ca/dataset/city-wards/', 'Toronto Open Data: City Wards')}. To find which ward and councillor an address belongs to.</li>
-            <li>{link('https://www.openstreetmap.org/copyright', 'OpenStreetMap')} for the map and address search, with map tiles from {link('https://openfreemap.org/', 'OpenFreeMap')}.</li>
+            <li>{link('https://www.openstreetmap.org/copyright', 'OpenStreetMap')} for the map data and address search (© OpenStreetMap contributors).</li>
+            <li>{link('https://openfreemap.org/', 'OpenFreeMap')} for the map tiles, made from {link('https://openmaptiles.org/', 'OpenMapTiles')} data.</li>
+            <li>{link('https://maplibre.org/', 'MapLibre GL JS')} to draw the map.</li>
           </ul>
         </section>
 
@@ -54,8 +56,11 @@ export default function About() {
         </section>
 
         <section className="info__block">
-          <h2 className="info__heading">Built with</h2>
-          <p>Built with help from Claude Code and Google Gemini.</p>
+          <h2 className="info__heading">Photo credit</h2>
+          <p>
+            Start page photo: {link('https://commons.wikimedia.org/wiki/File:Quiet_residential_street,_Toronto_(44892326332).jpg', '"Quiet residential street, Toronto"')} by Enoch
+            Leung from Canada, licensed {link('https://creativecommons.org/licenses/by-sa/2.0/', 'CC BY-SA 2.0')}, via Wikimedia Commons. Cropped and resized.
+          </p>
         </section>
       </div>
     </main>

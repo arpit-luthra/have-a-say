@@ -1,4 +1,5 @@
-/* Photo: "Cabbagetown" by Mark (Flickr), CC BY 2.0 via Wikimedia Commons. Credited in the README.
+/* Photo: "Quiet residential street, Toronto" by Enoch Leung, CC BY-SA 2.0 via Wikimedia Commons (cropped and resized).
+   Credited on the About & sources page and in the README.
    The overlay is a soft dark layer so the white text is always readable. */
 .hero {
   display: grid;
@@ -6,7 +7,7 @@
   min-height: 560px;
   padding: 72px 20px;
   background:
-    linear-gradient(180deg, rgb(8 24 44 / 0.5), rgb(8 24 44 / 0.7)),
+    linear-gradient(180deg, rgb(8 24 44 / 0.58), rgb(8 24 44 / 0.74)),
     url('/hero.jpg') center / cover no-repeat,
     #0f3e73;
   color: #ffffff;
