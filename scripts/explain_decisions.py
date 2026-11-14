@@ -56,6 +56,7 @@ except ImportError:
 
 # The 6 questions the AI answers. `key` is the name used in explanations.json.
 SECTION_KEYS = ["happening", "why", "where", "conditions"]  # written by the AI, from the PDFs only
+AI_KEYS = SECTION_KEYS + ["staff"]  # "staff" feeds the first step of the process (only when a PDF is a staff report)
 VOTING_RECORD_URL = "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/"
 
 INSTRUCTIONS = f"""You explain one City of Toronto council decision to residents, using ONLY the document text you are given.
@@ -68,9 +69,20 @@ where that fact is found. A sentence may cite more than one page.
 Answer these:
 - "happening": What's happening?
 - "why": Why?
-- "where": Where, and who is affected? Say the street or address first, then who.
-- "conditions": Important conditions or changes attached to it. ONE short sentence per condition (they are shown as bullet points).
+  If the proposal moves or spends money, say it HERE in "happening" with the exact amount and the document's own wording for
+  where it goes (for example "$1,389,589.69 is moved to funding from the 1-7 Yonge Street development"). Also put plain facts here
+  (for example "Infants already ride free").
+- "where": Where, and who is affected? The address or place first, then who. ALWAYS keep every named place the document
+  mentions (a street address, a terminal, a park, a building). Start the who part with "This mainly matters for ..."
+  and name only groups the document itself names.
+- "conditions": ONLY real conditions or requirements the owner, the City or the project must meet (for example "At least 30%
+  of the homes must be affordable rentals."). One short sentence each (they are shown as bullet points). A plain fact about
+  the proposal is NOT a condition: put facts like "infants already ride free" in "happening" instead.
   Use an EMPTY list if there are none.
+- "staff": ONLY if one of the documents is a City STAFF report (for example headed "Report for Action" or written by City staff
+  with a recommendation), give exactly ONE sentence: "City staff recommended ..." saying what staff recommended. Put the date
+  printed on that report in "date", exactly as printed (for example "December 18, 2025"). Cite its page.
+  If no document is a staff report (a councillor's motion is NOT a staff report), use an EMPTY list.
 
 Rules you must follow:
 1. Use only facts that are in the documents. Never add outside knowledge.
@@ -78,30 +90,34 @@ Rules you must follow:
    So describe what is in them as "recommended" or "proposed" (for example "The motion proposes free rides..."
    or "Staff recommend approving..."). Never say Council "decided", "approved" or "changed" something, and never say it already happened.
    The result of the vote is written somewhere else. Do not mention votes or results.
-3. Who is affected: name only groups the document itself names. If you have to infer a group, say so softly,
-   for example "This mainly matters for children, youth and older adults, who the motion says it hopes will use the free fares."
-4. Use the real numbers from the document when they matter, in short form, and say where money comes from or goes to
-   (for example "$1.39 million is moved to funds from the 1-7 Yonge St development"). Do not invent or round to a different number.
+3. If you have to infer who is affected, say so softly, for example "This mainly matters for children, youth and older adults,
+   who the motion says it hopes will use the free fares."
+4. Use the exact numbers from the document when they matter (write $1,389,589.69, not a rounded number), and describe money
+   using the document's OWN wording for where it goes. Do not add words the document does not use: for example do not
+   write "city debt" unless the document says it. Example: "$1,389,589.69 is moved to funding from the 1-7 Yonge Street development."
 5. If something is not clear, write exactly "{NOT_CLEAR}" as the sentence instead of guessing (use an empty "cites" list).
 6. NEVER work out a deadline from a meeting date. Mention a deadline only if the document states it as a deadline.
 7. Never include the name of any resident or member of the public who wrote in or spoke. Councillors and City staff roles may be named.
-8. Do not use legal or council jargon. Say "rule change" not "by-law amendment", "new building" not "development application".
+8. Plain everyday language a 10-year-old understands. Never copy the document's legal or planning wording. Use these swaps:
+   - "Official Plan and Zoning By-law changes / amendments" -> "changes to the rules for what can be built on this site"
+   - "Privately Owned Publicly-Accessible Space" or "POPS" -> "outdoor space the public can use"
+   - "holding provision" or "(H)" -> "a hold on building until <the condition> is met"
+   - "Section 37" or "community benefits" -> "money or things the developer gives the community"
+   - "Toronto Green Standard Tier N" -> "the City's green building rules"
+   - "Functional Servicing and Stormwater Management Report" -> "a report on water, sewer and drainage"
+   - "heritage designated / Part IV" -> "protected as a heritage building"; "Heritage Easement Agreement" -> "a legal agreement to protect the building"
+   - "dwelling units" -> "homes"; "mixed-use" -> "homes, shops or offices"; "zoning" -> "the rules for what can be built"
+   - "direct the General Manager", "amend the Capital/Operating Budget", account names -> say what it means for people
+   Never leave words like "by-law", "zoning", "Official Plan", "amendment", "Section 37" or "easement" in your answer.
 9. Also return "documents": for each document, its number, a short plain title, and its date as printed in it ("" if none).
-10. Conditions and everything else must be plain everyday language, NOT copied from the document's legal wording.
-    Never write phrases like "direct the General Manager", "amend the Capital Budget", account names, "Debt/Capital From Current",
-    "Section 37", "Tier 2", "POPS". Say what it means for people instead. Examples:
-    "The ferry is free for children, youth and older adults from Aug 1 to Aug 31, 2026."
-    "$1.39 million is moved from other City money to funds from the 1-7 Yonge St development, so the ferry money is replaced."
-    "At least 250 square metres must stay open to the public, like a small plaza."
-    Keep exact dollar amounts, sizes and dates, but write them simply ($1.39 million, not $1,389,589.69).
-11. For "where": the address or place first, then who. Start the who part with "This mainly matters for ..." and name only groups the document names.
-12. Do not write citations like "(p. 4)" inside a sentence. Put citations only in "cites".
+10. Do not write citations like "(p. 4)" inside a sentence. Put citations only in "cites".
 """
 
 SENTENCE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
         "text": {"type": "STRING"},
+        "date": {"type": "STRING"},
         "cites": {
             "type": "ARRAY",
             "items": {
@@ -117,7 +133,7 @@ SENTENCE_SCHEMA = {
 RESPONSE_SCHEMA = {
     "type": "OBJECT",
     "properties": {
-        **{key: {"type": "ARRAY", "items": SENTENCE_SCHEMA} for key in SECTION_KEYS},
+        **{key: {"type": "ARRAY", "items": SENTENCE_SCHEMA} for key in AI_KEYS},
         "documents": {
             "type": "ARRAY",
             "items": {
@@ -131,7 +147,7 @@ RESPONSE_SCHEMA = {
             },
         },
     },
-    "required": SECTION_KEYS + ["documents"],
+    "required": AI_KEYS + ["documents"],
 }
 
 
@@ -252,8 +268,8 @@ def clean_sentences(sentences, docs):
     A "Not clear from the report" sentence needs no citation. Anything else without a good citation is dropped."""
     kept = []
     for s in sentences:
-        text = " ".join(str(s.get("text", "")).split())
-        if not text:
+        text = plain_words(" ".join(str(s.get("text", "")).split()))
+        if not text.strip():
             continue
         cites = []
         for c in s.get("cites", []):
@@ -271,6 +287,81 @@ def clean_sentences(sentences, docs):
             row["date"] = " ".join(str(s["date"]).split())
         kept.append(row)
     return kept
+
+
+# Fixed word swaps, applied to every sentence AFTER the AI writes it, so the plain wording is guaranteed.
+# Order matters: the longest, most specific phrases first.
+RULES_PHRASE = "the rules for what can be built on this site"
+SWAPS = [
+    (r"(?:the )?(?:changes|amendments?) to the Official Plan and Zoning By-?laws?", "changes to " + RULES_PHRASE),
+    (r"(?:to )?amend(?:ing)? the Official Plan and Zoning By-?laws?", "to change " + RULES_PHRASE),
+    (r"(?:to )?amend(?:ing)? the Zoning By-?laws?", "to change " + RULES_PHRASE),
+    (r"(?:the )?Official Plan and Zoning By-?laws?(?: Amendments?)?", RULES_PHRASE),
+    (r"Zoning By-?law Amendments?", "changes to " + RULES_PHRASE),
+    (r"with a holding provision", "with a hold on building until some conditions are met"),
+    (r"a holding provision", "a hold on building until some conditions are met"),
+    (r"Privately Owned Publicly-Accessible Spaces?", "outdoor space the public can use"),
+    (r"Functional Servicing and Stormwater Management Report", "report on water, sewer and drainage"),
+    (r"Heritage Easement Agreement", "legal agreement to protect the heritage building"),
+    (r"designated heritage propert(y|ies)", lambda m: "heritage propert" + m.group(1) + " protected by the City"),
+    (r"residential (?:homes|dwelling units)", "homes"),
+    (r"dwelling units", "homes"),
+    (r"permit the proposed building height and setbacks", "allow the proposed building height and how far it sits back from the property edges"),
+    (r"Tree By-?laws?", "tree rules"),
+    # Budget wording: keep the document's amounts and places, drop the accounting labels.
+    (r"reducing (\$[\d,.]+) in Debt/Capital From Current and increasing the money using Section 37 community benefits from (?:the development at )?", r"moving \1 to funding from the development at "),
+    (r"Corporate Accounts\s*-\s*Capital From Current", "other City accounts"),
+    (r"(?:2\d{3} )?(Capital|Operating) Budget", lambda m: "City budget"),
+    (r"Section 37 community benefits", "community benefits money from the developer"),
+    (r"Official Plan Amendment and changes to (the rules for what can be built on this site)(?: application)?", r"changes to \1"),
+    (r"the holding provision", "the hold on building"),
+    (r"adjust environmental performance rules to Tier \d of the green building rules", "meet the City's green building rules"),
+    (r"Tier \d of the green building rules", "the City's green building rules"),
+    (r"the Official Plan and the rules for what can be built on this site", RULES_PHRASE),
+    (r"Official Plan and the rules for what can be built on this site", RULES_PHRASE),
+    (r"Tier \d of the City's green building rules", "the City's green building rules"),
+    (r"zoning rules", "building rules"),
+    (r"height and setbacks", "height and how far it sits back from the property edges"),
+]
+SWAPS = [(re.compile(pattern, re.I), new) for pattern, new in SWAPS]
+
+
+def plain_words(text):
+    for pattern, new in SWAPS:
+        text = pattern.sub(new, text)
+    return text[:1].upper() + text[1:]
+
+
+# Hard words we still look for AFTER the swaps. Anything found is printed so a person can check it.
+JARGON = re.compile(
+    r"official plan|zoning|by-?law|holding provision|\(H\)|section 37|privately.owned publicly|\bPOPS\b|tier \d|stormwater|"
+    r"functional servicing|easement|community benefit|capital budget|operating budget|\bdebt\b|amendment|dwelling unit|"
+    r"\bOPA\b|\bZBA\b|massing|setback|variance|conveyance|designated (?:heritage|property)",
+    re.I,
+)
+
+
+def warn_about_jargon(sections):
+    """Print any hard words that slipped through, so a person can check them. (We never silently change the AI's text.)"""
+    for key, sentences in sections.items():
+        for s in sentences:
+            found = {m.group(0).lower() for m in JARGON.finditer(s["text"])}
+            if found:
+                print(f"  WARNING hard words in {key}: {sorted(found)}")
+
+
+def staff_step(answer, docs):
+    """The first step of the process: "City staff recommended ...", only when a PDF is a staff report.
+    Its date must really appear on the page it cites; if it doesn't, we keep the sentence but drop the date."""
+    steps = clean_sentences(answer.get("staff", []), docs)[:1]
+    for s in steps:
+        s["step"] = "staff"
+        wanted = " ".join(s.get("date", "").lower().split())
+        pages = " ".join(" ".join(docs[c["doc"] - 1]["pages"][c["page"] - 1].lower().split()) for c in s["cites"])
+        if wanted and wanted not in pages:
+            print(f"  staff report date not found on its page, dropped: {s['date']}")
+            del s["date"]
+    return steps
 
 
 def format_date(iso):
@@ -321,13 +412,14 @@ def build_explanation(answer, docs, item_id):
         })
     sections = {key: clean_sentences(answer.get(key, []), docs) for key in SECTION_KEYS}
     # "Where is it in the process?" comes from the voting record, cited like a document (no page number).
-    sections["process"] = []
+    sections["process"] = staff_step(answer, docs)  # staff report first (if any), then the voting record
     step = voting_record_step(item_id)
     if step:
         sentence, record = step
         n = len(documents) + 1
         documents.append({"n": n, "url": record["url"], "title": record["title"], "date": record["date"], "pages": 0, "record": True})
-        sections["process"] = [{**sentence, "cites": [{"doc": n}]}]
+        sections["process"].append({**sentence, "cites": [{"doc": n}]})
+    warn_about_jargon(sections)
     # The three must-have answers need at least one sentence; otherwise the page shows its fallback text.
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),

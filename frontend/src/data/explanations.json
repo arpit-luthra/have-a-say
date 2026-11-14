@@ -1,6 +1,6 @@
 {
  "2026.MM43.128": {
-  "generatedAt": "2026-11-14T07:25:34+00:00",
+  "generatedAt": "2026-11-14T07:33:17+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
@@ -22,7 +22,7 @@
   "sections": {
    "happening": [
     {
-     "text": "The motion proposes making round-trip Toronto Island Ferry tickets free for children, youth, and older adults from August 1 to August 31, 2026.",
+     "text": "The motion proposes making the Toronto Island Ferry free for children, youth and older adults for the month of August.",
      "cites": [
       {
        "doc": 1,
@@ -31,7 +31,16 @@
      ]
     },
     {
-     "text": "It also proposes moving money around in the 2026 budgets so the lost ticket money is replaced without changing total project costs.",
+     "text": "It also proposes changing the City budget by moving $1,389,589.69 to funding from the development at 1-7 Yonge Street for the Jack Layton Ferry Terminal redevelopment and Shoreline Infrastructure projects.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "User fee revenues of $940,000 are replaced with a contribution from other City accounts.",
      "cites": [
       {
        "doc": 1,
@@ -42,16 +51,7 @@
    ],
    "why": [
     {
-     "text": "This celebrates the federal government deciding not to expand the Island airport, and thanks the many people who spoke up about it.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "It also aims to show more people why the Toronto Islands and their green space are so special.",
+     "text": "This celebrates the federal government deciding not to expand the Island airport and lets more people visit the Toronto Islands.",
      "cites": [
       {
        "doc": 1,
@@ -62,7 +62,7 @@
    ],
    "where": [
     {
-     "text": "At the Toronto Island Ferry, this mainly matters for families, young people, seniors, and children, youth and older adults who the motion hopes will use the free fares.",
+     "text": "This mainly matters for children, youth, and older adults using the Toronto Island Ferry and visiting the Toronto Islands.",
      "cites": [
       {
        "doc": 1,
@@ -71,35 +71,7 @@
      ]
     }
    ],
-   "conditions": [
-    {
-     "text": "Infants already ride free.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "$1,389,589.69 is moved from city debt to funds from the 1-7 Yonge Street development for ferry terminal improvements.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "$940,000 in lost ticket money is replaced using other corporate accounts so the operating budget stays balanced.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    }
-   ],
+   "conditions": [],
    "process": [
     {
      "text": "Approved by City Council.",
@@ -115,7 +87,7 @@
   }
  },
  "2026.TE32.10": {
-  "generatedAt": "2026-11-14T07:25:39+00:00",
+  "generatedAt": "2026-11-14T07:33:21+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
@@ -128,7 +100,7 @@
    {
     "n": 2,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-286531.pdf",
-    "title": "Draft Zoning By-law Amendment",
+    "title": "Revised Attachment 5: Draft Zoning By-law Amendment",
     "date": "",
     "pages": 7
    },
@@ -151,66 +123,72 @@
   "sections": {
    "happening": [
     {
-     "text": "Staff recommend approving a rule change to permit a 91-storey mixed-use building with 840 homes and non-residential space.",
+     "text": "A 91-storey mixed-use building with 840 homes and 7,921 square metres of non-residential space is proposed.",
      "cites": [
       {
        "doc": 1,
-       "page": 1
+       "page": 12
       }
      ]
     }
    ],
    "why": [
     {
-     "text": "The report proposes the new rule to allow for high-density growth in this downtown area.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 4
-      },
-      {
-       "doc": 1,
-       "page": 8
-      }
-     ]
+     "text": "Not clear from the report",
+     "cites": []
     }
    ],
    "where": [
     {
-     "text": "At 17-19, 23 and 25 Toronto Street and 55 and 57 Adelaide Street East, this mainly matters for people living in the city and future residents of the building.",
+     "text": "At 17-19, 23 and 25 Toronto Street and 55 and 57 Adelaide Street East. This mainly matters for people living or working near the site and those using nearby transit and public spaces.",
      "cites": [
       {
        "doc": 1,
        "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 3
       }
      ]
     }
    ],
    "conditions": [
     {
-     "text": "The owner must sign a heritage agreement with the City for specific properties.",
+     "text": "The owner must enter into a legal agreement to protect the heritage building with the City for the properties at 17-19 Toronto Street, 25 Toronto Street, and 55 Adelaide Street East.",
      "cites": [
       {
        "doc": 1,
        "page": 10
+      },
+      {
+       "doc": 2,
+       "page": 4
       }
      ]
     },
     {
-     "text": "The owner must provide a detailed conservation plan that satisfies the Senior Manager of Heritage Planning.",
+     "text": "The owner must provide a detailed Conservation Plan to the satisfaction of the Senior Manager, Heritage Planning.",
      "cites": [
       {
        "doc": 1,
        "page": 10
+      },
+      {
+       "doc": 2,
+       "page": 4
       }
      ]
     }
    ],
    "process": [
+    {
+     "text": "City staff recommended approving the application to amend the building rules, with a hold on building until specific conditions are met.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "April 14, 2026",
+     "step": "staff"
+    },
     {
      "text": "Approved by City Council.",
      "step": "council",
@@ -225,13 +203,13 @@
   }
  },
  "2026.TE32.11": {
-  "generatedAt": "2026-11-14T07:25:44+00:00",
+  "generatedAt": "2026-11-14T07:33:26+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
     "n": 1,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-285996.pdf",
-    "title": "Toronto Report for Action: 17-19, 23 and 25 Toronto Street and 55 Adelaide Street East - Alterations to Heritage Properties, Demolition, Approval of Replacement Building and HEA",
+    "title": "Report for Action on Toronto Street and Adelaide Street East Heritage Properties",
     "date": "April 1, 2026",
     "pages": 29
    },
@@ -254,15 +232,11 @@
   "sections": {
    "happening": [
     {
-     "text": "City staff recommend approving changes to heritage properties, the demolition of one building, and a new 91-storey mixed-use tower.",
+     "text": "A proposal recommends building a 91-storey mixed-use tower with commercial, office, and residential spaces while changing and conserving several historic properties.",
      "cites": [
       {
        "doc": 1,
        "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 6
       },
       {
        "doc": 2,
@@ -271,60 +245,48 @@
      ]
     },
     {
-     "text": "The proposal includes keeping some entire buildings, keeping some outer walls, and signing a Heritage Easement Agreement.",
+     "text": "The plan includes tearing down the building at 23 Toronto Street and building a new low-rise lobby in its place.",
      "cites": [
       {
        "doc": 1,
-       "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 6
-      },
-      {
-       "doc": 2,
-       "page": 3
+       "page": 2
       }
      ]
     }
    ],
    "why": [
     {
-     "text": "The plan allows for new spaces while protecting the cultural heritage value of the St. Lawrence Neighbourhood Heritage Conservation District.",
+     "text": "The changes are proposed to allow for the construction of a new tower while protecting and conserving the cultural heritage value of the historic properties and district.",
      "cites": [
       {
        "doc": 1,
-       "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 7
+       "page": 2
       },
       {
        "doc": 2,
-       "page": 3
+       "page": 2
       }
      ]
     }
    ],
    "where": [
     {
-     "text": "At 17-19, 23, and 25 Toronto Street and 55 and 57 Adelaide Street East, this mainly matters for people who live, work, and visit in the Downtown East neighbourhood and the St. Lawrence Neighbourhood Heritage Conservation District.",
+     "text": "This mainly matters for people living, working, or visiting near 17-19 Toronto Street, 23 Toronto Street, 25 Toronto Street, 55 Adelaide Street East, and 57 Adelaide Street East.",
      "cites": [
       {
        "doc": 1,
        "page": 5
       },
       {
-       "doc": 1,
-       "page": 7
+       "doc": 2,
+       "page": 3
       }
      ]
     }
    ],
    "conditions": [
     {
-     "text": "The related zoning rule change must come into full force and effect.",
+     "text": "The related rules for what can be built must come into full force and effect.",
      "cites": [
       {
        "doc": 1,
@@ -337,7 +299,7 @@
      ]
     },
     {
-     "text": "A detailed Conservation Plan must be provided and followed.",
+     "text": "The owner must provide a detailed conservation plan, a heritage lighting plan, an interpretation plan, a landscape plan, a signage plan, and a letter of credit.",
      "cites": [
       {
        "doc": 1,
@@ -350,7 +312,7 @@
      ]
     },
     {
-     "text": "A Heritage Lighting Plan, Interpretation Plan, Landscape Plan, and Signage Plan must be submitted and carried out.",
+     "text": "A legal agreement to protect the historic buildings must be signed and registered on title.",
      "cites": [
       {
        "doc": 1,
@@ -359,28 +321,22 @@
       {
        "doc": 2,
        "page": 2
-      },
-      {
-       "doc": 2,
-       "page": 3
-      }
-     ]
-    },
-    {
-     "text": "A financial guarantee must be provided to secure the conservation and interpretation work.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 4
-      },
-      {
-       "doc": 2,
-       "page": 3
       }
      ]
     }
    ],
    "process": [
+    {
+     "text": "City staff recommended that City Council approve the demolition and alterations to the heritage properties, approve the replacement building, and give authority to enter into a legal agreement to protect the historic buildings.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "April 1, 2026",
+     "step": "staff"
+    },
     {
      "text": "Approved by City Council.",
      "step": "council",
@@ -395,20 +351,20 @@
   }
  },
  "2026.MM40.29": {
-  "generatedAt": "2026-11-14T07:25:46+00:00",
+  "generatedAt": "2026-11-14T07:33:29+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
     "n": 1,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286235.pdf",
-    "title": "Cabbagetown Cycling Connects - Ontario Street parking by-law amendments",
+    "title": "Notice of Motion - Cabbagetown Cycling Connects - Ontario Street parking rule changes",
     "date": "April 22, 2026",
     "pages": 1
    },
    {
     "n": 2,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/mm/bgrd/backgroundfile-286241.pdf",
-    "title": "ATTACHMENT 1: Cabbagetown Cycling Connects - Ontario Street parking by-law amendments",
+    "title": "Attachment 1 - Cabbagetown Cycling Connects - Ontario Street parking rule changes",
     "date": "",
     "pages": 4
    },
@@ -424,27 +380,34 @@
   "sections": {
    "happening": [
     {
-     "text": "The motion proposes new bike lanes, traffic rule changes, and parking updates on Ontario Street.",
+     "text": "The motion proposes new bike lanes, sidewalk and boulevard upgrades, and parking and traffic rule changes on Ontario Street.",
      "cites": [
       {
        "doc": 1,
        "page": 1
-      }
-     ]
-    },
-    {
-     "text": "Road work, watermain repairs, and sidewalk fixes are also planned for Ontario Street in 2026.",
-     "cites": [
+      },
       {
-       "doc": 1,
+       "doc": 2,
        "page": 1
+      },
+      {
+       "doc": 2,
+       "page": 2
+      },
+      {
+       "doc": 2,
+       "page": 3
+      },
+      {
+       "doc": 2,
+       "page": 4
       }
      ]
     }
    ],
    "why": [
     {
-     "text": "The project connects existing cycling routes, fixes damaged sidewalks, and improves public spaces.",
+     "text": "The project will improve watermains, roads, sidewalks, and trees while strengthening connections between existing bike routes.",
      "cites": [
       {
        "doc": 1,
@@ -455,7 +418,7 @@
    ],
    "where": [
     {
-     "text": "Ontario Street, between Wellesley Street East and Prospect Street, and between Aberdeen Avenue and Carlton Street. This mainly matters for residents and people who travel along Ontario Street.",
+     "text": "This mainly matters for people living, driving, cycling, and walking on Ontario Street between Wellesley Street East and Prospect Street or Carlton Street, as well as near Winchester Square Park, Garner Lane, Aberdeen Avenue, and Carleton Street.",
      "cites": [
       {
        "doc": 1,
@@ -464,53 +427,7 @@
      ]
     }
    ],
-   "conditions": [
-    {
-     "text": "Sidewalks must be made universally accessible and asphalt in boulevards replaced with pavers north of the park.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "New contra-flow bike lanes must be added north of the park.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "The cycle track between Aberdeen Avenue and Carlton Street must be changed to a bike lane next to parking to allow curbside parking.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "A new permanent loading zone must be added near Garner Lane.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "Safety upgrades such as a raised pedestrian crossing at Aberdeen Avenue and a curb extension with landscape elements at Carlton Street must be built south of the park.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    }
-   ],
+   "conditions": [],
    "process": [
     {
      "text": "Approved by City Council.",
@@ -526,13 +443,13 @@
   }
  },
  "2026.CC36.10": {
-  "generatedAt": "2026-11-14T07:25:50+00:00",
+  "generatedAt": "2026-11-14T07:33:32+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
     "n": 1,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/cc/bgrd/backgroundfile-264661.pdf",
-    "title": "Alterations and HEA - 353-355 Sherbourne St & 157 Carlton St",
+    "title": "Report for Action - 353-355 Sherbourne Street and 157 Carlton Street",
     "date": "January 26, 2026",
     "pages": 23
    },
@@ -555,7 +472,7 @@
   "sections": {
    "happening": [
     {
-     "text": "City staff recommend approving alterations to a heritage property to allow for a new 48-storey residential tower and a 4-storey mixed-use podium.",
+     "text": "A proposal recommends allowing changes to a heritage property to build a 48-storey mixed-use building with about 440 homes, including at least 30% affordable housing.",
      "cites": [
       {
        "doc": 1,
@@ -564,12 +481,8 @@
      ]
     },
     {
-     "text": "The project includes about 440 residential units, with at least 30 percent as affordable housing, and a community event hall inside the historic church.",
+     "text": "The project includes a 4-storey podium and a community event hall inside the historic church.",
      "cites": [
-      {
-       "doc": 1,
-       "page": 2
-      },
       {
        "doc": 1,
        "page": 6
@@ -579,18 +492,18 @@
    ],
    "why": [
     {
-     "text": "The proposal aims to provide affordable housing, public realm improvements, high building performance, and expanded community spaces while retaining a significant historic building.",
+     "text": "The changes are proposed to provide new residential and community spaces while retaining portions of the historic church complex.",
      "cites": [
       {
        "doc": 1,
-       "page": 11
+       "page": 6
       }
      ]
     }
    ],
    "where": [
     {
-     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for residents and people who use the community and housing spaces.",
+     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for people who live in the Cabbagetown Northwest Heritage Conservation District and users of the church space.",
      "cites": [
       {
        "doc": 1,
@@ -598,14 +511,14 @@
       },
       {
        "doc": 1,
-       "page": 2
+       "page": 5
       }
      ]
     }
    ],
    "conditions": [
     {
-     "text": "The owner must enter into a Heritage Easement Agreement with the City.",
+     "text": "The owner must enter into a legal agreement to protect the heritage property with the City.",
      "cites": [
       {
        "doc": 1,
@@ -623,7 +536,7 @@
      ]
     },
     {
-     "text": "The related Official Plan and Zoning By-law Amendments must come into full force and effect.",
+     "text": "The related changes to the rules for what can be built on this site must come into full force and effect.",
      "cites": [
       {
        "doc": 1,
@@ -632,7 +545,7 @@
      ]
     },
     {
-     "text": "The owner must provide a Heritage Lighting Plan, an Interpretation Plan, a detailed Landscape Plan, and a Signage Plan.",
+     "text": "The owner must provide a Heritage Lighting Plan, an Interpretation Plan, a Landscape Plan, and a Signage Plan.",
      "cites": [
       {
        "doc": 1,
@@ -641,16 +554,7 @@
      ]
     },
     {
-     "text": "The owner must provide building permit drawings and specifications for conservation and protective measures.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 3
-      }
-     ]
-    },
-    {
-     "text": "The owner must provide a Letter of Credit to secure all work included in the approved Conservation and Interpretation Plans.",
+     "text": "The owner must provide a Letter of Credit to secure all work in the approved Conservation Plan and Interpretation Plan.",
      "cites": [
       {
        "doc": 1,
@@ -660,6 +564,16 @@
     }
    ],
    "process": [
+    {
+     "text": "City staff recommended that City Council approve the alterations to the heritage property protected by the City with conditions.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ],
+     "step": "staff"
+    },
     {
      "text": "Approved by City Council.",
      "step": "council",
@@ -674,13 +588,13 @@
   }
  },
  "2026.TE28.12": {
-  "generatedAt": "2026-11-14T07:25:55+00:00",
+  "generatedAt": "2026-11-14T07:33:38+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
     "n": 1,
     "url": "https://www.toronto.ca/legdocs/mmis/2026/te/bgrd/backgroundfile-261269.pdf",
-    "title": "Toronto Report for Action: 353-355 Sherbourne Street and 157 Carlton Street – Official Plan and Zoning By-law Amendment Application – Decision Report – Approval",
+    "title": "Report for Action",
     "date": "December 18, 2025",
     "pages": 33
    },
@@ -710,35 +624,27 @@
   "sections": {
    "happening": [
     {
-     "text": "Staff recommend approving changes to the Official Plan and Zoning By-law to allow a 48-storey mixed-use building that includes 440 homes and community space.",
+     "text": "A proposal recommends allowing a 48-storey mixed-use building with about 440 homes, including 30% affordable rental homes.",
      "cites": [
       {
        "doc": 1,
        "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 4
       }
      ]
     },
     {
-     "text": "The proposal keeps the existing heritage church building on site and uses it as part of the new building's base.",
+     "text": "The existing St. Luke's United Church building will be kept and used for a residential lobby, 1,453 square metres of community space, and outdoor space the public can use.",
      "cites": [
       {
        "doc": 1,
-       "page": 4
-      },
-      {
-       "doc": 1,
-       "page": 12
+       "page": 1
       }
      ]
     }
    ],
    "why": [
     {
-     "text": "The project aims to add housing units, including affordable rental homes, and community spaces while preserving a designated heritage property.",
+     "text": "The changes are proposed to permit a taller building and meet the City's green building rules.",
      "cites": [
       {
        "doc": 1,
@@ -746,14 +652,14 @@
       },
       {
        "doc": 1,
-       "page": 11
+       "page": 5
       }
      ]
     }
    ],
    "where": [
     {
-     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for people looking for housing, members of St. Luke’s United Church, and local residents who use the community spaces and social programs.",
+     "text": "At 353-355 Sherbourne Street and 157 Carlton Street, this mainly matters for people living in the area, the church congregation, and people who use the community spaces and local social programs.",
      "cites": [
       {
        "doc": 1,
@@ -772,7 +678,7 @@
    ],
    "conditions": [
     {
-     "text": "At least 30 percent of the new homes must be affordable rental dwelling units.",
+     "text": "At least 30% of the homes must be affordable rental homes.",
      "cites": [
       {
        "doc": 1,
@@ -781,33 +687,40 @@
      ]
     },
     {
-     "text": "A minimum of 250 square metres must be secured as a Privately Owned Publicly-Accessible Space along the Sherbourne Street and Carlton Street frontages.",
+     "text": "A minimum of 250 square metres must be secured as outdoor space the public can use.",
      "cites": [
       {
        "doc": 1,
        "page": 1
-      },
-      {
-       "doc": 1,
-       "page": 8
       }
      ]
     },
     {
-     "text": "The owner must update and have accepted a Functional Servicing and Stormwater Management Report and secure any needed municipal infrastructure updates before the holding provision can be removed.",
+     "text": "A hold on building until a revised water, sewer and drainage report, a conservation plan, and a legal agreement to protect the building are complete.",
      "cites": [
-      {
-       "doc": 1,
-       "page": 14
-      },
       {
        "doc": 1,
        "page": 16
+      },
+      {
+       "doc": 1,
+       "page": 17
       }
      ]
     }
    ],
    "process": [
+    {
+     "text": "City staff recommended approving the application to amend the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "December 18, 2025",
+     "step": "staff"
+    },
     {
      "text": "Approved by City Council.",
      "step": "council",
@@ -822,27 +735,27 @@
   }
  },
  "2024.TE16.5": {
-  "generatedAt": "2026-11-14T07:26:01+00:00",
+  "generatedAt": "2026-11-14T07:33:43+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
     "n": 1,
     "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248596.pdf",
-    "title": "Decision Report - Approval - 214-230 Sherbourne Street",
+    "title": "Report for Action - 214-230 Sherbourne Street - Decision Report",
     "date": "September 9, 2024",
     "pages": 23
    },
    {
     "n": 2,
     "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248931.pdf",
-    "title": "City of Toronto By-law XXX-2024",
+    "title": "Draft Official Plan Amendment By-law",
     "date": "",
     "pages": 4
    },
    {
     "n": 3,
     "url": "https://www.toronto.ca/legdocs/mmis/2024/te/bgrd/backgroundfile-248906.pdf",
-    "title": "City of Toronto By-law [Clerks to insert By-law number]",
+    "title": "Draft Zoning By-law Amendment",
     "date": "",
     "pages": 12
    },
@@ -865,16 +778,7 @@
   "sections": {
    "happening": [
     {
-     "text": "City staff recommend approving rule changes to the Official Plan and Zoning By-law to allow a 46-storey residential building with non-space in a kept heritage house.",
-     "cites": [
-      {
-       "doc": 1,
-       "page": 1
-      }
-     ]
-    },
-    {
-     "text": "The proposed building has 615 homes and about 479 square metres of non-residential floor area.",
+     "text": "The proposal recommends a 46-storey building with 615 homes and some non-business space.",
      "cites": [
       {
        "doc": 1,
@@ -885,7 +789,7 @@
    ],
    "why": [
     {
-     "text": "The rule changes are proposed because the project needs changes to height limits, setbacks and floor area rules to be built.",
+     "text": "Changes to the rules for what can be built on this site are requested to allow the proposed building height and how far it sits back from the property edges.",
      "cites": [
       {
        "doc": 1,
@@ -896,7 +800,7 @@
    ],
    "where": [
     {
-     "text": "At 214-230 Sherbourne Street, this mainly matters for future residents living in the 615 new homes and people using the non-residential spaces in the heritage building.",
+     "text": "At 214-230 Sherbourne Street, this mainly matters for people living nearby and future residents.",
      "cites": [
       {
        "doc": 1,
@@ -907,7 +811,7 @@
    ],
    "conditions": [
     {
-     "text": "The historic William Dineen House at 230 Sherbourne Street must be kept in its place and fully restored as part of the project.",
+     "text": "The existing William Dineen House at 230 Sherbourne Street must be kept in place and restored.",
      "cites": [
       {
        "doc": 1,
@@ -916,7 +820,7 @@
      ]
     },
     {
-     "text": "At least 15 percent of the homes must have two or more bedrooms, 10 percent must have three or more bedrooms, and another 15 percent must be convertible two or three-bedroom units.",
+     "text": "At least 15% of the homes must have two or more bedrooms, 10% must have three or more bedrooms, and another 15% must be two or three bedrooms or convertible units.",
      "cites": [
       {
        "doc": 1,
@@ -925,16 +829,27 @@
      ]
     },
     {
-     "text": "A total of 10 vehicle parking spaces and 616 bicycle parking spaces must be provided.",
+     "text": "The building must stay below and outside the St. Michael's Hospital helicopter flight path.",
      "cites": [
       {
        "doc": 1,
-       "page": 3
+       "page": 6
       }
      ]
     }
    ],
    "process": [
+    {
+     "text": "City staff recommended that City Council to change the rules for what can be built on this site for 214-230 Sherbourne Street.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "September 9, 2024",
+     "step": "staff"
+    },
     {
      "text": "Approved by City committee.",
      "step": "committee",
@@ -949,7 +864,7 @@
   }
  },
  "2026.IE27.17": {
-  "generatedAt": "2026-11-14T07:26:03+00:00",
+  "generatedAt": "2026-11-14T07:33:45+00:00",
   "model": "gemini-3.5-flash-lite",
   "documents": [
    {
@@ -971,18 +886,40 @@
   "sections": {
    "happening": [
     {
-     "text": "A City Councillor recommends changing a one-way block of Lennox Street to two-way traffic for cars.",
+     "text": "A City Councillor proposes changing the single block of Lennox Street between Palmerston Avenue and Markham Street to two-way traffic for vehicles.",
      "cites": [
       {
        "doc": 1,
        "page": 1
       }
      ]
+    },
+    {
+     "text": "The proposal also asks to remove the current one-way lanes and bicycle track on that block of Lennox Street, and to study vehicle counts and speed humps later.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
     }
    ],
    "why": [
     {
-     "text": "Drivers are making illegal turns because of the current one-way rule and nearby street closures.",
+     "text": "The proposal is made because traffic in the area is difficult and the current one-way rule causes drivers to make illegal turns onto Markham Street.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "It also aims to give drivers a legal alternative so they do not drive north through a planned pedestrian area on Markham Street.",
      "cites": [
       {
        "doc": 1,
@@ -993,7 +930,614 @@
    ],
    "where": [
     {
-     "text": "Lennox Street between Palmerston Boulevard and Markham Street, this mainly matters for local residents and drivers.",
+     "text": "Lennox Street between Palmerston Boulevard and Markham Street. This mainly matters for local residents, drivers, and people walking or biking in the Bloor and Bathurst neighborhood.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Mar 26, 2026",
+     "cites": [
+      {
+       "doc": 2
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.NY34.12": {
+  "generatedAt": "2026-11-14T07:33:52+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-287824.pdf",
+    "title": "Decision Report - Approval",
+    "date": "June 8, 2026",
+    "pages": 30
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288626.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "",
+    "pages": 4
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288625.pdf",
+    "title": "Draft Zoning Bylaw Amendment",
+    "date": "",
+    "pages": 9
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-287838.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "May 29, 2026",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jul 30, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A proposal recommends two 59-storey towers with shops on the ground floor, 1,202 homes, and a public laneway.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    },
+    {
+     "text": "The project includes 128 parking spaces and 1,445 bicycle parking spaces.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The changes allow taller buildings near a transit station and replace some existing office space with other uses.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 5
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 245 Eglinton Avenue East, located at the southeast corner of Mount Pleasant Road and Eglinton Avenue East. This mainly matters for people living or owning property near 245 Eglinton Avenue East, Mount Pleasant Road, Eglinton Avenue East, and Taunton Road.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must make reasonable commercial efforts to find a suitable off-site parkland dedication or pay cash-in-lieu.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "Any tall building development on the site must include a minimum of 3,577 square metres of non-residential and/or affordable rental housing gross floor area.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a minimum of 6 Affordable Rental Housing Units for a minimum of 25 years if providing affordable rental housing.",
+     "cites": [
+      {
+       "doc": 2,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "A revised report on water, sewer and drainage must demonstrate adequate capacity for water, combined sewer, and storm sewer systems before the hold on building can be lifted.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 15
+      },
+      {
+       "doc": 3,
+       "page": 5
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the application to change the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 8, 2026",
+     "step": "staff"
+    },
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Jul 30, 2026",
+     "cites": [
+      {
+       "doc": 5
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.NY34.13": {
+  "generatedAt": "2026-11-14T07:33:57+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288018.pdf",
+    "title": "Report for Action",
+    "date": "June 15, 2026",
+    "pages": 31
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288700.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "",
+    "pages": 6
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288701.pdf",
+    "title": "Draft Zoning By-law Amendment",
+    "date": "",
+    "pages": 9
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288068.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 3, 2026",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jul 30, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "An application is proposed to build a 35-storey mixed-use building with 383 homes.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to add to the range and mix of housing options and promote efficient, transit-supportive development.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 16
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 537, 539, 541, 543, 545, 547 and 551 Eglinton Avenue East and 59 and 61 Hoyle Avenue, this mainly matters for the people living in the area and future residents.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that Council approve the changes to the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 16
+      }
+     ],
+     "step": "staff"
+    },
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Jul 30, 2026",
+     "cites": [
+      {
+       "doc": 5
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.NY34.23": {
+  "generatedAt": "2026-11-14T07:34:03+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288139.pdf",
+    "title": "Decision Report - Approval",
+    "date": "June 17, 2026",
+    "pages": 27
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288166.pdf",
+    "title": "Draft Official Plan Amendment",
+    "date": "",
+    "pages": 6
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288167.pdf",
+    "title": "Draft Zoning Bylaw Amendment",
+    "date": "",
+    "pages": 9
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-288140.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 11, 2026",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jul 30, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "A proposal recommends changing the rules for what can be built on this site to allow a 36-storey residential building with 339 rental homes.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 5
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The proposal aims to bring more housing options near a transit station.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 9
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 590 and 592 Roehampton Avenue, 7, 9, 11, 15, 17, 19, 21, 23, 25, 27 and 29 Glenavy Avenue and 7 Glazebrook Avenue, this mainly matters for residents living near the site and people using Leaside Station.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 7
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "The owner must submit a revised Transportation Impact Study that satisfies the Director of Engineering Review, Development Review.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 16
+      }
+     ]
+    },
+    {
+     "text": "The owner must submit a revised report on water, sewer and drainage showing adequate capacity for water and sanitary sewers.",
+     "cites": [
+      {
+       "doc": 3,
+       "page": 5
+      }
+     ]
+    },
+    {
+     "text": "The owner must provide a letter confirming that the proposed building will be constructed to be watertight below grade.",
+     "cites": [
+      {
+       "doc": 3,
+       "page": 6
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended approving the application to change the rules for what can be built on this site, with a hold on building until some conditions are met.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 17, 2026",
+     "step": "staff"
+    },
+    {
+     "text": "Approved by City Council.",
+     "step": "council",
+     "date": "Jul 30, 2026",
+     "cites": [
+      {
+       "doc": 5
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2025.NY20.1": {
+  "generatedAt": "2026-11-14T07:34:05+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-251412.pdf",
+    "title": "Application to Remove a Private Tree – 425 Manor Road East",
+    "date": "November 15, 2024",
+    "pages": 5
+   },
+   {
+    "n": 2,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jan 9, 2025",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "An applicant wants to cut down a healthy red oak tree with three stems in a rear yard.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The City denied the permit, and the applicant is appealing that choice.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The applicant is worried about personal safety and property damage from falling acorns and dead branches.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 425 Manor Road East, this mainly matters for the property owner and the local community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [],
+   "process": [
+    {
+     "text": "City staff recommended that North York Community Council deny the request for a permit to remove one privately owned tree located at 425 Manor Road East.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "November 15, 2024",
+     "step": "staff"
+    },
+    {
+     "text": "Rejected by City committee.",
+     "step": "committee",
+     "date": "Jan 9, 2025",
+     "cites": [
+      {
+       "doc": 2
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2025.NY25.6": {
+  "generatedAt": "2026-11-14T07:34:13+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-256449.pdf",
+    "title": "Decision Report",
+    "date": "June 17, 2025",
+    "pages": 39
+   },
+   {
+    "n": 2,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-256774.pdf",
+    "title": "Official Plan Amendment By-law",
+    "date": "",
+    "pages": 6
+   },
+   {
+    "n": 3,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-256712.pdf",
+    "title": "Zoning By-law Amendment",
+    "date": "",
+    "pages": 14
+   },
+   {
+    "n": 4,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-256454.pdf",
+    "title": "Notice of Public Meeting",
+    "date": "June 11, 2025",
+    "pages": 3
+   },
+   {
+    "n": 5,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/cc/bgrd/backgroundfile-257550.pdf",
+    "title": "Supplementary Report",
+    "date": "July 18, 2025",
+    "pages": 15
+   },
+   {
+    "n": 6,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jul 23, 2025",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "The proposal recommends building a 13-storey seniors residence with 251 homes, including 31 rental replacement units.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    },
+    {
+     "text": "The owner must pay a cash contribution of $950,000.00 for public park improvements, public art, and/or streetscape improvements within proximity of the lands in the Ward.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The project is proposed to provide independent residential suites, assisted living suites, and memory care suites while fully replacing the existing rental housing.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 2674, 2676, 2678, and 2704 Yonge Street and 19 Alexandra Boulevard. This mainly matters for existing tenants, seniors, and people living nearby.",
      "cites": [
       {
        "doc": 1,
@@ -1004,7 +1548,7 @@
    ],
    "conditions": [
     {
-     "text": "City staff must count the traffic on Lennox Street after Markham Street reopens and the street changes are made.",
+     "text": "Prior to the first above grade building permit, the owner must convey a minimum 205 square metre parkland dedication to expand Snider Parkette.",
      "cites": [
       {
        "doc": 1,
@@ -1013,20 +1557,232 @@
      ]
     },
     {
-     "text": "City staff must report back with ideas for speed humps to keep cyclists safe.",
+     "text": "The owner must provide and maintain 31 replacement rental homes with a total gross floor area of at least 1,970 square metres.",
      "cites": [
       {
        "doc": 1,
-       "page": 2
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "The owner must construct and maintain an area of not less than 370 square metres at grade for use as outdoor space the public can use.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
       }
      ]
     }
    ],
    "process": [
     {
+     "text": "City staff recommended approving the application to change the rules for what can be built on this site and to change the rules for what can be built on this site.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "June 17, 2025",
+     "step": "staff"
+    },
+    {
      "text": "Approved by City Council.",
      "step": "council",
-     "date": "Mar 26, 2026",
+     "date": "Jul 23, 2025",
+     "cites": [
+      {
+       "doc": 6
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2026.NY29.1": {
+  "generatedAt": "2026-11-14T07:34:15+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2026/ny/bgrd/backgroundfile-261033.pdf",
+    "title": "Application to Remove a Private Tree – 10 Glencairn Avenue",
+    "date": "November 6, 2025",
+    "pages": 5
+   },
+   {
+    "n": 2,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Jan 6, 2026",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "An applicant is asking for permission to cut down a white mulberry tree, and is appealing after the City denied the permit.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The homeowner is worried the tree might fall down because of defects and how close it is to a fence.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 10 Glencairn Avenue, on the boundary line between 10 and 12 Glencairn Avenue. This mainly matters for the property owner and the local community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "If the removal request is granted, the applicant must provide five replacement trees using on-site planting, cash-in-lieu of planting, or both.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 4
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended that North York Community Council deny the request for a permit to remove one privately owned tree located at 10 Glencairn Avenue.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "November 6, 2025",
+     "step": "staff"
+    },
+    {
+     "text": "Approved by City committee.",
+     "step": "committee",
+     "date": "Jan 6, 2026",
+     "cites": [
+      {
+       "doc": 2
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2025.NY23.4": {
+  "generatedAt": "2026-11-14T07:34:18+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "documents": [
+   {
+    "n": 1,
+    "url": "https://www.toronto.ca/legdocs/mmis/2025/ny/bgrd/backgroundfile-254309.pdf",
+    "title": "Application to Remove a Private Tree – 390 Glencairn Avenue",
+    "date": "March 4, 2025",
+    "pages": 5
+   },
+   {
+    "n": 2,
+    "url": "https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/",
+    "title": "City of Toronto voting record",
+    "date": "Apr 30, 2025",
+    "pages": 0,
+    "record": true
+   }
+  ],
+  "sections": {
+   "happening": [
+    {
+     "text": "An applicant is asking for a permit to remove one privately owned tree.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "why": [
+    {
+     "text": "The applicant states the tree has declining health and worries it might fail.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    {
+     "text": "At 390 Glencairn Avenue, in the front yard. This mainly matters for the property owner and the local community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "text": "If Community Council approves removing the tree, the applicant must provide five replacement trees on-site or pay cash-in-lieu.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    }
+   ],
+   "process": [
+    {
+     "text": "City staff recommended that North York Community Council deny the request for a permit to remove one privately owned tree located at 390 Glencairn Avenue.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      }
+     ],
+     "date": "March 4, 2025",
+     "step": "staff"
+    },
+    {
+     "text": "Approved by City committee.",
+     "step": "committee",
+     "date": "Apr 30, 2025",
      "cites": [
       {
        "doc": 2

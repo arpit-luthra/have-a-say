@@ -1,0 +1,49 @@
+{
+  "note": "Real upcoming items collected by hand from the City of Toronto agenda for the Toronto Preservation Board, meeting 2027.PB1 (Nov 16, 2026). Retrieved Nov 14, 2026. Not in Toronto Open Data yet because no vote has happened.",
+  "meeting": {
+    "body": "Toronto Preservation Board",
+    "date": "2026-11-16",
+    "time": "9:30 AM",
+    "location": "Committee Room 1, City Hall / Video Conference",
+    "agendaUrl": "https://secure.toronto.ca/council/agenda-items.do?meeting=2027.PB1"
+  },
+  "items": [
+    {
+      "id": "2027.PB1.3",
+      "officialTitle": "66 Gerrard Street East - Notice of Intention to Designate a Property under Part IV, Section 29 of the Ontario Heritage Act",
+      "plainTitle": "Plan to protect old houses at 66 Gerrard St E",
+      "topic": "Heritage",
+      "ward": "13 - Toronto Centre",
+      "address": "66 Gerrard Street East, Toronto",
+      "staffReportDate": "2026-10-28",
+      "nextStep": "Toronto Preservation Board, Nov 16, 2026, 9:30 AM",
+      "status": "In progress",
+      "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.3",
+      "pdfs": ["https://www.toronto.ca/legdocs/mmis/2027/pb/bgrd/backgroundfile-290748.pdf"]
+    },
+    {
+      "id": "2027.PB1.4",
+      "officialTitle": "70 Gerrard Street East - Notice of Intention to Designate a Property under Part IV, Section 29 of the Ontario Heritage Act",
+      "plainTitle": "Plan to protect old house at 70 Gerrard St E",
+      "topic": "Heritage",
+      "ward": "13 - Toronto Centre",
+      "address": "70 Gerrard Street East, Toronto",
+      "nextStep": "Toronto Preservation Board, Nov 16, 2026, 9:30 AM",
+      "status": "In progress",
+      "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.4",
+      "pdfs": ["https://www.toronto.ca/legdocs/mmis/2027/pb/bgrd/backgroundfile-290749.pdf"]
+    },
+    {
+      "id": "2027.PB1.6",
+      "officialTitle": "1337 Queen Street West - Demolition and New Construction on a Designated Heritage Property under Part V, Section 42 of the Ontario Heritage Act - Approval",
+      "plainTitle": "New 16-storey affordable housing building at 1337 Queen St W",
+      "topic": "Housing",
+      "ward": "4 - Parkdale-High Park",
+      "address": "1337 Queen Street West, Toronto",
+      "nextStep": "Toronto Preservation Board, Nov 16, 2026, 9:30 AM",
+      "status": "In progress",
+      "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2027.PB1.6",
+      "pdfs": ["https://www.toronto.ca/legdocs/mmis/2027/pb/bgrd/backgroundfile-290746.pdf"]
+    }
+  ]
+}
