@@ -29,7 +29,7 @@ OUT_FILE = ROOT / "frontend" / "src" / "data" / "item-locations.json"
 
 SEARCH_URL = "https://nominatim.openstreetmap.org/search"
 # Nominatim asks for a User-Agent that says who is calling (no email needed here).
-USER_AGENT = "heads-up-civic-hack/1.0 (student hackathon project; github.com/arpit-luthra/have-a-say)"
+USER_AGENT = "heads-up-civic-hack/1.0 (student hackathon project; github.com/arpit-luthra/heads-up)"
 SECONDS_BETWEEN_REQUESTS = 1.1  # policy: max 1 per second
 
 try:
