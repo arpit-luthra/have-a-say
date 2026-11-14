@@ -2,8 +2,32 @@
 // We never guess a deadline: open items always point to the official page for it.
 // `headlineOnly`: just the bold line (used when the report's own sentences already explain the rest).
 import { getStageSteps, isStale } from '../lib/stageSteps.js'
+import { formatDate } from '../lib/formatDate.js'
 
 export default function SayBox({ item, headlineOnly = false }) {
+  // An upcoming item: the meeting has not happened, so people can still comment or ask to speak.
+  // Both buttons open the official item page, which has the real deadline and the forms. We never guess a deadline.
+  if (item.upcoming) {
+    const { body, date, time } = item.meeting
+    return (
+      <div className="say">
+        <p className="say__main">Yes, you can still have a say.</p>
+        <p>
+          Send a written comment or ask to speak at the {body} meeting on {formatDate(date)} at {time} (City Hall or video).
+        </p>
+        <div className="say__buttons">
+          <a className="say__link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+            Submit a comment
+          </a>
+          <a className="say__link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+            Ask to speak
+          </a>
+        </div>
+        <p>Check the official page for the exact deadline.</p>
+      </div>
+    )
+  }
+
   const decided = getStageSteps(item).steps[3].state !== 'upcoming'
 
   if (isStale(item)) {

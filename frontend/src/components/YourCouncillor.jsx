@@ -34,7 +34,9 @@ export default function YourCouncillor({ item, showVote = true, ward: wardOverri
       <p className="councillor__name">{councillor.name}</p>
       <p className="councillor__ward">Ward {ward.number}</p>
       {showVote && <p>
-        {vote
+        {item.upcoming
+          ? 'Not voted yet.'
+          : vote
           ? VOTE_WORDS[vote.code]
           : summary
             ? 'Not listed in the vote on this item.'

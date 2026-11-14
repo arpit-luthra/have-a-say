@@ -381,15 +381,15 @@ a.say__link:hover {
 .decision__full {
   color: var(--brand);
 }
-.steps__item {
+.process__item {
   margin-top: 18px;
 }
-.steps__name {
+.process__name {
   margin: 0 0 6px;
   font-size: 15px;
   font-weight: 700;
 }
-.steps__date {
+.process__date {
   font-weight: 400;
   color: var(--ink-muted);
 }
@@ -489,15 +489,15 @@ a.say__link:hover {
   font-style: italic;
   color: var(--grey);
 }
-.steps__item {
+.process__item {
   margin-top: 16px;
 }
-.steps__name {
+.process__name {
   margin: 0 0 8px;
   font-size: 16px;
   font-weight: 600;
 }
-.steps__date {
+.process__date {
   font-weight: 400;
   color: var(--grey);
 }
@@ -623,4 +623,24 @@ a.say__link:hover {
 }
 .dp .bullets li {
   margin-bottom: 8px;
+}
+
+.dp .tracker__dot--current {
+  background: #fff;
+  border: 2px solid var(--text);
+}
+
+.dp .say__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+.dp .say__buttons a.say__link {
+  margin-top: 0;
+}
+
+.dp .tracker__name,
+.dp .tracker__date {
+  overflow-wrap: anywhere;
 }

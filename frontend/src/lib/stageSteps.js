@@ -30,7 +30,7 @@ const STALE_AFTER_MONTHS = 6
 
 /** True when the latest recorded vote is over 6 months old and the item isn't decided. */
 export function isStale(item) {
-  if (item.detailed || !item.dateISO) return false
+  if (item.detailed || item.upcoming || !item.dateISO) return false
   const body = item.committee
   if (body === 'City Council' || FINAL_DECISION_BODIES.has(body)) return false
   const cutoff = new Date()
@@ -39,6 +39,21 @@ export function isStale(item) {
 }
 
 export function getStageSteps(item) {
+  // Upcoming item: staff report is done, the committee meeting is NEXT ("current"), then Council, then decided.
+  if (item.upcoming) {
+    return {
+      steps: [
+        { name: 'Staff report', state: 'reached', note: null },
+        { name: item.meeting.body, state: 'current', note: null },
+        { name: 'City Council', state: 'upcoming', note: null },
+        { name: 'Decided', state: 'upcoming', note: null },
+      ],
+      label: 'Open for comments',
+      next: null,
+      uncertain: false,
+    }
+  }
+
   // Our 2 hand-checked decisions: both were adopted by City Council, and we know the path.
   const known = item.detailed
   const body = known ? 'City Council' : item.committee

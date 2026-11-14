@@ -528,7 +528,7 @@
   "official": "5 Vonda Avenue - Application to Remove a Private Tree",
   "template": "5 Vonda Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 5 Vonda Ave",
+  "plain": "Request to remove a tree at 5 Vonda Ave",
   "v": 3
  },
  "2026.EY32.8": {
@@ -808,14 +808,14 @@
   "official": "15 Marchwood Drive - Application to Remove a Private Tree",
   "template": "15 Marchwood Drive - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 15 Marchwood Dr",
+  "plain": "Request to remove a tree at 15 Marchwood Dr",
   "v": 3
  },
  "2026.NY32.10": {
   "official": "14 Prestbury Street - Application to Remove a Private Tree",
   "template": "14 Prestbury Street - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 14 Prestbury St",
+  "plain": "Request to remove a tree at 14 Prestbury St",
   "v": 3
  },
  "2026.EY31.2": {
@@ -1207,7 +1207,7 @@
   "official": "10 Glencairn Avenue - Application to Remove a Private Tree",
   "template": "10 Glencairn Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 10 Glencairn Ave",
+  "plain": "Appeal to cut down a tree at 10 Glencairn Ave",
   "v": 3
  },
  "2025.PH26.10": {
@@ -1626,8 +1626,8 @@
  "2025.TE26.15": {
   "official": "171 Neville Park Boulevard - Application to Remove a Private Tree",
   "template": "171 Neville Park Boulevard - Application to Remove a Private Tree",
-  "topic": "Other",
-  "plain": "Remove a private tree",
+  "topic": "Parks & trees",
+  "plain": "Request to remove a tree at 171 Neville Park Blvd",
   "v": 3
  },
  "2025.EY26.25": {
@@ -1802,7 +1802,7 @@
   "official": "258 Glengrove Avenue West - Application to Remove a Private Tree",
   "template": "258 Glengrove Avenue West - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 258 Glengrove Ave W",
+  "plain": "Request to remove a tree at 258 Glengrove Ave W",
   "v": 3
  },
  "2025.CA29.1": {
@@ -2271,7 +2271,7 @@
   "official": "49 Bellamy Road South - Application to Remove a Private Tree",
   "template": "49 Bellamy Road South - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 49 Bellamy Rd S",
+  "plain": "Request to remove a tree at 49 Bellamy Rd S",
   "v": 3
  },
  "2025.TTC5.1": {
@@ -2467,7 +2467,7 @@
   "official": "390 Glencairn Avenue - Application to Remove a Private Tree",
   "template": "390 Glencairn Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 390 Glencairn Ave",
+  "plain": "Request to remove a tree at 390 Glencairn Ave",
   "v": 3
  },
  "2025.NY22.27": {
@@ -2845,7 +2845,7 @@
   "official": "513 Huntingwood Drive - Application to Remove a Private Tree",
   "template": "513 Huntingwood Drive - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at Huntingwood Dr",
+  "plain": "Request to remove a tree at 513 Huntingwood Dr",
   "v": 3
  },
  "2025.SC20.1": {
@@ -2978,7 +2978,7 @@
   "official": "425 Manor Road East - Application to Remove a Private Tree",
   "template": "425 Manor Road East - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 425 Manor Rd E",
+  "plain": "Request to cut down a tree at 425 Manor Rd E",
   "v": 3
  },
  "2024.CC25.1": {
@@ -3181,7 +3181,7 @@
   "official": "20 Shirley Crescent - Application to Remove a Private Tree",
   "template": "20 Shirley Crescent - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 20 Shirley Cres",
+  "plain": "Request to remove a tree at 20 Shirley Cres",
   "v": 3
  },
  "2024.SC18.20": {
@@ -3237,7 +3237,7 @@
   "official": "124 Sandringham Drive - Application to Remove a Tree in a Ravine - Protected Area",
   "template": "124 Sandringham Drive - Application to Remove a Tree in a Ravine - Protected Area",
   "topic": "Parks & trees",
-  "plain": "Park changes at 124 Sandringham Dr",
+  "plain": "Request to remove a tree in a protected ravine at 124 Sandringham Dr",
   "v": 3
  },
  "2024.EY18.6": {
@@ -3461,7 +3461,7 @@
   "official": "110 Caines Avenue  - Application to Remove a City Tree",
   "template": "110 Caines Avenue  - Application to Remove a City Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 110 Caines Ave",
+  "plain": "Request to remove a City tree at 110 Caines Ave",
   "v": 3
  },
  "2024.NY18.12": {
@@ -3475,7 +3475,7 @@
   "official": "85 Helendale Avenue - Application to Remove a Private Tree",
   "template": "85 Helendale Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 85 Helendale Ave",
+  "plain": "Request to remove a tree at 85 Helendale Ave",
   "v": 3
  },
  "2024.TE17.8": {
@@ -4385,7 +4385,7 @@
   "official": "2 Hawksdale Road - Application to Remove a Private Tree",
   "template": "2 Hawksdale Road - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 2 Hawksdale Rd",
+  "plain": "Request to remove a tree at 2 Hawksdale Rd",
   "v": 3
  },
  "2024.PB18.7": {
@@ -4588,7 +4588,7 @@
   "official": "173 Homewood Avenue - Application to Remove a Private Tree",
   "template": "173 Homewood Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 173 Homewood Ave",
+  "plain": "Request to remove a tree at 173 Homewood Ave",
   "v": 3
  },
  "2024.PB16.6": {
@@ -5316,7 +5316,7 @@
   "official": "7 Marwill Street - Application to Remove a Private Tree",
   "template": "7 Marwill Street - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 7 Marwill St",
+  "plain": "Request to remove a tree at 7 Marwill St",
   "v": 3
  },
  "2023.PH7.13": {
@@ -5785,7 +5785,7 @@
   "official": "146 Three Valleys Drive - Application to Remove a Private Tree",
   "template": "146 Three Valleys Drive - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 146 Three Valleys Dr",
+  "plain": "Request to remove a tree at 146 Three Valleys Dr",
   "v": 3
  },
  "2023.NY6.36": {
@@ -6030,7 +6030,7 @@
   "official": "136 Craighurst Avenue - Application to Remove a Private Tree",
   "template": "136 Craighurst Avenue - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 136 Craighurst Ave",
+  "plain": "Request to remove a tree at 136 Craighurst Ave",
   "v": 3
  },
  "2023.MM6.13": {
@@ -6338,14 +6338,14 @@
   "official": "76 Covewood Street - Application to Remove Three Private Trees",
   "template": "76 Covewood Street - Application to Remove Three Private Trees",
   "topic": "Parks & trees",
-  "plain": "Park changes at 76 Covewood St",
+  "plain": "Request to remove three trees at 76 Covewood St",
   "v": 3
  },
  "2023.NY4.31": {
   "official": "59 Palm Drive - Application to Remove a Private Tree",
   "template": "59 Palm Drive - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 59 Palm Dr",
+  "plain": "Request to remove a tree at 59 Palm Dr",
   "v": 3
  },
  "2023.NY3.31": {
@@ -6716,14 +6716,14 @@
   "official": "20 Pinemore Crescent - Application to Remove a Private Tree",
   "template": "20 Pinemore Crescent - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 20 Pinemore Cres",
+  "plain": "Request to remove a tree at 20 Pinemore Cres",
   "v": 3
  },
  "2023.NY2.14": {
   "official": "31 Norden Crescent - Application to Remove a Private Tree",
   "template": "31 Norden Crescent - Application to Remove a Private Tree",
   "topic": "Parks & trees",
-  "plain": "Park changes at 31 Norden Cres",
+  "plain": "Request to remove a tree at 31 Norden Cres",
   "v": 3
  },
  "2023.HL1.1": {

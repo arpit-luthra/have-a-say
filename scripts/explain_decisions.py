@@ -90,7 +90,10 @@ Rules you must follow:
    So describe what is in them as "recommended" or "proposed" (for example "The motion proposes free rides..."
    or "Staff recommend approving..."). Never say Council "decided", "approved" or "changed" something, and never say it already happened.
    The result of the vote is written somewhere else. Do not mention votes or results.
-3. If you have to infer who is affected, say so softly, for example "This mainly matters for children, youth and older adults,
+3. "why" must give the REASON for the proposal (for example the building's history, a problem it fixes, a goal). Never use
+   "no financial implications" or budget notes as the reason. "where" must name people (neighbours, tenants, visitors, drivers),
+   never City bodies, committees or staff.
+   If you have to infer who is affected, say so softly, for example "This mainly matters for children, youth and older adults,
    who the motion says it hopes will use the free fares."
 4. Use the exact numbers from the document when they matter (write $1,389,589.69, not a rounded number), and describe money
    using the document's OWN wording for where it goes. Do not add words the document does not use: for example do not
@@ -307,6 +310,13 @@ SWAPS = [
     (r"residential (?:homes|dwelling units)", "homes"),
     (r"dwelling units", "homes"),
     (r"permit the proposed building height and setbacks", "allow the proposed building height and how far it sits back from the property edges"),
+    # Heritage law wording
+    (r"state its intention to designate", "say it plans to protect"),
+    (r"under Part IV, Section 29 of the Ontario Heritage Act", "under Ontario's heritage law"),
+    (r"under the Ontario Heritage Act", "under Ontario's heritage law"),
+    (r"Ontario Heritage Act", "Ontario's heritage law"),
+    (r"\bto designate\b", "to protect"),
+    (r"Palmerston Avenue", "Palmerston Boulevard"),  # the street is Palmerston Boulevard (the PDF mixes both)
     (r"Tree By-?laws?", "tree rules"),
     # Budget wording: keep the document's amounts and places, drop the accounting labels.
     (r"reducing (\$[\d,.]+) in Debt/Capital From Current and increasing the money using Section 37 community benefits from (?:the development at )?", r"moving \1 to funding from the development at "),

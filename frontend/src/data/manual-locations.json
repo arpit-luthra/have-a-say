@@ -4,5 +4,20 @@
   "lng": -79.3759,
   "address": "Jack Layton Ferry Terminal, Bay Street and Queens Quay",
   "approximate": true
+ },
+ "2027.PB1.3": {
+  "lat": 43.659904,
+  "lng": -79.378719,
+  "address": "66 Gerrard Street East"
+ },
+ "2027.PB1.4": {
+  "lat": 43.660096,
+  "lng": -79.378352,
+  "address": "70 Gerrard Street East"
+ },
+ "2027.PB1.6": {
+  "lat": 43.640847,
+  "lng": -79.43391,
+  "address": "1337 Queen Street West"
  }
 }

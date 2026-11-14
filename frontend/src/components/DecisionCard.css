@@ -103,3 +103,9 @@
   font-size: 12px;
   font-weight: 600;
 }
+
+/* Upcoming items that people can still comment on: the one place a card uses blue for a status. */
+.card__open {
+  color: var(--brand);
+  font-weight: 700;
+}

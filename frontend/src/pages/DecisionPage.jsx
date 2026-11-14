@@ -151,16 +151,16 @@ function ProcessSteps({ sentences }) {
   const seen = Object.keys(STEP_NAMES).filter((step) => sentences.some((s) => s.step === step))
   if (seen.length === 0) return null
   return (
-    <div className="steps">
+    <div className="process">
       {Object.entries(STEP_NAMES).map(([step, name]) => {
         const mine = sentences.filter((s) => s.step === step)
         if (mine.length === 0) return null
         const date = mine.find((s) => s.date)?.date
         return (
-          <div className="steps__item" key={step}>
-            <h3 className="steps__name">
+          <div className="process__item" key={step}>
+            <h3 className="process__name">
               {name}
-              {date && <span className="mono steps__date"> · {date}</span>}
+              {date && <span className="mono process__date"> · {date}</span>}
             </h3>
             <Sentences sentences={mine} />
           </div>
@@ -193,6 +193,10 @@ function statusLine(status, body) {
 // Our hand-checked decisions know all their dates. For the others we only know the LATEST vote,
 // so only the step that vote belongs to gets a date (we never invent the others).
 function trackerDates(item, info) {
+  if (item.upcoming) {
+    // The board meeting date is on the agenda. The Council date is not set yet, and we don't guess it.
+    return [item.staffReportDate ? formatDate(item.staffReportDate) : '', `${formatDate(item.meeting.date)}, ${item.meeting.time}`, 'Date not set yet', '']
+  }
   const stages = info?.sections.find((sec) => sec.stages)?.stages
   if (stages) return stages.map((st) => (st.skipped ? '' : st.date))
   const dates = ['', '', '', '']
@@ -214,7 +218,7 @@ function buildSources(item, ex, info) {
   const official = {
     label: 'Official City of Toronto page',
     url: item.sourceUrl,
-    date: `latest vote ${formatDate(item.dateISO)}`,
+    date: item.upcoming ? `meeting ${formatDate(item.meeting.date)}` : `latest vote ${formatDate(item.dateISO)}`,
     itemNumber: item.id,
   }
   if (ex) return [official, ...ex.documents.map((d) => ({ label: d.title, url: d.url, date: d.date }))]
@@ -266,11 +270,16 @@ export default function DecisionPage() {
   // Our 2 hand-checked decisions have no vote record of their own; both were adopted by City Council.
   const voteItem = item.detailed ? { ...item, committee: 'City Council', result: 'Carried' } : item
   const body = bodyName(voteItem.committee)
-  const headerLine = [
-    statusLine(statusWord(voteItem), body),
-    formatDate(item.dateISO),
-    item.place && `${item.place}${item.approximate ? ' (approximate)' : ''}`,
-  ]
+  const headerLine = (
+    item.upcoming
+      ? [`In progress · ${item.meeting.body} meets ${formatDate(item.meeting.date)}`, item.place]
+      : [
+          statusLine(statusWord(voteItem), body),
+          formatDate(item.dateISO),
+          item.ward?.match(/^Ward \d+/)?.[0], // only when we really know the ward (our 2 hand-checked decisions)
+          item.place && `${item.place}${item.approximate ? ' (approximate)' : ''}`,
+        ]
+  )
     .filter(Boolean)
     .join(' · ')
   const sources = buildSources(item, ex, info)
@@ -337,7 +346,7 @@ export default function DecisionPage() {
           <StageTracker item={item} dates={trackerDates(item, details[id])} quiet />
           <ProcessSteps sentences={processSentences} />
           {/* With a cited voting-record step above, this line would say the same thing twice. */}
-          {processSentences.length === 0 && (
+          {processSentences.length === 0 && !item.upcoming && (
             <p className="dp__note">
               Latest recorded vote: {body}, {formatDate(item.dateISO)}
             </p>
@@ -354,7 +363,8 @@ export default function DecisionPage() {
             City-wide decisions (no location) only get the list of how everyone voted. */}
         <Block title={ward ? 'Your councillor' : areaWard ? 'Councillor for this area' : 'How councillors voted'}>
           {(ward || areaWard) && <YourCouncillor item={voteItem} ward={ward ?? areaWard} />}
-          <CouncillorVote item={voteItem} full hideWard={Boolean(ward || areaWard)} />
+          {/* No vote has happened for an upcoming item, so there is no list of votes to show. */}
+          {!item.upcoming && <CouncillorVote item={voteItem} full hideWard={Boolean(ward || areaWard)} />}
         </Block>
 
         <Block title="Sources">

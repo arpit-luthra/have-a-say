@@ -11,6 +11,8 @@ import geocoded from '../data/item-locations.json'
 // so re-running the geocoding script never wipes them. "approximate": true = the place is a landmark, not the exact spot.
 import manual from '../data/manual-locations.json'
 import explanations from '../data/explanations.json'
+// Real items from agendas for meetings that have NOT happened yet (so no vote, and not in open data). Made by hand.
+import upcomingData from '../data/upcoming-items.json'
 
 const locations = { ...geocoded, ...manual }
 
@@ -38,15 +40,70 @@ const fromOpenData = openData.items
     }
   })
 
-// "approved"/"rejected"/"can't be torn down" only when the body that makes the final call has
-// voted. Otherwise the title says "proposed". (Stale items are not decided either.)
+// Upcoming items: no vote yet, so they are always "In progress". Their pins come from manual-locations.json.
+const { meeting } = upcomingData
+const upcoming = upcomingData.items.map((item) => {
+  const spot = locations[item.id]
+  return {
+    id: item.id,
+    title: item.plainTitle,
+    officialTitle: item.officialTitle,
+    topic: item.topic,
+    ward: item.ward, // e.g. "13 - Toronto Centre"
+    committee: meeting.body, // the body that meets next
+    dateISO: meeting.date, // used only for sorting
+    sourceUrl: item.sourceUrl,
+    staffReportDate: item.staffReportDate ?? null,
+    meeting,
+    upcoming: true,
+    detailed: false,
+    sayStatus: 'open', // the person can still comment, so "Open now" in the filters
+    deadline: null, // never guessed: the official page has the exact deadline
+    fullExplanation: Boolean(explanations[item.id]),
+    ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address }),
+  }
+})
+
+// A plain title may only say "approved" / "rejected" when the LATEST vote is the final one (City Council, or a
+// board that makes its own final call). Otherwise it must say "proposed". These are the wordings that claim an outcome.
+const NOT_FINAL_WORDING = [
+  [/^New building (?:approved|rejected) at /, 'New building proposed at '],
+  [/^Old building at (.+) can't be torn down$/, 'Old building at $1 proposed for protection'],
+  [/^Approval for /, 'Proposal for '],
+  [/^Refusal of (.+)$/, 'Proposal to refuse $1'],
+  [/^New homes approval$/, 'New homes proposed'],
+  [/^Approval of (.+)$/, 'Proposal to approve $1'],
+]
+const CLAIMS_OUTCOME = /\b(approved|rejected|approval|refusal)\b|can't be torn down/i
+
+function isFinal(item) {
+  return getStageSteps(item).steps[3].state !== 'upcoming'
+}
+
 function matchTitleToStatus(item) {
-  if (item.detailed || getStageSteps(item).steps[3].state !== 'upcoming') return item
-  const title = item.title
-    .replace(/^New building (approved|rejected) at /, 'New building proposed at ')
-    .replace(/^Old building at (.+) can't be torn down$/, 'Old building at $1 proposed for protection')
+  if (item.detailed || item.upcoming) return item
+  if (isFinal(item)) {
+    // Final vote LOST: a title that says "approved" would be wrong.
+    if (item.result?.startsWith('Lost')) return { ...item, title: item.title.replace(/^New building approved at /, 'New building rejected at ') }
+    return item
+  }
+  let title = item.title
+  for (const [pattern, replacement] of NOT_FINAL_WORDING) title = title.replace(pattern, replacement)
   return { ...item, title }
 }
 
-export const allItems = [...detailed, ...fromOpenData].map(matchTitleToStatus)
+export const allItems = [...detailed, ...fromOpenData, ...upcoming].map(matchTitleToStatus)
+
+/** Automatic re-check of EVERY title in the app: returns the ones that claim an outcome the vote doesn't support. */
+export function titleProblems() {
+  return allItems
+    .filter((item) => !item.detailed && !item.upcoming)
+    .filter((item) => (isFinal(item) ? item.result?.startsWith('Lost') && /\bapproved\b/i.test(item.title) : CLAIMS_OUTCOME.test(item.title)))
+    .map((item) => `${item.id}: "${item.title}" (${item.committee}, ${item.result})`)
+}
+
+if (import.meta.env.DEV) {
+  const problems = titleProblems()
+  if (problems.length) console.warn('Titles that claim a result the latest vote does not support:', problems)
+}
 export const openDataUpdated = openData.generatedAt

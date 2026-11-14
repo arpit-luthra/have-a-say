@@ -45,6 +45,12 @@ export function filterDecisions(decisions, { topics, stages, says, sort, status 
   )
 
   const byNewest = (a, b) => b.dateISO.localeCompare(a.dateISO)
+  const sorted = sortShown(shown, sort, home, byNewest)
+  // Under "In progress", the items still open for comments come first (the sort order is kept inside each group).
+  return status === 'In progress' ? [...sorted.filter((d) => d.upcoming), ...sorted.filter((d) => !d.upcoming)] : sorted
+}
+
+function sortShown(shown, sort, home, byNewest) {
   if (sort === 'Closest to me' && home) {
     return shown.sort((a, b) => distance(a, home) - distance(b, home) || byNewest(a, b))
   }

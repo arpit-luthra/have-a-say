@@ -106,3 +106,12 @@
   font-size: 13px;
   color: var(--ink-muted);
 }
+
+/* The step happening next: a ring, so it reads as "you are here". */
+.tracker__dot--current {
+  background: #fff;
+  border: 2px solid var(--ink);
+}
+.tracker__step--current .tracker__name {
+  font-weight: 700;
+}
