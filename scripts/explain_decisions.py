@@ -44,6 +44,7 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 MAX_PDF_BYTES = 40 * 1024 * 1024
 MAX_TOTAL_CHARS = 600_000  # roughly 150k tokens: more than this and we refuse rather than silently cut text off
 NOT_CLEAR = "Not clear from the report"
+NOT_MENTIONED = "The report doesn't mention"  # "The report doesn't mention any plan to replace this building." needs no citation
 
 # Only official City of Toronto document links may be downloaded.
 ALLOWED_HOST = "www.toronto.ca"
@@ -73,6 +74,10 @@ Answer these:
   If the proposal moves or spends money, say it HERE in "happening" with the exact amount and the document's own wording for
   where it goes (for example "$1,389,589.69 is moved to funding from the 1-7 Yonge Street development"). Also put plain facts here
   (for example "Infants already ride free").
+  ALSO answer, in plain words: "What would actually change for people if this passes?" (one sentence in "happening", from the
+  document). And if a reader would naturally assume something the document does NOT mention (for example a new building
+  replacing an old one, a cost, a start date, a deadline), add one sentence in "happening" such as
+  "The report doesn't mention any plan to replace this building." (no citation needed for that sentence).
 - "where": Where, and who is affected? The address or place first, then who. ALWAYS keep every named place the document
   mentions (a street address, a terminal, a park, a building). Start the who part with "This mainly matters for ..."
   and name only groups the document itself names.
@@ -91,7 +96,10 @@ Rules you must follow:
    So describe what is in them as "recommended" or "proposed" (for example "The motion proposes free rides..."
    or "Staff recommend approving..."). Never say Council "decided", "approved" or "changed" something, and never say it already happened.
    The result of the vote is written somewhere else. Do not mention votes or results.
-3. "why" must give the REASON for the proposal (for example the building's history, a problem it fixes, a goal). Never use
+3. "why" must answer "Why now?" first, if the document says: the law change, deadline or event that forces this decision
+   (for example "A law change called Bill 23 says listed buildings must be protected or taken off the Heritage Register by
+   January 1, 2027"). Say plainly what happens if nothing is done, only if the document says so. Then one sentence on why the
+   place or idea matters, in plain words. "why" must give the REASON for the proposal (for example the building's history, a problem it fixes, a goal). Never use
    "no financial implications" or budget notes as the reason. "where" must name people (neighbours, tenants, visitors, drivers),
    never City bodies, committees or staff.
    If you have to infer who is affected, say so softly, for example "This mainly matters for children, youth and older adults,
@@ -281,7 +289,7 @@ def clean_sentences(sentences, docs):
             if isinstance(doc, int) and 1 <= doc <= len(docs) and isinstance(page, int) and 1 <= page <= len(docs[doc - 1]["pages"]):
                 if {"doc": doc, "page": page} not in cites:
                     cites.append({"doc": doc, "page": page})
-        if not cites and not text.startswith(NOT_CLEAR):
+        if not cites and not text.startswith((NOT_CLEAR, NOT_MENTIONED)):
             print(f"  dropped a sentence with no valid source: {text[:60]}...")
             continue
         row = {"text": text, "cites": cites}

@@ -1735,22 +1735,74 @@
   "sections": {
    "happening": [
     {
-     "text": "The report proposes that City Council say it plans to protect the property at 66 Gerrard Street East under Ontario's heritage law.",
+     "text": "The City wants to give this old building full heritage protection.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "Right now it is only listed on the City's Heritage Register, a list of buildings with heritage value. It has been listed since November 6, 1974.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "If it is protected, City Council could review any plan to tear it down or change it, and the City could enforce standards for looking after it.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
+    }
+   ],
+   "why": [
+    {
+     "text": "A provincial law change called Bill 23 says listed buildings must either be protected or taken off the Heritage Register by January 1, 2027.",
      "cites": [
       {
        "doc": 1,
        "page": 1
       }
      ]
-    }
-   ],
-   "why": [
+    },
     {
-     "text": "The proposal aims to protect the property's cultural heritage value, as it is a representative example of a Georgian rowhouse with Second Empire features and has strong historical associations with Toronto's LGBTQ+ community.",
+     "text": "This is one of 18 old (pre-1870) listed buildings the City is looking at first. If it isn't protected by that date, it comes off the register.",
      "cites": [
       {
        "doc": 1,
-       "page": 6
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "It was built around 1855 as three attached brick houses, and its history is tied to Toronto's LGBTQ+ community.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
       },
       {
        "doc": 1,
@@ -1805,22 +1857,78 @@
   "sections": {
    "happening": [
     {
-     "text": "The report proposes stating the City's intention to protect 70 Gerrard Street East under Ontario's heritage law.",
+     "text": "The City wants to give this old building full heritage protection.",
      "cites": [
       {
        "doc": 1,
        "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
       }
      ]
+    },
+    {
+     "text": "Right now it is only listed on the City's Heritage Register, a list of buildings with heritage value. It has been listed since March 15, 1974.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 3
+      }
+     ]
+    },
+    {
+     "text": "If it is protected, City Council could review any plan to tear it down or change it, and the City could enforce standards for looking after it.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "The report doesn't mention any plan to replace this building.",
+     "cites": []
     }
    ],
    "why": [
     {
-     "text": "The property has cultural heritage value because of its old architecture, its famous past doctor and music venue history, and its part in the historic neighbourhood.",
+     "text": "A provincial law change called Bill 23 says listed buildings must either be protected or taken off the Heritage Register by January 1, 2027.",
      "cites": [
       {
        "doc": 1,
-       "page": 6
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "This is one of 18 old (pre-1870) listed buildings the City is looking at first. If it isn't protected by that date, it comes off the register.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
+      },
+      {
+       "doc": 1,
+       "page": 2
+      }
+     ]
+    },
+    {
+     "text": "It was built around 1845 as the Dr. James Elliot Graham House and remodelled in 1886. It later housed The Edge, an influential punk music venue.",
+     "cites": [
+      {
+       "doc": 1,
+       "page": 1
       },
       {
        "doc": 1,

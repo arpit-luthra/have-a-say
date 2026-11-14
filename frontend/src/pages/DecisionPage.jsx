@@ -29,6 +29,7 @@ import StageTracker from '../components/StageTracker.jsx'
 import './DecisionPage.css'
 
 const NOT_CLEAR = 'Not clear from the report'
+const NOT_MENTIONED = "The report doesn't mention" // e.g. "The report doesn't mention any plan to replace this building."
 const STEP_NAMES = {
   staff: 'Staff recommendation',
   committee: 'Committee decision',
@@ -110,7 +111,7 @@ function Sentences({ sentences, bullets = false }) {
         const note = certaintyNote(s.certainty)
         return (
           <p className="answer" key={i}>
-            <span className={s.text.startsWith(NOT_CLEAR) ? 'answer__unclear' : undefined}>{s.text}</span>{' '}
+            <span className={s.text.startsWith(NOT_CLEAR) || s.text.startsWith(NOT_MENTIONED) ? 'answer__unclear' : undefined}>{s.text}</span>{' '}
             {s.links.map((l) => (
               <a className="src" key={l.url} href={l.url} target="_blank" rel="noreferrer">
                 {l.label}
