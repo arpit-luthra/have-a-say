@@ -13,7 +13,7 @@ export default function TopBar() {
   return (
     <header className="topbar">
       <NavLink className="topbar__logo" to="/" aria-label="Heads Up, home">
-        {/* Logo: a map pin with a small speech-bubble dot inside, in brand teal. */}
+        {/* Logo: a map pin with a small speech-bubble dot inside, in brand blue. */}
         <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
           <path
             d="M16 2C9.9 2 5 6.7 5 12.7c0 7.6 9.2 16.2 10.1 17a1.3 1.3 0 0 0 1.8 0C17.8 28.9 27 20.3 27 12.7 27 6.7 22.1 2 16 2z"

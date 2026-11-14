@@ -5,9 +5,11 @@
 
 /* The white rounded bar with a soft shadow. */
 .find-ward__pill {
+  position: relative; /* the suggestions dropdown is placed under this bar */
   background: #ffffff;
-  border-radius: 2px;
+  border-radius: 999px;
   border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgb(16 40 70 / 0.05);
   transition: box-shadow 150ms;
 }
 
@@ -23,7 +25,7 @@
 .find-ward__input {
   flex: 1;
   min-width: 0; /* lets the input shrink on narrow phones instead of overflowing */
-  padding: 13px 4px 13px 20px;
+  padding: 14px 4px 14px 22px;
   border: 0;
   background: transparent;
   font: inherit;
@@ -44,7 +46,7 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  margin-right: 2px;
+  margin-right: 4px;
   border: 0;
   border-radius: 50%;
   background: var(--brand);
@@ -53,7 +55,7 @@
 }
 
 .find-ward__button:hover {
-  filter: brightness(0.9);
+  background: var(--brand-dark);
 }
 
 .find-ward__button:disabled {
@@ -68,10 +70,10 @@
 /* Error text sits on its own small white chip so it's readable over the map. */
 .find-ward__error {
   margin: 8px 0 0;
-  padding: 8px 12px;
-  border-radius: 2px;
+  padding: 10px 14px;
+  border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+  box-shadow: var(--shadow-card);
   font-size: 13px;
   line-height: 1.4;
 }
@@ -79,46 +81,48 @@
 /* The dropdown under the search bar. */
 .find-ward__menu {
   position: absolute;
-  z-index: 10;
-  top: calc(100% - 4px);
+  z-index: 20;
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   margin: 0;
-  padding: 6px;
+  padding: 8px;
   list-style: none;
-  border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 6px 20px rgb(38 48 59 / 0.15);
+  box-shadow: 0 12px 36px rgb(16 40 70 / 0.22);
+  text-align: left;
 }
-
 .find-ward__option {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
   padding: 12px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 10px;
   background: none;
+  color: var(--ink);
   font-size: 15px;
   text-align: left;
   cursor: pointer;
 }
 
-.find-ward__option:hover {
-  background: var(--paper);
+.find-ward__option:hover,
+.find-ward__option--on {
+  background: var(--brand-light);
 }
 
 .find-ward__option svg {
+  flex-shrink: 0;
   color: var(--brand);
 }
 
 /* Big version on the start page: sits on the photo, so the error chip stays readable. */
 .find-ward--hero .find-ward__pill {
   border: 0;
-  border-radius: 40px;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 0.35);
+  border-radius: 999px;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.35);
 }
 .find-ward--hero .find-ward__input {
   padding: 22px 8px 22px 28px;

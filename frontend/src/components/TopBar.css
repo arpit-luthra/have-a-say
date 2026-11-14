@@ -34,7 +34,7 @@
 
 .topbar__link {
   padding: 10px 14px;
-  border-radius: 2px;
+  border-radius: 8px;
   color: var(--ink-muted);
   text-decoration: none;
   font-size: 16px;
@@ -48,7 +48,7 @@
 .topbar__link.active {
   color: var(--brand);
   font-weight: 500;
-  background: #e6f2f0; /* light teal tint */
+  background: var(--brand-light);
 }
 
 @media (max-width: 800px) {

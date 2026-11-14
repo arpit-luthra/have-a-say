@@ -1,23 +1,28 @@
 /* Global styles and design tokens (colours, fonts) used across the app.
-   Calm, civic palette: warm paper, dark ink, one muted blue.
-   We deliberately avoid red/yellow/green so nothing feels like an alarm. */
+   Toronto blue is the brand colour; everything else is soft neutral. */
 
 :root {
-  --paper: #f6f5f1; /* background */
-  --ink: #26303b; /* main text, ward outlines */
-  --ink-muted: #5b6672; /* secondary text */
-  --line: #d9d6ce; /* borders */
-  --brand: #0f766e; /* deep teal: the only brand colour */
+  --paper: #f7f9fc; /* page background */
+  --ink: #1c2733; /* main text */
+  --ink-muted: #5d6b7a; /* secondary text */
+  --line: #e1e7ef; /* borders */
+  --brand: #1b5fa8; /* Toronto blue */
+  --brand-dark: #0f3e73; /* hover */
+  --brand-light: #eef4fb; /* light blue backgrounds, chips */
+  --radius: 12px;
+  --shadow-card: 0 1px 2px rgb(16 40 70 / 0.06), 0 4px 14px rgb(16 40 70 / 0.07);
+  --shadow-card-hover: 0 2px 4px rgb(16 40 70 / 0.08), 0 10px 28px rgb(16 40 70 / 0.12);
 
-  --font-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-
-  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-sans);
 
   color: var(--ink);
   background: var(--paper);
   font-family: var(--font-sans);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
+
 
 *,
 *::before,
@@ -50,7 +55,7 @@ button {
   overflow-y: auto;
 }
 
-/* Keyboard focus ring in brand teal. */
+/* Keyboard focus ring in brand blue. */
 :focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;

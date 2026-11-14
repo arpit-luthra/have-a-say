@@ -10,8 +10,9 @@
     "say": "This decision has been made.",
     "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2026.IE27.17",
     "dateISO": "2026-03-26",
-    "lat": 43.6615,
-    "lng": -79.4105,
+    "lat": 43.6634663,
+    "lng": -79.4125157,
+    "approximate": true,
     "sayStatus": "closed",
     "deadline": null,
     "place": "Lennox Street"
@@ -27,8 +28,9 @@
     "say": "This decision has been made.",
     "sourceUrl": "https://secure.toronto.ca/council/agenda-item.do?item=2026.MM40.29",
     "dateISO": "2026-04-23",
-    "lat": 43.66,
-    "lng": -79.365,
+    "lat": 43.663734,
+    "lng": -79.3705402,
+    "approximate": true,
     "sayStatus": "closed",
     "deadline": null,
     "place": "Ontario Street"

@@ -1,47 +1,30 @@
-.map-back,
 .map-panel {
   position: absolute;
   z-index: 2;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
-}
-
-.map-back {
-  top: 16px;
-  left: 16px;
-  padding: 9px 14px;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
-}
-.map-back:hover {
-  color: var(--brand);
-}
-
-.map-panel {
   left: 16px;
   bottom: 28px;
-  width: min(300px, calc(100% - 32px));
-  padding: 16px;
+  width: min(320px, calc(100% - 32px));
+  padding: 18px;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card-hover);
 }
 .map-panel__title {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.35;
 }
 .map-panel__link {
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 14px;
   font-weight: 600;
   color: var(--brand);
 }
-
+.map-panel__link:hover {
+  color: var(--brand-dark);
+}
 .map-panel__place {
   margin: 2px 0 10px;
   font-size: 14px;

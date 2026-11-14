@@ -1,80 +1,93 @@
-/* A list item, not a box: just text with a thin rule under it. */
+/* A clean white card: topic chip, plain title, then "Approved · 0.7 km away". */
 .card {
   display: block;
-  padding: 32px 16px;
-  margin: 0 -16px;
-  border-bottom: 1px solid var(--line);
-  transition: background 120ms;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 160ms, transform 160ms;
   color: inherit;
   text-decoration: none;
 }
 
 .card:hover,
 .card--active {
-  background: rgb(38 48 59 / 0.04);
+  box-shadow: var(--shadow-card-hover);
+}
+.card--active {
+  outline: 2px solid var(--brand);
 }
 
-.card:hover .card__title,
-.card:focus-visible .card__title {
-  color: var(--brand);
-  text-decoration: underline;
-}
-
-.card__top {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-muted);
-}
-
+/* The topic: a small light-blue pill. */
 .card__topic {
-  margin: 0 0 8px;
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--brand-light);
+  color: var(--brand);
   font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-muted);
-}
-
-.card__stage {
-  font-family: var(--font-mono);
-  text-transform: none;
-  letter-spacing: 0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .card__title {
   margin: 0 0 10px;
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  transition: color 160ms;
 }
 
 .card__meta {
-  margin: 0 0 2px;
+  margin: 0;
   font-size: 14px;
+  font-weight: 500;
   color: var(--ink-muted);
-}
-
-.card__meta--date {
-  font-family: var(--font-mono);
-  font-size: 13px;
 }
 
 .card__say {
   margin: 10px 0 0;
   font-size: 14px;
-  font-style: italic;
 }
 
-/* Open-data items aren't links as a whole, so no hover highlight; only the official link is teal. */
 .card--plain .card__say a {
   color: var(--brand);
 }
 
 .card__status {
   font-weight: 600;
+}
+
+.card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.card__btn {
+  padding: 8px 16px;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--brand);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background: var(--brand-light);
+}
+
+.card__btn--primary {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.card__btn--primary:hover {
+  background: var(--brand-dark, var(--brand));
 }

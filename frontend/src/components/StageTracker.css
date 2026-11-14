@@ -1,4 +1,4 @@
-/* Reached steps are teal, later ones grey. Skipped / not-needed steps are hollow. */
+/* Reached steps are blue, later ones grey. Skipped / not-needed steps are hollow. */
 .tracker__dot {
   display: inline-block;
   box-sizing: border-box;

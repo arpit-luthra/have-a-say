@@ -93,7 +93,11 @@ export default function Home() {
         <ul className="home__cards">
           {shown.slice(0, visible).map((decision) => (
             <li key={decision.id}>
-              <DecisionCard decision={decision} distanceKm={homeLocation && decision.lat != null ? distanceKm(homeLocation, decision) : null} active={hoveredId === decision.id || selected?.id === decision.id} onHover={setHoveredId} />
+              <DecisionCard decision={decision} distanceKm={homeLocation && decision.lat != null ? distanceKm(homeLocation, decision) : null} active={hoveredId === decision.id || selected?.id === decision.id} onHover={setHoveredId} onShowOnMap={(id) => {
+                setSelectedId(id)
+                setScrolledTo(id) // the card is already in view, so don't scroll the list
+                setShowMap(true) // on phones, switch to the map
+              }} />
             </li>
           ))}
         </ul>
@@ -117,16 +121,28 @@ export default function Home() {
             setScrolledTo(null)
           }}
         />
-        {homeLocation && (
-          <label className="home__showall">
-            <input type="checkbox" checked={showAll} onChange={(e) => setShowAll(e.target.checked)} />
-            Show all of Toronto
-          </label>
-        )}
-        <MapPanel decision={selected} onBack={() => {
-            setSelectedId(null)
-            setScrolledTo(null)
-          }} />
+        {/* One neat stack in the top-left corner, so these buttons can never overlap. */}
+        <div className="map-stack">
+          {homeLocation && (
+            <label className="map-stack__item map-stack__check">
+              <input type="checkbox" checked={showAll} onChange={(e) => setShowAll(e.target.checked)} />
+              Show all of Toronto
+            </label>
+          )}
+          {selected && (
+            <button
+              className="map-stack__item map-stack__back"
+              type="button"
+              onClick={() => {
+                setSelectedId(null)
+                setScrolledTo(null)
+              }}
+            >
+              ← Back to all of Toronto
+            </button>
+          )}
+        </div>
+        <MapPanel decision={selected} />
       </section>
 
       <button className="home__toggle" type="button" onClick={() => setShowMap(!showMap)}>

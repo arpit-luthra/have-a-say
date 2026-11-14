@@ -29,7 +29,7 @@
 }
 
 .decision__band {
-  background: #eef6f5; /* very light brand-teal tint */
+  background: var(--brand-light);
   border-bottom: 2px solid var(--ink);
 }
 .decision__header {
@@ -221,7 +221,7 @@
 .explain-btn {
   padding: 12px 24px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 8px;
   background: var(--brand);
   color: #fff;
   font-weight: 600;

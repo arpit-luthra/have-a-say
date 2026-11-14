@@ -202,7 +202,7 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
       { fromApp: true },
     )
     // "approximate" pins (a whole street, not one address) get no building highlight.
-    if (!pin.detailed) {
+    if (!pin.detailed && !pin.approximate) {
       // 'idle' = the flight is over and the close-up map tiles are loaded, so footprints can be read.
       map.once('idle', () => {
         if (flight === flightRef.current) showBuilding(map, buildingAt(map, pin.lng, pin.lat))

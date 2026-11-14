@@ -19,7 +19,7 @@ const FINAL_DECISION_BODIES = new Set([
 
 /**
  * Returns { steps, label, next, uncertain }.
- *  - steps: 4 objects { name, state, note }. state is 'reached' (teal), 'upcoming' (grey),
+ *  - steps: 4 objects { name, state, note }. state is 'reached' (blue), 'upcoming' (grey),
  *    'skipped' / 'not-needed' (hollow dot, italic note) or 'rejected' (dark).
  *  - label: short name of where it is now (used on list cards).
  *  - next: "Next: City Council" when more is still to come, otherwise null.
