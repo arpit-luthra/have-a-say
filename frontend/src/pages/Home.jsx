@@ -57,10 +57,11 @@ export default function Home() {
   }, [selected?.id, visible]) // eslint-disable-line react-hooks/exhaustive-deps
   // The heading follows the All / In progress / Decided toggle, and says "near you" after an address search.
   const near = homeLocation && !showAll
-  const n = shown.length
-  const noun = n === 1 ? 'decision' : 'decisions'
+  const count = shown.length
+  const n = count.toLocaleString('en-CA') // 1,115, like the number on the start page
+  const noun = count === 1 ? 'decision' : 'decisions'
   const heading =
-    nearOnly && n === 0
+    nearOnly && count === 0
       ? `Nothing within ${radius} km right now`
       : filters.status === 'In progress'
         ? `${n} ${noun} still in progress${near ? ' near you' : ''}`

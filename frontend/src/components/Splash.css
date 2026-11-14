@@ -1,0 +1,55 @@
+/* Warm off-white screen with a very faint paper grain. */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #faf6ee;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 450ms ease;
+}
+.splash::before {
+  /* paper texture: fine noise, barely visible */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+}
+.splash--out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.splash__word {
+  color: #012d73; /* the logo's navy */
+  font-size: clamp(44px, 10vw, 76px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  white-space: pre;
+}
+.splash__ghost {
+  visibility: hidden;
+}
+.splash__icon {
+  width: clamp(56px, 12vw, 96px);
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 420ms ease, transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.splash--icon .splash__icon,
+.splash--out .splash__icon {
+  opacity: 1;
+  transform: scale(1);
+}

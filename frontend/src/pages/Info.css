@@ -36,7 +36,7 @@
   margin-bottom: 16px;
   padding: 24px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 16px;
   background: #fff;
 }
 .info__heading {
@@ -85,7 +85,7 @@
   display: inline-block;
   margin-top: 8px;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--brand);
   color: #fff;
   font-weight: 600;

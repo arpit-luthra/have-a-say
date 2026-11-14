@@ -1,70 +1,107 @@
+/* Floats over the page (see .app in index.css). Solid white at the top, translucent with a blur once scrolled. */
 .topbar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 76px;
+  height: var(--header-h);
   padding: 0 32px;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
-  flex-shrink: 0;
+  transition: background-color 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease;
+}
+.topbar--scrolled {
+  background: rgb(255 255 255 / 0.78);
+  border-bottom-color: rgb(225 231 239 / 0.7);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
 }
 
 .topbar__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  gap: 8px;
   text-decoration: none;
   white-space: nowrap;
-  color: var(--brand);
 }
-.topbar__logo span {
-  color: var(--ink);
+.topbar__logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+/* The wordmark in the logo's own colours: bold navy "Heads", blue "Up". */
+.topbar__name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.topbar__heads {
+  color: #012d73;
+}
+.topbar__up {
+  color: #075cd1;
 }
 
 .topbar__menu {
   display: flex;
-  gap: 12px;
+  gap: 24px;
   overflow-x: auto; /* menu scrolls sideways on tiny phones */
 }
 
+/* Active page: a thin blue underline, no filled box. */
 .topbar__link {
-  padding: 10px 14px;
-  border-radius: 8px;
+  position: relative;
+  padding: 8px 0;
   color: var(--ink-muted);
   text-decoration: none;
   font-size: 16px;
+  font-weight: 500;
   white-space: nowrap;
+  transition: color 160ms ease;
 }
-
+.topbar__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
 .topbar__link:hover {
   color: var(--ink);
 }
-
 .topbar__link.active {
-  color: var(--brand);
-  font-weight: 500;
-  background: var(--brand-light);
+  color: var(--ink);
+  font-weight: 600;
+}
+.topbar__link.active::after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 800px) {
   .topbar {
-    height: 64px;
-    padding: 0 12px;
+    padding: 0 16px;
+    gap: 8px;
   }
-  .topbar__logo {
-    font-size: 17px;
+  .topbar__logo img {
+    width: 32px;
+    height: 32px;
+  }
+  .topbar__name {
+    font-size: 20px;
+  }
+  .topbar__menu {
+    gap: 16px;
   }
   .topbar__link {
-    padding: 8px;
     font-size: 14px;
-  }
-  .topbar__logo svg {
-    width: 24px;
-    height: 24px;
   }
 }

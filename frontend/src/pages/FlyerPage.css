@@ -17,7 +17,7 @@
 .flyer__print {
   padding: 8px 16px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--brand);
   color: #fff;
   font-weight: 600;
@@ -109,6 +109,8 @@
   #root,
   .app,
   .app__page {
+    position: static !important;
+    padding-top: 0 !important;
     height: auto !important;
     overflow: visible !important;
     display: block !important;

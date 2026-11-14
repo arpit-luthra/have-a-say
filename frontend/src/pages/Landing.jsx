@@ -4,12 +4,20 @@ import { useNavigate } from 'react-router-dom'
 import FindWard from '../components/FindWard.jsx'
 import DecisionCard from '../components/DecisionCard.jsx'
 import { allItems } from '../lib/allItems.js'
+import explanations from '../data/explanations.json'
 import { useResident } from '../lib/ResidentContext.jsx'
 import './Landing.css'
 
 // Four relatable decisions that have a full explanation (picked by hand, not the newest ones).
 const RECENT_IDS = ['2026.MM43.128', '2026.TE28.12', '2026.IE27.17', '2026.NY34.12']
 const recentlyDecided = RECENT_IDS.map((id) => allItems.find((d) => d.id === id)).filter(Boolean)
+
+// Three real numbers from our own data (never typed in by hand).
+const STATS = [
+  { value: allItems.length.toLocaleString('en-CA'), label: 'decisions tracked' },
+  { value: Object.keys(explanations).length.toLocaleString('en-CA'), label: 'explained in plain words, with sources' },
+  { value: allItems.filter((d) => d.upcoming).length.toLocaleString('en-CA'), label: 'open for comment now' },
+]
 
 const STEPS = [
   {
@@ -37,15 +45,30 @@ export default function Landing() {
     <main>
       <section className="hero">
         <div className="hero__inner">
-          <h1 className="hero__title">Your city is making decisions about your street.</h1>
-          <p className="hero__sub">See what's happening near you, and how to have a say.</p>
-          <FindWard
-            hero
-            onFound={(found) => {
-              setFound(found)
-              navigate('/explore')
-            }}
-          />
+          {/* Each part fades up in turn (--i = its turn). The first one waits for the intro splash if it is playing. */}
+          <h1 className="hero__title fade-up" style={{ '--i': 0 }}>
+            Your city is making decisions about your street.
+          </h1>
+          <p className="hero__sub fade-up" style={{ '--i': 1 }}>
+            See what's happening near you, and how to have a say.
+          </p>
+          <div className="hero__search fade-up" style={{ '--i': 2 }}>
+            <FindWard
+              hero
+              onFound={(found) => {
+                setFound(found)
+                navigate('/explore')
+              }}
+            />
+          </div>
+          <ul className="hero__stats fade-up" style={{ '--i': 3 }}>
+            {STATS.map((stat) => (
+              <li key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

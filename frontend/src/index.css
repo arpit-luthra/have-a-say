@@ -9,7 +9,10 @@
   --brand: #1b5fa8; /* Toronto blue */
   --brand-dark: #0f3e73; /* hover */
   --brand-light: #eef4fb; /* light blue backgrounds, chips */
-  --radius: 12px;
+  --radius: 16px; /* cards and big containers. Small controls use 8px. Spacing scale: 8 / 16 / 24. */
+  --header-h: 76px;
+  --navy: #012d73; /* the logo's colours */
+  --logo-blue: #075cd1;
   --shadow-card: 0 1px 2px rgb(16 40 70 / 0.06), 0 4px 14px rgb(16 40 70 / 0.07);
   --shadow-card-hover: 0 2px 4px rgb(16 40 70 / 0.08), 0 10px 28px rgb(16 40 70 / 0.12);
 
@@ -42,18 +45,24 @@ button {
   color: inherit;
 }
 
-/* Top bar on top, page fills the rest. Each page scrolls inside its own box. */
+/* The top bar floats over the page, and the page scrolls inside its own box underneath it
+   (that is what lets the bar blur the content passing behind it). The padding keeps every page clear of the bar. */
 .app {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   height: 100%;
 }
 
 .app__page {
-  position: relative;
-  flex: 1;
-  min-height: 0;
+  position: absolute;
+  inset: 0;
+  padding-top: var(--header-h);
   overflow-y: auto;
+}
+
+@media (max-width: 800px) {
+  :root {
+    --header-h: 64px;
+  }
 }
 
 /* Keyboard focus ring in brand blue. */
@@ -72,4 +81,30 @@ button {
 /* Map credit: small, in the map's bottom-right corner. */
 .maplibregl-ctrl-attrib {
   font-size: 10px;
+}
+
+/* ---------- Small touches: smooth hover and press on every button, cards that lift ---------- */
+.card__btn,
+.find-ward__button,
+.find-ward__clear,
+.say__link,
+.councillor__btn,
+.home__status-btn,
+.home__filters,
+.home__more,
+.home__toggle,
+.flyer__print,
+.info__button {
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+}
+.card__btn:active,
+.find-ward__button:active,
+.say__link:active,
+.councillor__btn:active,
+.home__status-btn:active,
+.home__filters:active,
+.home__more:active,
+.flyer__print:active,
+.info__button:active {
+  transform: scale(0.97);
 }

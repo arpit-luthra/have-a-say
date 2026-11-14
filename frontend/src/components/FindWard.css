@@ -67,15 +67,18 @@
   display: none;
 }
 
-/* Error text sits on its own small white chip so it's readable over the map. */
+/* The message sits on its own small white chip so it's readable over the map and the photo.
+   The text colour is set here (dark) because on the start page the parent's text is white. */
 .find-ward__error {
   margin: 8px 0 0;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
   background: #ffffff;
   box-shadow: var(--shadow-card);
-  font-size: 13px;
+  color: var(--ink);
+  font-size: 15px;
   line-height: 1.4;
+  text-align: left;
 }
 
 /* The dropdown under the search bar. */
@@ -91,6 +94,7 @@
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 12px 36px rgb(16 40 70 / 0.22);
+  color: var(--ink); /* dark text on the white dropdown, even on the start page where the surrounding text is white */
   text-align: left;
 }
 .find-ward__option {
@@ -100,7 +104,7 @@
   width: 100%;
   padding: 12px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   background: none;
   color: var(--ink);
   font-size: 15px;
@@ -122,15 +126,15 @@
 .find-ward--hero .find-ward__pill {
   border: 0;
   border-radius: 999px;
-  box-shadow: 0 10px 40px rgb(0 0 0 / 0.35);
+  box-shadow: 0 16px 48px rgb(0 0 0 / 0.3);
 }
 .find-ward--hero .find-ward__input {
-  padding: 22px 8px 22px 28px;
-  font-size: 18px;
+  padding: 24px 8px 24px 32px;
+  font-size: 19px;
 }
 .find-ward--hero .find-ward__button {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   margin-right: 8px;
 }
 .find-ward__link {

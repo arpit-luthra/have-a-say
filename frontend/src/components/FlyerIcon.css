@@ -5,7 +5,7 @@
   place-items: center;
   width: 28px;
   height: 28px;
-  border-radius: 6px;
+  border-radius: 8px;
   color: #6b7280; /* grey */
   text-decoration: none;
   transition: color 120ms;
@@ -21,7 +21,7 @@
   position: absolute;
   right: 0;
   padding: 4px 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--ink);
   color: #fff;
   font: 600 12px/1.2 var(--font-sans);

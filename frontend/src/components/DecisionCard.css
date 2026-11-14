@@ -14,6 +14,9 @@
 .card--active {
   box-shadow: var(--shadow-card-hover);
 }
+.card:hover {
+  transform: translateY(-2px); /* lifts slightly */
+}
 .card--active {
   outline: 2px solid var(--brand);
 }

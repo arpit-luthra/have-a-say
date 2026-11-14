@@ -17,7 +17,7 @@ import { loadWards, wardSummary } from '../lib/wardData.js'
 import './FindWard.css'
 
 const MESSAGES = {
-  notFound: "We couldn't find that address in Toronto. Try a street address, or a full postal code like M5S 1A1.",
+  notFound: "We couldn't find that address. Try a street and cross street, like Jarvis St & Gerrard St E.",
   outside: "That address seems to be outside Toronto's 25 wards.",
   noLocation: "Couldn't get your location. Type an address instead.",
   offline: "Address search isn't working right now. Please try again in a moment.",
