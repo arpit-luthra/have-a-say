@@ -1,9 +1,21 @@
 // "Can I still have a say?" box. The wording depends on the stage.
 // We never guess a deadline: open items always point to the official page for it.
-import { getStageSteps } from '../lib/stageSteps.js'
+import { getStageSteps, isStale } from '../lib/stageSteps.js'
 
 export default function SayBox({ item }) {
   const decided = getStageSteps(item).steps[3].state !== 'upcoming'
+
+  if (isStale(item)) {
+    return (
+      <div className="say">
+        <p className="say__main">We don't have a recent update on this one.</p>
+        <p>It may already be decided. Check the official page for its current status.</p>
+        <a className="say__link" href={item.sourceUrl} target="_blank" rel="noreferrer">
+          Open the official page
+        </a>
+      </div>
+    )
+  }
 
   if (decided) {
     return (

@@ -202,7 +202,8 @@ export default function CityMap({ homeLocation, pins = [], hoveredId = null, sel
       { fromApp: true },
     )
     // "approximate" pins (a whole street, not one address) get no building highlight.
-    if (!pin.detailed && !pin.approximate) {
+    // Only Housing and Heritage pins with an exact address get the site outline.
+    if (!pin.detailed && !pin.approximate && (pin.topic === 'Housing' || pin.topic === 'Heritage')) {
       // 'idle' = the flight is over and the close-up map tiles are loaded, so footprints can be read.
       map.once('idle', () => {
         if (flight === flightRef.current) showBuilding(map, buildingAt(map, pin.lng, pin.lat))
@@ -280,32 +281,25 @@ function buildingAt(map, lng, lat) {
   return best
 }
 
-const HIGHLIGHT_GROW_M = 0.5 // how far the red footprint is pushed outward on every side
-const HIGHLIGHT_TALLER_M = 1 // and how much taller than the grey building it is
+const HIGHLIGHT_GROW_M = 0.5 // how far the outline is pushed outward on every side
 
 /**
- * A red 3D copy of one building, drawn directly ABOVE the grey 3D buildings (and under the
- * labels and pins). It is slightly bigger than the grey one, so the two surfaces are never in
- * exactly the same place (that was the flicker, called "z-fighting").
+ * The "site" of a decision: a thin soft-red outline and a very light red fill, flat on the ground
+ * (no 3D block), plus a small label. Drawn above the grey buildings, under the pins.
  */
 function addBuildingHighlight(map) {
   map.addSource('building-highlight', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } })
   const layers = map.getStyle().layers
-  const above3d = layers[layers.findIndex((layer) => layer.id === 'building-3d') + 1] // the layer right after the grey buildings
-  map.addLayer(
-    {
-      id: 'building-highlight',
-      type: 'fill-extrusion',
-      source: 'building-highlight',
-      paint: {
-        'fill-extrusion-color': PIN_RED,
-        'fill-extrusion-height': ['+', ['get', 'height'], HIGHLIGHT_TALLER_M],
-        'fill-extrusion-base': ['get', 'base'],
-        'fill-extrusion-opacity': 1,
-      },
-    },
-    above3d?.id,
-  )
+  const above3d = layers[layers.findIndex((layer) => layer.id === 'building-3d') + 1]
+  map.addLayer({ id: 'building-highlight', type: 'fill', source: 'building-highlight', paint: { 'fill-color': PIN_RED, 'fill-opacity': 0.12 } }, above3d?.id)
+  map.addLayer({ id: 'building-highlight-line', type: 'line', source: 'building-highlight', paint: { 'line-color': PIN_RED, 'line-opacity': 0.7, 'line-width': 1.5 } }, above3d?.id)
+  map.addLayer({
+    id: 'building-highlight-label',
+    type: 'symbol',
+    source: 'building-highlight',
+    layout: { 'text-field': 'Site of this decision', 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top', 'text-allow-overlap': true },
+    paint: { 'text-color': PIN_RED, 'text-halo-color': '#fff', 'text-halo-width': 1.5 },
+  })
 }
 
 /**
@@ -342,14 +336,13 @@ function growPolygon(rings, metres) {
   })
 }
 
-/** Show this building in red, or clear the highlight when `building` is undefined/null. */
+/** Outline this building's footprint, or clear the highlight when `building` is undefined/null. */
 function showBuilding(map, building) {
   const features = building
     ? [{
         type: 'Feature',
         geometry: { type: 'Polygon', coordinates: growPolygon(building.geometry.coordinates, HIGHLIGHT_GROW_M) },
-        // If the map data has no height for it, use a plain 6 m so it still shows as a block.
-        properties: { height: building.properties.render_height ?? 6, base: building.properties.render_min_height ?? 0 },
+        properties: {},
       }]
     : []
   map.getSource('building-highlight').setData({ type: 'FeatureCollection', features })

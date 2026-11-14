@@ -25,6 +25,19 @@ const FINAL_DECISION_BODIES = new Set([
  *  - next: "Next: City Council" when more is still to come, otherwise null.
  *  - uncertain: true when we're guessing from the latest vote alone.
  */
+// A vote older than this, on an item not marked decided, is too old to say where it stands.
+const STALE_AFTER_MONTHS = 6
+
+/** True when the latest recorded vote is over 6 months old and the item isn't decided. */
+export function isStale(item) {
+  if (item.detailed || !item.dateISO) return false
+  const body = item.committee
+  if (body === 'City Council' || FINAL_DECISION_BODIES.has(body)) return false
+  const cutoff = new Date()
+  cutoff.setMonth(cutoff.getMonth() - STALE_AFTER_MONTHS)
+  return new Date(item.dateISO) < cutoff
+}
+
 export function getStageSteps(item) {
   // Our 2 hand-checked decisions: both were adopted by City Council, and we know the path.
   const known = item.detailed
@@ -57,5 +70,6 @@ export function getStageSteps(item) {
 
   // Any other committee or community council: the next stop is City Council.
   steps[1].state = 'reached'
+  if (isStale(item)) return { steps, label: 'Status unclear', next: null, uncertain: true }
   return { steps, label: 'At committee', next: 'Next: City Council', uncertain: true }
 }

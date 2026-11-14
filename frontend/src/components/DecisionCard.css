@@ -91,3 +91,15 @@
 .card__btn--primary:hover {
   background: var(--brand-dark, var(--brand));
 }
+
+/* Small marker on decisions that have a full explanation from the official report. */
+.card__badge {
+  display: inline-block;
+  margin: 0 0 12px 8px;
+  padding: 3px 9px;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -336,3 +336,63 @@
   display: block;
   margin-bottom: 8px;
 }
+.say__link:hover,
+.councillor__btn:hover {
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+/* The say-box button: white text on blue, always visible (also when visited / hovered / focused). */
+a.say__link,
+a.say__link:visited,
+a.say__link:hover,
+a.say__link:focus {
+  background-color: var(--brand);
+  color: #fff;
+}
+a.say__link:hover {
+  background-color: var(--brand-dark);
+}
+
+/* Answers: each sentence, then its small grey source link ("Report, p. 4"). */
+.row__a p.answer {
+  display: block;
+  margin: 0 0 10px;
+}
+.src {
+  margin-left: 6px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.src:hover {
+  color: var(--brand);
+}
+.answer__unclear,
+.answer__note {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+.row__a p.answer__latest {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+.decision__full {
+  color: var(--brand);
+}
+.steps__item {
+  margin-top: 18px;
+}
+.steps__name {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.steps__date {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+.sources__date {
+  color: var(--ink-muted);
+}
