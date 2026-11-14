@@ -15,6 +15,6 @@ export function statusWord(decision) {
 /** The status plus any detail from the official page: "In progress · Postponed", "Rejected · Fence exemption not granted". */
 export function statusText(decision) {
   const word = statusWord(decision)
-  const detail = decision.official?.label
+  const detail = decision.official?.label === 'Adopted by committee' ? null : decision.official?.label // "In progress" says enough for that one
   return detail && !(word === 'Approved' && detail === 'Approved') ? `${word} · ${detail}` : word
 }

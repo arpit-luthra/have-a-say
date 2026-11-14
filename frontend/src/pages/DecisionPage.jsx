@@ -192,7 +192,7 @@ function statusLine(status, body) {
 
 // The same line for an item whose status comes from the official City page (it can carry a detail like "Postponed").
 function officialStatusLine(o, word) {
-  const detail = o.label && o.label !== word ? ` · ${o.label}` : ''
+  const detail = o.label && o.label !== word && o.label !== 'Adopted by committee' ? ` · ${o.label}` : ''
   if (word === 'Approved' || word === 'Rejected') return `${word} by ${o.finalBody}${detail}`
   if (word === 'In progress') return `In progress${detail} · ${o.steps[0].body}`
   return `${word} · ${o.finalBody}` // "Noted, no action"
@@ -322,6 +322,21 @@ export default function DecisionPage() {
     .join(' · ')
   const sources = buildSources(item, ex, info)
 
+  // A small grey line under the status, for the two cases where it needs more explaining:
+  //  - a committee adopted it but City Council hasn't voted yet (from the official page),
+  //  - the status comes ONLY from the voting record (not hand-checked, not from an official page).
+  const officialPage = (
+    <a href={item.sourceUrl} target="_blank" rel="noreferrer">
+      official City page
+    </a>
+  )
+  const basisLine =
+    item.official?.label === 'Adopted by committee' ? (
+      <>A committee agreed to this. City Council hasn't voted on it yet. See the {officialPage}.</>
+    ) : !item.official && !item.upcoming && !item.detailed ? (
+      <>Based on the City's voting record. Check the {officialPage} to confirm.</>
+    ) : null
+
   return (
     <main className="dp">
       <div className="dp__wrap">
@@ -342,6 +357,7 @@ export default function DecisionPage() {
         <header className="dp__header">
           <h1 className="dp__title">{item.title}</h1>
           <p className="dp__meta">{headerLine}</p>
+          {basisLine && <p className="dp__basis">{basisLine}</p>}
           <OfficialTitle title={item.officialTitle} plain={item.title} />
         </header>
 

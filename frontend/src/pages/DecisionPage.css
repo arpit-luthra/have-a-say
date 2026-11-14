@@ -644,3 +644,9 @@ a.say__link:hover {
 .dp .tracker__date {
   overflow-wrap: anywhere;
 }
+
+.dp p.dp__basis {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--grey);
+}

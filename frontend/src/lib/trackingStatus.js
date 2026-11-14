@@ -91,7 +91,7 @@ export function parseTracking(tracking) {
     if (body === 'Toronto Transit Commission') {
       return { status: 'Approved', word: 'Approved', finalBody: 'TTC board', date, label: null, text, steps: [{ body, date, text }], final: true, outcome: `The TTC board approved this${withChanges(text)} on ${formatDate(date)}.` }
     }
-    return { status: 'In progress', word: 'In progress', finalBody: null, date, label: 'Adopted by committee', text, steps: [{ body, date, text }], final: false, outcome: `${the(body)} agreed to this${withChanges(text)} on ${formatDate(date)}. No City Council vote is recorded yet.` }
+    return { status: 'In progress', word: 'In progress', finalBody: null, date, label: 'Adopted by committee', text, steps: [{ body, date, text }], final: false } // no outcome sentence: the decision page shows "A committee agreed to this. City Council hasn't voted on it yet." under the status
   }
   return null
 }
