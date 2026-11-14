@@ -271,13 +271,15 @@ export default function DecisionPage() {
   const ex = explanations[id]
   const info = !ex ? details[id] : null // hand-checked text is only used when there is no generated explanation
 
-  const happening = ex ? fromExplanation(ex, 'happening') : info ? fromHandChecked(info, 'changing') : []
+  const officialLink = [{ label: 'Official City page', url: item.sourceUrl }]
+  // A hand-checked outcome (official-status.json) is the first sentence of "What's happening?".
+  const outcome = item.official?.outcome ? [{ text: item.official.outcome, links: officialLink }] : []
+  const happening = [...outcome, ...(ex ? fromExplanation(ex, 'happening') : info ? fromHandChecked(info, 'changing') : [])]
   const why = ex ? fromExplanation(ex, 'why') : info ? fromHandChecked(info, 'why') : []
   const whereWho = ex ? fromExplanation(ex, 'where') : info ? fromHandChecked(info, 'where', 'who') : []
   const conditions = ex ? fromExplanation(ex, 'conditions') : []
   // Process: the staff report step comes from the PDF. For items checked on the official City page, the
   // other steps come from that page (cited "Official City page") and replace the voting-record guess.
-  const officialLink = [{ label: 'Official City page', url: item.sourceUrl }]
   const officialSteps = item.official
     ? (item.official.steps ?? [{ body: item.official.finalBody, date: item.official.date, text: item.official.text }]).map((st) => ({
         step: st.body.includes('City Council') ? 'council' : 'committee',

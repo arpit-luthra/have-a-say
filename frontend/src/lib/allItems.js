@@ -34,8 +34,9 @@ const fromOpenData = openData.items
       ...item,
       official: officialStatus.items[item.id] ?? null,
       ...(spot && { lat: spot.lat, lng: spot.lng, place: spot.address, approximate: Boolean(spot.approximate) }),
-      title: plain || item.title,
-      officialTitle: plain ? item.title : null,
+      // A hand-checked plain title (official-status.json) beats the generated one.
+      title: officialStatus.items[item.id]?.plainTitle || plain || item.title,
+      officialTitle: officialStatus.items[item.id]?.plainTitle || plain ? item.title : null,
       topic: guessTopic(item.title), // guess from the OFFICIAL title: it has more keywords
       detailed: false,
     }

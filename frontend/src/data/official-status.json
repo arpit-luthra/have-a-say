@@ -1,9 +1,47 @@
 {
   "note": "Final status checked by hand on each item's official City of Toronto page (Tracking Status), Nov 14, 2026. Overrides the status guessed from the voting record.",
   "items": {
-    "2024.TE16.5": { "status": "Approved", "finalBody": "City Council", "date": "2024-10-10", "text": "City Council adopted this item on October 9 and 10, 2024 with amendments.", "steps": [{"body": "Toronto and East York Community Council", "date": "2024-09-25", "text": "Sent to City Council without recommendations."}, {"body": "City Council", "date": "2024-10-10", "text": "Adopted with amendments."}] },
-    "2025.NY20.1": { "status": "Approved", "finalBody": "North York Community Council", "date": "2025-01-09", "text": "North York Community Council adopted this item without amendment. City Council gave North York Community Council the authority to decide, so this decision is final." },
-    "2026.NY29.1": { "status": "Approved", "finalBody": "North York Community Council", "date": "2026-01-06", "text": "North York Community Council adopted this item with amendments. City Council gave North York Community Council the authority to decide, so this decision is final." },
-    "2025.NY23.4": { "status": "Approved", "finalBody": "North York Community Council", "date": "2025-04-30", "text": "North York Community Council adopted this item with amendments. City Council gave North York Community Council the authority to decide, so this decision is final." }
+    "2024.TE16.5": {
+      "status": "Approved",
+      "finalBody": "City Council",
+      "date": "2024-10-10",
+      "text": "City Council adopted this item on October 9 and 10, 2024 with amendments.",
+      "steps": [
+        {
+          "body": "Toronto and East York Community Council",
+          "date": "2024-09-25",
+          "text": "Sent to City Council without recommendations."
+        },
+        {
+          "body": "City Council",
+          "date": "2024-10-10",
+          "text": "Adopted with amendments."
+        }
+      ]
+    },
+    "2025.NY20.1": {
+      "status": "Rejected",
+      "finalBody": "North York Community Council",
+      "date": "2025-01-09",
+      "text": "North York Community Council denied the request for a permit to remove one privately owned tree at 425 Manor Road East. City Council gave North York Community Council the authority to decide, so this decision is final.",
+      "plainTitle": "Request to cut down a tree at 425 Manor Rd E was denied",
+      "outcome": "North York Community Council denied the permit to remove the tree, as City staff recommended. The tree stays."
+    },
+    "2026.NY29.1": {
+      "status": "Approved",
+      "finalBody": "North York Community Council",
+      "date": "2026-01-06",
+      "text": "North York Community Council approved the permit to remove one privately owned tree at 10 Glencairn Avenue and required five replacement trees. City Council gave North York Community Council the authority to decide, so this decision is final.",
+      "plainTitle": "Tree at 10 Glencairn Ave can be cut down, 5 new trees required",
+      "outcome": "City staff recommended denying the permit, but North York Community Council approved it and required 5 replacement trees (planted or paid for)."
+    },
+    "2025.NY23.4": {
+      "status": "Approved",
+      "finalBody": "North York Community Council",
+      "date": "2025-04-30",
+      "text": "North York Community Council approved the permit to remove one privately owned tree at 390 Glencairn Avenue and required five replacement trees. City Council gave North York Community Council the authority to decide, so this decision is final.",
+      "plainTitle": "Tree at 390 Glencairn Ave can be cut down, 5 new trees required",
+      "outcome": "City staff recommended denying the permit, but North York Community Council approved it and required 5 replacement trees (planted or paid for)."
+    }
   }
 }
